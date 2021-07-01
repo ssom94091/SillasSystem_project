@@ -1,4 +1,7 @@
-# <p style= "color : red;">(주) 신라시스템 현장실습 프로젝트</p>
+<style type="text/css">
+    p{color:red;}
+ </style>
+# <p>(주) 신라시스템 현장실습 프로젝트</p>
 <b>※프로젝트명 : </b>(S-PPSS)신라-인사관리시스템 <br>
 
 <b>※개발기간 :</b> 2021.6.22~2021.8.13 <br>
