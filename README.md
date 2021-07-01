@@ -6,7 +6,9 @@
 <b>※개발목표 :</b> 근로계약서, 재직증명서 등 웹에서 작성 및 수정 관리가 가능한 전자인사관리시스템 개발  <br>
 
 <b>※개발환경 :</b> 전자정부표준프레임워크 3.10 준수 <br>
-
+<b>Program </b>JSP,JAVA,JavaScript, jQuery<br>
+<b>FrameWork </b>Spring<br>
+<b>DataBase </b>MariaDB<br>
 
 ## 폴더 구성::
     1.업무일지 : 업무일지, 내용, 목표에 관하여 정리된 폴더입니다.
