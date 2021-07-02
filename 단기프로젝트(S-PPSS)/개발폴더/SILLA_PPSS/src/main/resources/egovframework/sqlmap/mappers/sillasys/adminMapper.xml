@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="adminDAO">
+	<select id="selectAdmin" resultType="egovMap" parameterType="adminVO"><!-- upd, ins, del ::: para->있으면 그것만 적어주면됨 but!!! select ret있어야함 -->
+		SELECT pk
+			  , company_nm
+			  , company_number
+			  , id
+			  , grade
+		FROM admin_tb
+		WHERE id = #{id}
+		AND pw = #{pw}
+	</select>
+
+
+</mapper>
