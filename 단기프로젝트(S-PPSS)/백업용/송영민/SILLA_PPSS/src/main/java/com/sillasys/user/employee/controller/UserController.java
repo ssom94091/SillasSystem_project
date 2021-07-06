@@ -55,12 +55,15 @@ public class UserController {
 	}
 	
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	//양식페이지로 이동
 	@RequestMapping(value = "/user/write.do" , method = RequestMethod.GET)
 	public String goWrite() {
 		return "com/sillasys/user/write";
 	}
+=======
+>>>>>>> parent of 0720d8f (pr)
 =======
 >>>>>>> parent of 0720d8f (pr)
 	

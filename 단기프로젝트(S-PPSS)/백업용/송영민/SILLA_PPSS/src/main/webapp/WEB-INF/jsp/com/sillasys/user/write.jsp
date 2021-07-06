@@ -1,9 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 <div class="container">
 	<div class="raw">
+=======
+
+<div class ="container">
+		<div class ="raw">
+>>>>>>> parent of 0720d8f (pr)
 =======
 
 <div class ="container">
@@ -14,7 +20,11 @@
 			<thread>
 				<tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<th style="background-color: #eeeee; text-align: center;">근로계약서 양식</th>
+=======
+					<th colspan="2" style="background-color: #eeeee; text-align: center;">게시판 글쓰기 양식</th>
+>>>>>>> parent of 0720d8f (pr)
 =======
 					<th colspan="2" style="background-color: #eeeee; text-align: center;">게시판 글쓰기 양식</th>
 >>>>>>> parent of 0720d8f (pr)
@@ -26,6 +36,7 @@
 				</tr>
 				<tr>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<td><textarea  class="form-control"placeholder="글 내용" name="bbscontent" maxlengh="1000" style="height: 350px;"></textarea></td>
 				</tr>
 				</today>
@@ -34,10 +45,17 @@
 =======
 					<td><textarea class= "from-control" placeholder="글 내용" name="indexContent" maxlength="2048" style="height: 350px";></textarea></td>
 				</tr>
+=======
+					<td><textarea class= "from-control" placeholder="글 내용" name="indexContent" maxlength="2048" style="height: 350px";></textarea></td>
+				</tr>
+>>>>>>> parent of 0720d8f (pr)
 			</today>
 		</table>
 			<input type="submit" class="btn btn-primary pull-right" value="글쓰기">
 		</div>
+<<<<<<< HEAD
+>>>>>>> parent of 0720d8f (pr)
+=======
 >>>>>>> parent of 0720d8f (pr)
 		</form>
 </div>

@@ -27,25 +27,37 @@
 <<<<<<< HEAD
            
             <div class="form-group">
+<<<<<<< HEAD
                <p for="userResNum">주민등록번호</p>
                 <input type="text" class="form-control"  id="userResNum_front" name="userResNum_front" style="width:48%;display:inline-block;">
                 <label for="userResNum_rear" style="display:inline-block;"> - </label>
                 <input type="text" class="form-control"  id="userResNum_rear" name="userResNum_rear" style="width:48%;display:inline-block;">
+=======
+               <label for="resNumfront">주민등록번호</label>
+                <input type="text" class="form-control"  id="resNumfront" name="resNumfront">-
+                  <input type="text" class="form-control" id="resNumrear" name="resNumrear">
+>>>>>>> parent of 0720d8f (pr)
             </div>
            
 =======
             
+<<<<<<< HEAD
             <div class="form-group">
                <label for="resNumfront">주민등록번호</label>
                 <input type="text" class="form-control"  id="resNumfront" name="resNumfront">-
                   <input type="text" class="form-control" id="resNumrear" name="resNumrear">
             </div>
             
+=======
+>>>>>>> parent of 0720d8f (pr)
            <!--  <div class="form-group">
                  <label for="resNumrear"></label>
                 <input type="text" class="form-control" id="nick" name="resNumrear">
             </div> -->
             
+<<<<<<< HEAD
+>>>>>>> parent of 0720d8f (pr)
+=======
 >>>>>>> parent of 0720d8f (pr)
             <div class="form-group">
                  <label for="gender">성별</label>
