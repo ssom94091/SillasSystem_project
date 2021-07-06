@@ -5,7 +5,7 @@
 
 
 
-
+<div style="background:#f7f7f7;text-align:right">
 	<c:if test="${loginUser != null }">
 		<a href="/user/logout.do">로그아웃</a>	
 	</c:if>
@@ -13,5 +13,4 @@
 		<a href="/user/login.do">로그인</a>
 		<a href="/user/join.do">회원가입</a>	
 	</c:if>
-
-
+</div>

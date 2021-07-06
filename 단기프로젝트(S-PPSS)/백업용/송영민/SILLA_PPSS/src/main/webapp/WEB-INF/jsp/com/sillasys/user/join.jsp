@@ -7,52 +7,53 @@
          <form action="/user/join.do" method="post"><!--  -->
             <div class="form-group">
                 <label for="id">아이디</label>
-                <input type="text" class="form-control" id="id" name="userId">
+                <input type="text" class="form-control" id="userId" name="userId">
             </div>
             
             <div class="form-group">
                  <label for="pw">비밀번호</label>
-                 <input type="password" class="form-control" id="pw" name="userPw">
+                 <input type="password" class="form-control" id="userPw" name="userPw">
             </div>
             
             <div class="form-group">
                  <label for="name">이름</label>
-                <input type="text" class="form-control" id="name" name="userName">
+                <input type="text" class="form-control" id="userName" name="userName">
             </div>
             
             <div class="form-group">
                  <label for="address">주소</label>
-                <input type="text" class="form-control" id="address" name="userAddress">
+                <input type="text" class="form-control" id="userAddress" name="userAddress">
             </div>
-            
+           
             <div class="form-group">
-               <label for="resNumfront">주민등록번호</label>
-                <input type="text" class="form-control"  id="resNumfront" name="resNumfront">-
-                  <input type="text" class="form-control" id="resNumrear" name="resNumrear">
+               <p for="userResNum">주민등록번호</p>
+                <input type="text" class="form-control"  id="userResNum_front" name="userResNum_front" style="width:48%;display:inline-block;">
+                <label for="userResNum_rear" style="display:inline-block;"> - </label>
+                <input type="text" class="form-control"  id="userResNum_rear" name="userResNum_rear" style="width:48%;display:inline-block;">
             </div>
-            
-           <!--  <div class="form-group">
-                 <label for="resNumrear"></label>
-                <input type="text" class="form-control" id="nick" name="resNumrear">
-            </div> -->
-            
+           
             <div class="form-group">
                  <label for="gender">성별</label>
-                <input type="text" class="form-control" id="gender" name="userNick">
+                <select name="userGender">
+                <option value="">-- 선택 --</option>
+        		<option value="남">남</option>
+        		<option value="여">여</option>
+        		</select>
             </div>
             
             <div class="form-group">
                  <label for="email">이메일</label>
-                <input type="text" class="form-control" id="email" name="userEmail">
+                <input type="text" class="form-control" id="userEmail" name="userEmail">
+                
             </div>
             
             <div class="form-group">
                  <label for="phone">전화번호</label>
-                <input type="text" class="form-control" id="phone" name="userPhone">
+                <input type="text" class="form-control" id="userPhone" name="userPhone">
             </div>
             
             <button class="btn btn-primary">가입</button>
-            <a href="/index" type="button" class="btn btn-success">취소</a>
+            <a href="/user/login.do" type="button" class="btn btn-success">취소</a>
          </form>   
       
       </div>
