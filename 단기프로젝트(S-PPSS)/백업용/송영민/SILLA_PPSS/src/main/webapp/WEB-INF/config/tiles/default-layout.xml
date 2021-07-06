@@ -5,10 +5,10 @@
         
 <tiles-definitions>
 	<!-- 근로자 -->
-    <definition name="layout-tiles" template="/WEB-INF/tiles/template2.jsp">
-        <put-attribute name="head" value="/WEB-INF/tiles/include/head.jsp" />
+    <definition name="layout-tiles" template="/WEB-INF/tiles/user/template2.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/user/head.jsp" />
         <put-attribute name="body" value="" />
-        <put-attribute name="foot" value="/WEB-INF/tiles/include/foot.jsp" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/user/foot.jsp" />
     </definition>
     
     

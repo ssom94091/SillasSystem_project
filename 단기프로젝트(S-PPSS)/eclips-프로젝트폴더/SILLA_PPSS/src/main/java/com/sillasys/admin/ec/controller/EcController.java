@@ -29,7 +29,7 @@ public class EcController {
 		EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
 		
 		if(loginAdmin == null) {//나중에 관리자 로그인 시스템을 만들어서 그리로 보내야합니다. *관리자와 근로자는 로그인시스템을 달리 해야합니다.*
-			return "redirect:/user/login.do";
+			return "redirect:/admin/login.do";
 		}
 		return "com/sillasys/admin/ec/regist";
 	}
@@ -40,7 +40,7 @@ public class EcController {
 		EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
 		System.out.println("loginAdmin : "+loginAdmin);
 		if(loginAdmin == null) { // 로그인 안하고 등록
-			return "redirect:/user/login.do";
+			return "redirect:/admin/login.do";
 		} else { //로그인 한 사용자
 			String companyNm = loginAdmin.get("companyNm").toString();
 			String employerNm = loginAdmin.get("id").toString();

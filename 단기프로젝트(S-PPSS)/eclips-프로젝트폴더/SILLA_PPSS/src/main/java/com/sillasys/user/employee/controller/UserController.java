@@ -55,7 +55,12 @@ public class UserController {
 		return "com/sillasys/user/index";
 	}
 	
-	
+	//홈 페이지로 이동
+		@RequestMapping(value = "/index.do" , method = RequestMethod.GET)
+		public String goHome() {
+			return "com/sillasys/index";
+		}
+		
 	//양식페이지로 이동
 	@RequestMapping(value = "/user/write.do" , method = RequestMethod.GET)
 	public String goWrite() {

@@ -32,12 +32,24 @@ public class AdminController {
 		EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
 		
 		if(loginAdmin != null)
-			return "redirect:/admin/index.do";
+			return "redirect:/admin/main.do";
 		
 		
 		return "com/sillasys/admin/login";
-		
 	}
+	
+	
+	@RequestMapping(value = "/admin/main.do", method = RequestMethod.GET)
+	public String goMain(HttpServletRequest request) throws Exception {
+		HttpSession hs = request.getSession();
+		EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
+		
+		if(loginAdmin == null)
+			return "redirect:/admin/login.do";
+		
+		return "com/sillasys/admin/main";
+	}
+	
 	
 	@RequestMapping(value = "/admin/login.do", method = RequestMethod.POST)
 	public String doLogin(@ModelAttribute AdminVO vo, HttpServletRequest request, Model model) throws Exception {
@@ -50,7 +62,7 @@ public class AdminController {
 			HttpSession hs = request.getSession();
 			hs.setAttribute("loginAdmin", loginAdmin);
 			
-			url = "/admin/index.do";
+			url = "/admin/main.do";
 			msg = "로그인에 성공했습니다.";
 			
 		}
@@ -60,7 +72,19 @@ public class AdminController {
 		return "com/sillasys/common/common";
 	}
 	
-	
+	//로그아웃
+		@RequestMapping(value = "admin/logout.do", method = RequestMethod.GET)
+		public String doLogout(HttpServletRequest request, Model model) {
+			HttpSession hs = request.getSession();
+			
+			hs.invalidate();
+			model.addAttribute("msg", "로그아웃에 성공했습니다.");
+			model.addAttribute("url", "/admin/login.do");
+			
+			return "com/sillasys/common/common";
+		}
+		
+		
 	@RequestMapping(value = "/admin/index.do", method = RequestMethod.GET)
 	public String goIndex(HttpServletRequest request) throws Exception{
 		HttpSession hs = request.getSession();
