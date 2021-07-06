@@ -23,8 +23,8 @@
 		,#{userPw}
 		,#{userName}
 		,#{userAddress}
-		,#{userResNum_front}
-		,#{userResNum_rear}
+		,#{userResNumfront}
+		,#{userResNumrear}
 		,#{userGender}
 		,#{userEmail}
 		,#{userPhone}
