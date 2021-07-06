@@ -44,11 +44,17 @@ public class UserController {
 		return "com/sillasys/user/login";
 	}
 	
+	@RequestMapping(value = "/user/go.do" , method = RequestMethod.GET)
+	public String goUser() {
+		return "com/sillasys/user/go";
+	}
 	
 	@RequestMapping(value = "/user/index.do" , method = RequestMethod.GET)
 	public String goIdx() {
 		return "com/sillasys/user/index";
 	}
+	
+	
 	
 	@RequestMapping(value = "/user/login.do", method = RequestMethod.POST)
 	public String doLogin(@ModelAttribute UserVO vo, Model model, HttpServletRequest request) throws Exception {
