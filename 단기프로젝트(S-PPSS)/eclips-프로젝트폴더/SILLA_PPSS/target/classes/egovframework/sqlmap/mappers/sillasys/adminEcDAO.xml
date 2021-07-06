@@ -4,8 +4,10 @@
 <mapper namespace="ecDAO">
 	<insert id="insertEcInfo" parameterType="ecVO" >
 		INSERT INTO  employee_cont_tb(
-			employer_nm
+			employee_nm
+			,employer_nm
 			,pay
+			,pay_type
 			,company_nm
 			,content
 			,work_start_dt
@@ -13,20 +15,21 @@
 			,cont_start_dt
 			,cont_end_dt
 			,reg_dt
-			,mod_dt
+			,mod_dt	
 		)
 		VALUES(
-			#{employerNm}
+			#{employeeNm}
+			,#{employerNm}
 			,#{pay}
+			,#{payType}
 			,#{companyNm}
 			,#{content}
 			,#{workStartDt}
-			,#{workEndDt}
+			,#{workEndtDt}
 			,#{contStartDt}
 			,#{contEndDt}
-			,now()
-			,now()
-		
+			,#{regDt}
+			,#{modDt}
 		)
 			
 	
