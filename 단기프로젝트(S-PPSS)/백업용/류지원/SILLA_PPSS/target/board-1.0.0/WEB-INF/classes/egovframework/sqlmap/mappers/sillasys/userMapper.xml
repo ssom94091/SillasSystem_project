@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userDAO">
+
+<insert id="doJoin" >
+
+	INSERT INTO user_tb (user_id, user_pw, user_nick, user_phone)
+	VALUES(
+		 "123"
+		,"12"
+		,"4235"
+		,"123"
+	)
+
+</insert>
+
+</mapper>
