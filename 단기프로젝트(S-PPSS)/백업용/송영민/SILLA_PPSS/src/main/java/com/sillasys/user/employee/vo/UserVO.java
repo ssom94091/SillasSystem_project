@@ -6,10 +6,13 @@ public class UserVO {   //DB
 	   private String userPw;
 	   private String userName;
 	   private String userAddress;
-	   private String userResNum_front;
-	   private String userResNum_rear;
+	   private String userResnum_front;
+	   private String userResnum_rear;
 	   private String userGender;
-	   public int getUserPk() {
+	   private String userEmail;
+	   private String userPhone;
+	   
+	public int getUserPk() {
 		return userPk;
 	}
 	public void setUserPk(int userPk) {
@@ -39,17 +42,17 @@ public class UserVO {   //DB
 	public void setUserAddress(String userAddress) {
 		this.userAddress = userAddress;
 	}
-	public String getUserResNum_front() {
-		return userResNum_front;
+	public String getUserResnum_front() {
+		return userResnum_front;
 	}
-	public void setUserResNum_front(String userResNum_front) {
-		this.userResNum_front = userResNum_front;
+	public void setUserResnum_front(String userResnum_front) {
+		this.userResnum_front = userResnum_front;
 	}
-	public String getUserResNum_rear() {
-		return userResNum_rear;
+	public String getUserResnum_rear() {
+		return userResnum_rear;
 	}
-	public void setUserResNum_rear(String userResNum_rear) {
-		this.userResNum_rear = userResNum_rear;
+	public void setUserResnum_rear(String userResnum_rear) {
+		this.userResnum_rear = userResnum_rear;
 	}
 	public String getUserGender() {
 		return userGender;
@@ -69,17 +72,13 @@ public class UserVO {   //DB
 	public void setUserPhone(String userPhone) {
 		this.userPhone = userPhone;
 	}
-	private String userEmail;
-	   private String userPhone;
 	
-	   @Override
+	@Override
 	public String toString() {
 		return "UserVO [userPk=" + userPk + ", userId=" + userId + ", userPw=" + userPw + ", userName=" + userName
-				+ ", userAddress=" + userAddress + ", userResNum_front=" + userResNum_front + ", userResNum_rear="
-				+ userResNum_rear + ", userGender=" + userGender + ", userEmail=" + userEmail + ", userPhone="
+				+ ", userAddress=" + userAddress + ", userResnum_front=" + userResnum_front + ", userResnum_rear="
+				+ userResnum_rear + ", userGender=" + userGender + ", userEmail=" + userEmail + ", userPhone="
 				+ userPhone + "]";
 	}
 	   
-	   
-	
 }

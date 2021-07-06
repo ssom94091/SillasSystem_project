@@ -6,24 +6,25 @@
 <insert id="doJoin" parameterType="userVO">
 
 	INSERT INTO user_tb (
-		user_id
+		user_pk
+		, user_id
 		, user_pw
 		, user_name
 		, user_address
-		, userResNum_front
-		, userResNum_rear
+		, user_resNum_front
+		, user_resNum_rear
 		, user_gender
 		, user_email
 		, user_phone
 		
 	)
 	VALUES(
-		#{userId}
+		 #{userId}
 		,#{userPw}
 		,#{userName}
 		,#{userAddress}
-		,#{userResNum_front}
-		,#{userResNum_rear}
+		,#{userResNumfront}
+		,#{userResNumrear}
 		,#{userGender}
 		,#{userEmail}
 		,#{userPhone}
@@ -36,8 +37,8 @@
 		, user_pw
 		, user_name
 		, user_address
-		, userResNum_front
-		, userResNum_rear
+		, user_resNum_front
+		, user_resNum_rear
 		, user_gender
 		, user_email
 		, user_phone

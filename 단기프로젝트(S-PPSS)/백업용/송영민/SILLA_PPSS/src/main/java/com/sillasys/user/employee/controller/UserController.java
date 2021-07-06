@@ -32,38 +32,39 @@ public class UserController {
 		return "com/sillasys/user/login";
 	}
 	
-	//회원가입페이지 이동
 	@RequestMapping(value = "/user/join.do", method = RequestMethod.GET)
 	public String goJoin() {
 		return "com/sillasys/user/join";
 	}
 	
-	
-	
-	//회원가입
 	@RequestMapping(value = "/user/join.do", method = RequestMethod.POST)
 	public String regist(@ModelAttribute UserVO vo) throws Exception{
 		
 		userService.doJoin(vo);
-				
 		return "com/sillasys/user/login";
 	}
 	
-	//메인 페이지로 이동
+	@RequestMapping(value = "/user/go.do" , method = RequestMethod.GET)
+	public String goUser() {
+		return "com/sillasys/user/go";
+	}
+	
 	@RequestMapping(value = "/user/index.do" , method = RequestMethod.GET)
 	public String goIdx() {
 		return "com/sillasys/user/index";
 	}
 	
+<<<<<<< HEAD
 	
 	//양식페이지로 이동
 	@RequestMapping(value = "/user/write.do" , method = RequestMethod.GET)
 	public String goWrite() {
 		return "com/sillasys/user/write";
 	}
+=======
+>>>>>>> parent of 0720d8f (pr)
 	
 	
-	//로그인
 	@RequestMapping(value = "/user/login.do", method = RequestMethod.POST)
 	public String doLogin(@ModelAttribute UserVO vo, Model model, HttpServletRequest request) throws Exception {
 		
@@ -90,7 +91,7 @@ public class UserController {
 		return "com/sillasys/common/common";
 	}
 	
-	//로그아웃
+	
 	@RequestMapping(value = "user/logout.do", method = RequestMethod.GET)
 	public String doLogout(HttpServletRequest request, Model model) {
 		HttpSession hs = request.getSession();

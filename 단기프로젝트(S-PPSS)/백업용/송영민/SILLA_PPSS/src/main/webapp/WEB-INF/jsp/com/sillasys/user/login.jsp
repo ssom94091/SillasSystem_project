@@ -4,7 +4,6 @@
    
    <div class="col-md-12">
       <div class="col-md-6" style="margin:0 auto;">
-      	<img src = "/images/img/login_silla_logo.png">
          <form action="/user/login.do" method="post"><!--  -->
             <div class="form-group">
                 <label for="id">아이디</label>
