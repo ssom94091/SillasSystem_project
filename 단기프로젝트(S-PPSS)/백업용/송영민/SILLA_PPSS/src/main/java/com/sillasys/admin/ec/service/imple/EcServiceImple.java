@@ -4,7 +4,7 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
-import com.sillasys.admin.ec.dao.EcDAO;
+import com.sillasys.admin.ec.dao.EcDVO;
 import com.sillasys.admin.ec.service.EcService;
 import com.sillasys.admin.ec.vo.EcVO;
 
@@ -12,11 +12,11 @@ import com.sillasys.admin.ec.vo.EcVO;
 public class EcServiceImple implements EcService{
 	
 	@Resource(name = "ecDAO")
-	private EcDAO ecDAO;
+	private EcDVO ecDAO;
 	
 	
 	@Override
-	public void insertEcInfo(EcVO param)  throws Exception{
+	public void insertEcInfo(EcDVO param)  throws Exception{
 		ecDAO.insertEcInfo(param);
 	}
 
