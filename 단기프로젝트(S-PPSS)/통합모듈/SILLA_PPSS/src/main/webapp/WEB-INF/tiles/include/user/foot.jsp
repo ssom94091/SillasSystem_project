@@ -30,9 +30,9 @@
       </address>
       <div class="sns">
         <ul>
-          <li><img src="/images/img/instargram_logo.png" alt="인스타그램"></li>
-          <li><a href="https://blog.naver.com/sillasystem" target="_blank"><img src="/images/img/naverblog_logo.png" alt="네이버블로그"></a></li>
-          <li><img src="/images/img/facebook_logo.png" alt="페이스북"></li>
+          <li><img src="/images/silla/instargram_logo.png" alt="인스타그램"></li>
+          <li><a href="https://blog.naver.com/sillasystem" target="_blank"><img src="/images/silla/naverblog_logo.png" alt="네이버블로그"></a></li>
+          <li><img src="/images/silla/facebook_logo.png" alt="페이스북"></li>
         </ul>
         <p>copyright (c) <br>
           silla system co.ltd <br>

@@ -6,7 +6,7 @@
       <div class="col-md-6" style="margin:0 auto;">
          <form action="/admin/login.do" method="post"><!--  -->
          <div>
-         	<img src="/images/img/login_silla_logo.png">
+         	<img src="/images/silla/login_silla_logo.png">
          </div>
             <div class="form-group">
                 <label for="id">아이디</label>
