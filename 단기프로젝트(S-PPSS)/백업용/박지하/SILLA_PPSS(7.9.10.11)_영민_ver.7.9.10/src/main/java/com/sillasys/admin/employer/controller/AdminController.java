@@ -68,9 +68,9 @@ public class AdminController {
 				public String goSample() {
 					return "com/sillasys/ec/sample";
 				}
-				@RequestMapping(value = "/ec/user/test.do" , method = RequestMethod.GET)
+				@RequestMapping(value = "/ec/user/contract.do" , method = RequestMethod.GET)
 				public String goTest() {
-					return "com/sillasys/ec/user/test";
+					return "com/sillasys/ec/user/contract";
 				}
 			
 	@RequestMapping(value = "/admin/login.do", method = RequestMethod.POST)
