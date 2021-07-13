@@ -1,85 +1,77 @@
 package com.sillasys.user.employee.vo;
 
 public class UserVO {   //DB
-	   private int userPk;
-	   private String userId;
-	   private String userPw;
-	   private String userName;
-	   private String userAddress;
-	   private String userResNum_front;
-	   private String userResNum_rear;
-	   private String userGender;
-	   private String userEmail;
-	   private String userPhone;
-	   
-	   public int getUserPk() {
-		return userPk;
+	   private String user_id;				/* 유저 아이디 & user_tb 기본키*/
+	   private String user_pw;				/* 유저 비밀번호 */
+	   private String user_name;			/* 유저 이륾 */
+	   private String user_address;			/* 유저 주소*/
+	   private String user_resnum_front;	/* 유저 주민등록번호 앞 */
+	   private String user_resnum_rear;		/* 유저 주민등록번호 뒤 */
+	   private String user_gender;			/* 유저 성별 */
+	   private String user_email;			/* 유저 이메일 */
+	   private String user_phone;			/* 유저 연락처 */
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setUserPk(int userPk) {
-		this.userPk = userPk;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
-	public String getUserId() {
-		return userId;
+	public String getUser_pw() {
+		return user_pw;
 	}
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUser_pw(String user_pw) {
+		this.user_pw = user_pw;
 	}
-	public String getUserPw() {
-		return userPw;
+	public String getUser_name() {
+		return user_name;
 	}
-	public void setUserPw(String userPw) {
-		this.userPw = userPw;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
-	public String getUserName() {
-		return userName;
+	public String getUser_address() {
+		return user_address;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUser_address(String user_address) {
+		this.user_address = user_address;
 	}
-	public String getUserAddress() {
-		return userAddress;
+	public String getUser_resnum_front() {
+		return user_resnum_front;
 	}
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
+	public void setUser_resnum_front(String user_resnum_front) {
+		this.user_resnum_front = user_resnum_front;
 	}
-	public String getUserResNum_front() {
-		return userResNum_front;
+	public String getUser_resnum_rear() {
+		return user_resnum_rear;
 	}
-	public void setUserResNum_front(String userResNum_front) {
-		this.userResNum_front = userResNum_front;
+	public void setUser_resnum_rear(String user_resnum_rear) {
+		this.user_resnum_rear = user_resnum_rear;
 	}
-	public String getUserResNum_rear() {
-		return userResNum_rear;
+	public String getUser_gender() {
+		return user_gender;
 	}
-	public void setUserResNum_rear(String userResNum_rear) {
-		this.userResNum_rear = userResNum_rear;
+	public void setUser_gender(String user_gender) {
+		this.user_gender = user_gender;
 	}
-	public String getUserGender() {
-		return userGender;
+	public String getUser_email() {
+		return user_email;
 	}
-	public void setUserGender(String userGender) {
-		this.userGender = userGender;
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
 	}
-	public String getUserEmail() {
-		return userEmail;
+	public String getUser_phone() {
+		return user_phone;
 	}
-	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+	public void setUser_phone(String user_phone) {
+		this.user_phone = user_phone;
 	}
-	public String getUserPhone() {
-		return userPhone;
-	}
-	public void setUserPhone(String userPhone) {
-		this.userPhone = userPhone;
-	}
-	   @Override
+	@Override
 	public String toString() {
-		return "UserVO [userPk=" + userPk + ", userId=" + userId + ", userPw=" + userPw + ", userName=" + userName
-				+ ", userAddress=" + userAddress + ", userResNum_front=" + userResNum_front + ", userResNum_rear="
-				+ userResNum_rear + ", userGender=" + userGender + ", userEmail=" + userEmail + ", userPhone="
-				+ userPhone + "]";
+		return "UserVO [user_id=" + user_id + ", user_pw=" + user_pw + ", user_name=" + user_name + ", user_address="
+				+ user_address + ", user_resnum_front=" + user_resnum_front + ", user_resnum_rear=" + user_resnum_rear
+				+ ", user_gender=" + user_gender + ", user_email=" + user_email + ", user_phone=" + user_phone + "]";
 	}
 	   
+	
 	   
 	
 }

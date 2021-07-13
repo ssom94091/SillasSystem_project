@@ -1,12 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <script type="text/javascript">
+
+$(function() {
+	var btn1=0;  //버튼1 checked
+	var btn2=0;  //버튼2 checked
+	/*버튼1의 클릭 이벤트*/
+
+	$(document).ready(function(){
+		alert($(#admin_id).val());
+	}
+});
+
+</script>
 <div class="container">
 	<div class="row">
 		<div style="margin:0 auto;">
 			<h1 style="margin:0 auto;margin-top:20pt;display:block;text-align:center">표준 근로 계약서</h1><br>
 		</div>
+		
+		<form method="get" action="">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
 		<div class="col-sm-12">
-		<input type="text" id="admin_id" name="admin_id" style="width:100px; height:30px;display: inline-block;">
+		<input type="text" id="admin_id" name="admin_id" style="width:100px; height:30px;display: inline-block;" value="">
 		(이하 "사업주"라 함)과(와)
 		<input type="text" id="user_id" name="user_id" style="width:100px; height:30px;display: inline-block;">
 		(이하 "근로자"라 함)은 다음과 같이 근로계약을 채결한다.</div><br>
@@ -110,5 +126,9 @@
 		<input type="text" id="user_num" name="user_num" style="width:100px;height:30px;display:inline-block;"><br>성 명:
 		<input type="text" id="user_name" name="user_name" style="width:100px;height:30px;display:inline-block;">
 		</div>
+		
+		<input type="submit" id="submit" class="btn-btn-primary pull-left value="완료"> 
+		
+		</form>
 	</div>
 </div>

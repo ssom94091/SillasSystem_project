@@ -3,47 +3,47 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="userDAO">
 
-<insert id="doJoin" parameterType="userVO">
+<insert id="doJoin" parameterType="UserVO">
 
 	INSERT INTO user_tb (
 		user_id
 		, user_pw
 		, user_name
 		, user_address
-		, userResNum_front
-		, userResNum_rear
+		, user_resnum_front
+		, user_resnum_rear
 		, user_gender
 		, user_email
 		, user_phone
 		
 	)
 	VALUES(
-		#{userId}
-		,#{userPw}
-		,#{userName}
-		,#{userAddress}
-		,#{userResNum_front}
-		,#{userResNum_rear}
-		,#{userGender}
-		,#{userEmail}
-		,#{userPhone}
+		#{user_id}
+		,#{user_pw}
+		,#{user_name}
+		,#{user_address}
+		,#{user_resnum_front}
+		,#{user_resnum_rear}
+		,#{user_gender}
+		,#{user_email}
+		,#{user_phone}
 	)
 </insert>
 
-<select id="selectLoginUser" parameterType="userVO" resultType="egovMap"><!-- param 직접만든 객체는 다른설정이 없다면 모든 경로를 다 명시 com.sillasys.user.vo.UserVO -->
+<select id="selectLoginUser" parameterType="UserVO" resultType="egovMap"><!-- param 직접만든 객체는 다른설정이 없다면 모든 경로를 다 명시 com.sillasys.user.vo.UserVO -->
 	SELECT 
-		user_id
+		  user_id
 		, user_pw
 		, user_name
 		, user_address
-		, userResNum_front
-		, userResNum_rear
+		, user_resnum_front
+		, user_resnum_rear
 		, user_gender
 		, user_email
 		, user_phone
 	FROM user_tb
-	WHERE user_id = #{userId}
-	AND	  user_pw = #{userPw}
+	WHERE user_id = #{user_id}
+	AND	  user_pw = #{user_pw}
 </select>
 
 
