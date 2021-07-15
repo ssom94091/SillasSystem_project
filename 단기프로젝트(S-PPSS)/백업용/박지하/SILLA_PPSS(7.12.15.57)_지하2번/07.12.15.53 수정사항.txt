@@ -1,8 +1,0 @@
-template에
-contract2
-contract3
-contract4 추가
-
-write에 로비로 돌아가는 버튼추가
-index에서 write로 들어가는 버튼추가
-admincontroller에서 maaping 추가
