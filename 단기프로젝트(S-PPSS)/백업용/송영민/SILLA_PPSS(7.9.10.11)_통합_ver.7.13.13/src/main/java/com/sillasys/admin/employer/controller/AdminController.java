@@ -101,17 +101,12 @@ public class AdminController {
 				public String goSample() {
 					return "com/sillasys/ec/sample";
 				}
-				//
-				@RequestMapping(value = "/ec/template/contract.do" , method = RequestMethod.GET)
-				public String goTemplate() {
-					return "com/sillasys/ec/template/contract";
-				}
 				//메인페이지 이동
 				@RequestMapping(value = "/index.do" , method = RequestMethod.GET)
 				public String goHome() {
 				return "com/sillasys/index";
 					
 				}
-				
+			
 			/*페이지 이동 맵핑 구간 끝 */
 }

@@ -80,6 +80,28 @@
         <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/ec/{1}/{2}/{3}/{4}.jsp" />
     </definition>
     
+    <!--common -->
+    <definition name="layout-ec-tiles" template="/WEB-INF/tiles/common/template4.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/common/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/common/foot.jsp" />
+    </definition>
+    
+     <definition name="com/sillasys/common/*" extends="layout-ec-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*" extends="layout-ec-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*/*" extends="layout-ec-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*/*/*" extends="layout-ec-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
     
 </tiles-definitions>
 

@@ -16,10 +16,14 @@ public class UserDAO extends EgovAbstractMapper{
 	public void doJoin(UserVO param) throws Exception{
 		 insert("userDAO.doJoin", param);
 	}
-	
 	public EgovMap selectLoginUser(UserVO param) throws Exception {
 		return selectOne("userDAO.selectLoginUser", param);
 	}
+	
+	public EgovMap doIdCheck(String param) throws Exception{
+		return selectOne("userDAO.doIdCheck", param);
+	}
+	
 	
 	
 	

@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sillasys.user.employee.service.UserService;
 import com.sillasys.user.employee.vo.UserVO;
@@ -33,7 +35,26 @@ public class UserController {
 		return "com/sillasys/user/login";
 	}
 	
-	
+	//중복확인 
+
+		@RequestMapping(value = "/common/joinIdCheck.do", method = RequestMethod.POST)
+		public String doIdCheck(@ModelAttribute UserVO vo,Model model) throws Exception{
+			
+			System.out.println("정상작동했어윰\n");
+			System.out.println();
+		
+			String msg = vo.getUser_id()+"은(는) 사용 가능합니다.";
+			boolean result = true;
+			if(userService.doIdCheck(vo.getUser_id())!=null) {
+				msg = vo.getUser_id()+"은(는) 이미 사용중입니다.";
+				result = false;
+			}
+			model.addAttribute("msg", msg);
+			model.addAttribute("result", result);
+			return "com/sillasys/common/joinIdCheck";
+			
+			
+		}
 
 	
 	//로그인
@@ -49,9 +70,6 @@ public class UserController {
 		if(loginUser != null) { 
 			 msg = "로그인에 성공했습니다.";
 			 url = "/user/index.do";
-			 
-	
-			 
 			 //session에 로그인유저 정보 유지
 			 HttpSession hs = request.getSession();
 			 hs.setAttribute("loginUser", loginUser);
@@ -127,6 +145,11 @@ public class UserController {
 				@RequestMapping(value = "/ec/template/contract4.do" , method = RequestMethod.GET)
 				public String goContract4() {
 					return "com/sillasys/ec/template/contract4";
+				}
+				// 회원가입 ID 중복 확인
+				@RequestMapping(value = "/common/joinIdCheck.do" , method = RequestMethod.GET)
+				public String goJoinIdCheck() {
+					return "com/sillasys/common/joinIdCheck";
 				}
 	 /*페이지 이동 맵핑 구간 끝*/
 		

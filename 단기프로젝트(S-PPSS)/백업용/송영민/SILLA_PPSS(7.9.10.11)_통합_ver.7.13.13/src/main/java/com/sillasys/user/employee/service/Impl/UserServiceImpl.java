@@ -29,6 +29,15 @@ public class UserServiceImpl implements UserService{
 		return userDAO.selectLoginUser(param);
 	}
 
+
+	@Override
+	public EgovMap doIdCheck(String param) throws Exception {
+		return userDAO.doIdCheck(param);
+	}
+
+
+	
+
 	
 	
 }
