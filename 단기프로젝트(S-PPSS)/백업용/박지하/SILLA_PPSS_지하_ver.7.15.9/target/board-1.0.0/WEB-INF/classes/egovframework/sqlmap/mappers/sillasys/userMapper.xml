@@ -34,7 +34,7 @@
 </insert>
 
 <!-- Join.jsp(회원가입 페이지)에서 아이디 중복확인을 하기 위해 만든 셀렉트문입니다. -->
-<select id="doIdCheck" parameterType="UserVO" resultType="egovMap"><!-- param 직접만든 객체는 다른설정이 없다면 모든 경로를 다 명시 com.sillasys.user.vo.UserVO -->
+<select id="doIdCheck" parameterType="String" resultType="egovMap"><!-- param 직접만든 객체는 다른설정이 없다면 모든 경로를 다 명시 com.sillasys.user.vo.UserVO -->
 	SELECT 
 		  user_id
 	FROM user_tb

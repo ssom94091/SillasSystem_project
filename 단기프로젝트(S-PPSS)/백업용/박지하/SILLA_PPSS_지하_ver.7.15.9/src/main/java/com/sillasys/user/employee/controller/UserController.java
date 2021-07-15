@@ -152,9 +152,24 @@ public class UserController {
 					return "com/sillasys/common/joinIdCheck";
 				}
 				//작성체크 
-				@RequestMapping(value = "/ec/template/contractChk.do" , method = RequestMethod.POST)
-				public String doTemplate() {
-					return "com/sillasys/ec/template/contractChk";
+				@RequestMapping(value = "/ec/template/contractChk1.do" , method = RequestMethod.POST)
+				public String doTemplate1() {
+					return "com/sillasys/ec/template/contractChk1";
+				}
+				//작성체크 
+				@RequestMapping(value = "/ec/template/contractChk2.do" , method = RequestMethod.POST)
+				public String doTemplate2() {
+					return "com/sillasys/ec/template/contractChk2";
+				}
+				//작성체크 
+				@RequestMapping(value = "/ec/template/contractChk3.do" , method = RequestMethod.POST)
+				public String doTemplate3() {
+					return "com/sillasys/ec/template/contractChk3";
+				}
+				//작성체크 
+				@RequestMapping(value = "/ec/template/contractChk4.do" , method = RequestMethod.POST)
+				public String doTemplate4() {
+					return "com/sillasys/ec/template/contractChk4";
 				}
 	 /*페이지 이동 맵핑 구간 끝*/
 		
