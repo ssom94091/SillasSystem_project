@@ -19,19 +19,15 @@ import egovframework.rte.psl.dataaccess.util.EgovMap;
 
 @Controller
 public class UserController {
-	
 	@Resource(name = "userService")
 	private UserService userService;
 
-	
-	
-	
 	//회원가입
 	@RequestMapping(value = "/user/join.do", method = RequestMethod.POST)
 	public String regist(@ModelAttribute UserVO vo) throws Exception{
 		
 		userService.doJoin(vo);
-				
+		System.out.println("회원가입에 성공했습니다.\n *생성된 아이디 : "+vo.getUser_id());
 		return "com/sillasys/user/login";
 	}
 	
@@ -40,19 +36,26 @@ public class UserController {
 		@RequestMapping(value = "/common/joinIdCheck.do", method = RequestMethod.POST)
 		public String doIdCheck(@ModelAttribute UserVO vo,Model model) throws Exception{
 			
-			System.out.println("정상작동했어윰\n");
-			System.out.println();
-		
+			System.out.print("중복체크 유효성체크: ");
+			String id = vo.getUser_id();
 			String msg = vo.getUser_id()+"은(는) 사용 가능합니다.";
+			boolean res = true;
 			boolean result = true;
+			
 			if(userService.doIdCheck(vo.getUser_id())!=null) {
 				msg = vo.getUser_id()+"은(는) 이미 사용중입니다.";
 				result = false;
+				System.out.print("*"+vo.getUser_id()+"은(는) 중복된 아이디입니다.*\n");
 			}
+			else{
+				System.out.print("*"+vo.getUser_id()+"은(는) 사용 가능한 아이디입니다.*\n");
+			}
+			model.addAttribute("res",res);
+			model.addAttribute("id",id);
 			model.addAttribute("msg", msg);
 			model.addAttribute("result", result);
+		
 			return "com/sillasys/common/joinIdCheck";
-			
 			
 		}
 
@@ -151,11 +154,17 @@ public class UserController {
 				public String goJoinIdCheck() {
 					return "com/sillasys/common/joinIdCheck";
 				}
+				// 카드형식
+				@RequestMapping(value = "/common/card.do" , method = RequestMethod.GET)
+				public String goCard() {
+					return "com/sillasys/common/card";
+				}
 				//작성체크 
 				@RequestMapping(value = "/ec/template/contractChk.do" , method = RequestMethod.POST)
 				public String doTemplate() {
 					return "com/sillasys/ec/template/contractChk";
 				}
+				
 	 /*페이지 이동 맵핑 구간 끝*/
 		
 }

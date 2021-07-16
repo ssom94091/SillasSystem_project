@@ -2,92 +2,39 @@ package com.sillasys.admin.ec.vo;
 
 public class EcVO {
 	
-	private int seq;	//시퀀스
-	private String employerNm;	//등록자
-	private String pay;	//급여
-	private String companyNm;	//회사명
-	private String content;	//계약서내용
-	private String workStartDt;	//출근시간
-	private String workEndDt;	//퇴근시간
-	private String contStartDt;	//계약시작일
-	private String contEndDt;	//계약만료일
-	private String regDt;	//계약서 작성일
-	private String modDt;	//계약서 수정일
-	
-	public int getSeq() {
-		return seq;
+	private int contarct_pk;	// pk
+	private String content_html;
+	private String user_id;
+	private String admin_id;
+	public int getContarct_pk() {
+		return contarct_pk;
 	}
-	public void setSeq(int seq) {
-		this.seq = seq;
+	public void setContarct_pk(int contarct_pk) {
+		this.contarct_pk = contarct_pk;
 	}
-	public String getEmployerNm() {
-		return employerNm;
+	public String getContent_html() {
+		return content_html;
 	}
-	public void setEmployerNm(String employerNm) {
-		this.employerNm = employerNm;
+	public void setContent_html(String content_html) {
+		this.content_html = content_html;
 	}
-	public String getPay() {
-		return pay;
+	public String getUser_id() {
+		return user_id;
 	}
-	public void setPay(String pay) {
-		this.pay = pay;
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
 	}
-	public String getCompanyNm() {
-		return companyNm;
+	public String getAdmin_id() {
+		return admin_id;
 	}
-	public void setCompanyNm(String companyNm) {
-		this.companyNm = companyNm;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public String getWorkStartDt() {
-		return workStartDt;
-	}
-	public void setWorkStartDt(String workStartDt) {
-		this.workStartDt = workStartDt;
-	}
-	public String getWorkEndDt() {
-		return workEndDt;
-	}
-	public void setWorkEndDt(String workEndDt) {
-		this.workEndDt = workEndDt;
-	}
-	public String getContStartDt() {
-		return contStartDt;
-	}
-	public void setContStartDt(String contStartDt) {
-		this.contStartDt = contStartDt;
-	}
-	public String getContEndDt() {
-		return contEndDt;
-	}
-	public void setContEndDt(String contEndDt) {
-		this.contEndDt = contEndDt;
-	}
-	public String getRegDt() {
-		return regDt;
-	}
-	public void setRegDt(String regDt) {
-		this.regDt = regDt;
-	}
-	public String getModDt() {
-		return modDt;
-	}
-	public void setModDt(String modDt) {
-		this.modDt = modDt;
+	public void setAdmin_id(String admin_id) {
+		this.admin_id = admin_id;
 	}
 	@Override
 	public String toString() {
-		return "EcVO [seq=" + seq + ", employerNm=" + employerNm + ", pay=" + pay + ", companyNm=" + companyNm
-				+ ", content=" + content + ", workStartDt=" + workStartDt + ", workEndDt=" + workEndDt
-				+ ", contStartDt=" + contStartDt + ", contEndDt=" + contEndDt + ", regDt=" + regDt + ", modDt=" + modDt
-				+ "]";
+		return "EcVO [contarct_pk=" + contarct_pk + ", content_html=" + content_html + ", user_id=" + user_id
+				+ ", admin_id=" + admin_id + "]";
 	}
-	
 	
 	
 	

@@ -44,8 +44,6 @@ public class EcController {
 		} else { //로그인 한 사용자
 			String companyNm = loginAdmin.get("companyNm").toString();
 			String employerNm = loginAdmin.get("id").toString();
-			vo.setCompanyNm(companyNm);
-			vo.setEmployerNm(employerNm);
 		}
 		System.out.println("param : "+vo);
 		ecService.insertEcInfo(vo);
