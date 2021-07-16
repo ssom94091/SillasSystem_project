@@ -37,7 +37,7 @@ public class UserController {
 		public String doIdCheck(@ModelAttribute UserVO vo,Model model) throws Exception{
 			
 			System.out.print("중복체크 유효성체크: ");
-			String id = vo.getUser_id();
+			String id = vo.getUser_id();,
 			String msg = vo.getUser_id()+"은(는) 사용 가능합니다.";
 			boolean res = true;
 			boolean result = true;
