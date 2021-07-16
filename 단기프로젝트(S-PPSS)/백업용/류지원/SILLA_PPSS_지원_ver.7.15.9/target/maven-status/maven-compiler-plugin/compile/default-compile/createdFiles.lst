@@ -28,7 +28,6 @@ com\sillasys\user\employee\dao\UserDAO.class
 egovframework\com\cmm\EgovMessageSource.class
 com\sillasys\user\employee\service\Impl\UserServiceImpl.class
 com\sillasys\admin\ec\dao\EcDAO.class
-com\sillasys\contract\contractDAO.class
 egovframework\com\cmm\AltibaseClobStringTypeHandler.class
 com\sillasys\admin\ec\service\EcService.class
 egovframework\example\cmmn\web\EgovBindingInitializer.class

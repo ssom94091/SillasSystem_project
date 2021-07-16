@@ -7,10 +7,8 @@
 			<!--  -->
 			<div class="form-group">
 				<p for="userId">아이디</p>
-				<input type="text" class="form-control" id="userId" name="userId"
-					style="width: 35%; display: inline-block;"> <input
-					type="button" class="btn btn-info" id="userId_Check"
-					onclick="winOpen()" style="display: inline-block;" value="중복체크">
+				<input type="text" class="form-control" id="userId" name="userId" style="width: 35%; display: inline-block;"> 
+				<input type="button" class="btn btn-info" id="userId_Check" onclick="winOpen()" style="display: inline-block;" value="중복체크">
 			</div>
 
 
@@ -93,15 +91,58 @@
 		}).open();
 	}
 
+	var joinMbrInput = {
+			// 아이디 중복확인 체크
+			
+		    duplicateChkFn	: function() {
+		    	//var userId = document.fr.userId.value
+		    	winOpen();
+		    	var userId = $("#userId").val();
+		        // 아이디 유효성 검사
+		        if (!this.idValidChkFn(userId)) {
+		        			
+		        	return false;
+		        }
+		        		
+		        
+		       
+		    },	
+		    			
+		    // 아이디 유효성 체크
+		    idValidChkFn	: function(userId) {   		
+				var reg = /^(?=.*[a-zA-Z]).(?=.*[0-9]).{3,12}$/;        
+							/* 
+							  유효성체크 정규식표현
+								/^  start of string
+								$/  end of string
+								(?=.*[a-zA-Z])  
+							 	(  ) -> 그룹화
+							 	(? -> 그룹으로 된 문자가 존재할수도, 존재하지 않을수도 있다.	 	
+							 	*
+							*/
+					
+				if (!reg.test(userId))	{
+					alert("아이디가 유효하지 않습니다");
+		            
+					return false;
+				}
+					
+				return true;	
+		    }
+		}
+	
+	
 	function winOpen() {
 		if (document.fr.userId.value == "" || document.fr.userId.value.length < 0) {
 			alert("아이디를 먼저 입력해주세요");
 			document.fr.userId.focus(); //해당태그로  위치시켜준다.
 		} else {
+			var popupX= (window.screen.width/2)-(500/2);
+			var popupY= (window.screen.height/2)-(300/2);
 			//2. 회원정보아이디를 가지고 있는 지 체크하려면 DB에 접근해야한다.
 			//자바스크립트로 어떻게 DB에 접근할까? => 파라미터로 id값을 가져가서 jsp페이지에서 진행하면 된다.
-			window.open("../common/joinIdCheck.jsp?userId="
-					+ document.fr.id.value, "", "width=500, height=300");
+			window.open("/common/joinIdCheck.do?userId="
+					+ document.fr.userId.value, "", "width=500, height=300 left="+popupX+",top="+popupY);
 		}
 	}
 </script>

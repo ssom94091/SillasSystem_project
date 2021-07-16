@@ -151,11 +151,28 @@ public class UserController {
 				public String goJoinIdCheck() {
 					return "com/sillasys/common/joinIdCheck";
 				}
-				//작성체크 
-				@RequestMapping(value = "/ec/template/contractChk.do" , method = RequestMethod.POST)
-				public String doTemplate() {
-					return "com/sillasys/ec/template/contractChk";
+				
+				// 표준 근로 계약서 작성체크 
+				@RequestMapping(value = "/ec/template/contractChk1.do" , method = RequestMethod.POST)
+				public String doTemplate1() {
+					return "com/sillasys/ec/template/contractChk1";
 				}
+				// 근로 계약서(기간없음) 작성체크 
+				@RequestMapping(value = "/ec/template/contractChk2.do" , method = RequestMethod.POST)
+				public String doTemplate2() {
+					return "com/sillasys/ec/template/contractChk2";
+				}
+				// 단기 근로 계약서 작성체크 
+				@RequestMapping(value = "/ec/template/contractChk3.do" , method = RequestMethod.POST)
+				public String doTemplate3() {
+					return "com/sillasys/ec/template/contractChk3";
+				}
+				// 단기 근로 계약서(기간없음) 작성체크 
+				@RequestMapping(value = "/ec/template/contractChk4.do" , method = RequestMethod.POST)
+				public String doTemplate4() {
+					return "com/sillasys/ec/template/contractChk4";
+				}
+			
 	 /*페이지 이동 맵핑 구간 끝*/
 		
 }

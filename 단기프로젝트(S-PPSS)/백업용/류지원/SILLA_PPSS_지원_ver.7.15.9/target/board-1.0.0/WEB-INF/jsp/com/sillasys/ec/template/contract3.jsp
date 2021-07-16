@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<div class="container">
+<<div class="container">
 	<div class="row">
 		<div style="margin:0 auto;">
 			<h1 style="margin:0 auto;margin-top:20pt;display:block;text-align:center">단시간근로자 표준근로계약서</h1><br>
@@ -38,10 +38,10 @@
 					<td></td>
 					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_1" name="work_day_1" style="width:30px;height:30px;display:inline-block;">요일</td>
 					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_2" name="work_day_2" style="width:30px;height:30px;display:inline-block;">요일</td>
-					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_3" name="work_day_2" style="width:30px;height:30px;display:inline-block;">요일</td>
-					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_4" name="work_day_2" style="width:30px;height:30px;display:inline-block;">요일</td>
-					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_5" name="work_day_2" style="width:30px;height:30px;display:inline-block;">요일</td>
-					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_6" name="work_day_2" style="width:30px;height:30px;display:inline-block;">요일</td>
+					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_3" name="work_day_3" style="width:30px;height:30px;display:inline-block;">요일</td>
+					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_4" name="work_day_4" style="width:30px;height:30px;display:inline-block;">요일</td>
+					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_5" name="work_day_5" style="width:30px;height:30px;display:inline-block;">요일</td>
+					<td style="text-align:center;padding:0px;"><input type="text" id="work_day_6" name="work_day_6" style="width:30px;height:30px;display:inline-block;">요일</td>
 				</tr>
 				<tr>
 					<td style="text-align:center;padding:0px;">근로시간</td>

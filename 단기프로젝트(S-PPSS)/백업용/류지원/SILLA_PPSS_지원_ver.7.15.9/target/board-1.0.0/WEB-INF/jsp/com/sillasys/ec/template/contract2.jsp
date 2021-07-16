@@ -5,6 +5,8 @@
 		<div style="margin:0 auto;">
 			<h1 style="margin:0 auto;margin-top:20pt;display:block;text-align:center">표준 근로 계약서</h1><br>
 		</div>
+		
+		<form action="/ec/template/contractChk2.do" method="post">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
 		<div class="col-sm-12">
 		<input type="text" id="admin_id" name="admin_id" style="width:100px; height:30px;display: inline-block;">
 		(이하 "사업주"라 함)과(와)
