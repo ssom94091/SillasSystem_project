@@ -3,13 +3,124 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="ContractDAO">
 
-   <insert id="trmTemplate1" parameterType="ContractVO">
+	<insert id="template1" parameterType="Contract_1_VO">
 
-      INSERT INTO contract_tb (
-      contract_html
-      )
-      VALUES(
-      #{contract_html}
-      )
-   </insert>
+	INSERT INTO contract_tb (
+		admin_id
+		, user_id
+		, user_name
+		, start_year
+		, start_month
+		, start_day
+		, work_place
+		, contents
+		, work_per_week
+		, holiday
+		, pay_type
+		, pay
+		, bonus
+		, payday
+		, payfor
+		, em_insurance
+		, ac_insurance
+		, pension
+		, hlt_insurance
+		,sign_canvas
+		, contract_year
+		, contract_month
+		, contract_day
+		, company_name
+		, company_num
+		, company_address
+		, admin_name
+		, user_address
+		, user_num
+		, user_name
+		)
+	VALUES(
+		#{admin_id}
+		, #{user_id}
+		, #{user_name}
+		, #{start_year}
+		, #{start_month}
+		, #{start_day}
+		, #{work_place}
+		, #{contents}
+		, #{work_per_week}
+		, #{holiday}
+		, #{pay_type}
+		, #{pay}
+		, #{payday}
+		, #{payfor}
+		, #{em_insurance}
+		, #{ac_insurance}
+		, #{pension}
+		, #{hlt_insurance}
+		, #{sign_canvas}
+		, #{contract_year}
+		, #{contract_month}
+		, #{contract_day}
+		, #{company_name}
+		, #{company_num}
+		, #{company_address}
+		, #{admin_name}
+		, #{user_address}	
+		, #{user_num}
+		, #{user_name}
+		)
+	</insert>
+
+	<insert id="template1" parameterType="Contract_1_VO">
+
+	INSERT INTO work_time_tb (
+		start_hour
+		, start_min
+		, end_hour
+		, end_min
+		, b_start_hour
+		, b_start_min
+		, b_end_hour
+		, b_end_min
+		)
+	VALUES(
+		#{start_hour}
+		, #{start_min}
+		, #{end_hour}
+		, #{end_min}
+		, #{b_start_hour}
+		, #{b_start_min}
+		, #{b_end_hour}
+		, #{b_end_min}
+		)
+	</insert>
+
+	<insert id="template1" parameterType="Contract_1_VO">
+
+	INSERT INTO end_time_tb (
+		end_year
+		, end_month
+		, end_day
+	)
+	VALUES(
+		#{end_year}
+		, #{end_month}
+		, #{end_day}
+	)
+	</insert>
+
+	<insert id="template1" parameterType="Contract_1_VO">
+
+	INSERT INTO benefit_tb (
+		benefit_1
+		, benefit_2
+		, benefit_3
+		, benefit_4
+	)
+	VALUES(
+		#{benefit_1}
+		,#{benefit_2}
+		,#{benefit_3}
+		,#{benefit_4}
+	)
+	</insert>
 </mapper>
