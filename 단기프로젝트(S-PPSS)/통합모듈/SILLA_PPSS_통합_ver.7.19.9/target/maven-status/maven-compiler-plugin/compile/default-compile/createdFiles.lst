@@ -5,6 +5,7 @@ egovframework\com\cmm\SessionVO.class
 egovframework\com\cmm\service\CmmnDetailCode.class
 egovframework\com\cmm\service\EgovProperties.class
 com\sillasys\admin\ec\service\imple\EcServiceImple.class
+com\sillasys\admin\ec\vo\EcEndTimeVO.class
 com\sillasys\admin\ec\vo\EcVO.class
 egovframework\com\cmm\filter\HTMLTagFilter.class
 egovframework\com\cmm\ComDefaultCodeVO.class
@@ -26,9 +27,9 @@ egovframework\com\cmm\EgovComTraceHandler.class
 egovframework\com\cmm\service\impl\EgovComAbstractDAO.class
 com\sillasys\user\employee\dao\UserDAO.class
 egovframework\com\cmm\EgovMessageSource.class
+com\sillasys\admin\ec\vo\EcWorkTimeVO.class
 com\sillasys\user\employee\service\Impl\UserServiceImpl.class
 com\sillasys\admin\ec\dao\EcDAO.class
-com\sillasys\contract\contractDAO.class
 egovframework\com\cmm\AltibaseClobStringTypeHandler.class
 com\sillasys\admin\ec\service\EcService.class
 egovframework\example\cmmn\web\EgovBindingInitializer.class
@@ -37,6 +38,7 @@ com\sillasys\admin\employer\service\AdminService.class
 egovframework\com\cmm\service\FileVO.class
 egovframework\com\cmm\EgovWebUtil.class
 egovframework\com\cmm\service\Globals.class
+com\sillasys\admin\ec\vo\EcBenefitVO.class
 egovframework\com\cmm\web\EgovBindingInitializer.class
 egovframework\example\cmmn\EgovSampleOthersExcepHndlr.class
 egovframework\com\cmm\EgovComCrossSiteHndlr.class

@@ -6,7 +6,7 @@
 			<h1 style="margin:0 auto;margin-top:20pt;display:block;text-align:center">단시간근로자 표준근로계약서</h1><br>
 		</div>
 		
-		<form action="/ec/template/contractChk3.do" method="post" name="frm" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
+		<form action="/ec/template/contract3.do" method="post" name="frm" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
 				
 		<div class="col-sm-12">
 		<input type="text" id="admin_id" name="admin_id" style="width:150px; height:30px;display: inline-block;">
@@ -331,6 +331,20 @@
 		data = document.getElementById("canvas-data");
 		data.value = canVas.toDataURL();
 
+		<%-- test ver code--%>
+		admin_id = document.getElementById("admin_id");
+		temp = admin_id.value;
+		console.log(admin_id.value + " / " + temp);
+		admin_id.value = temp;
+
+		user_id = document.getElementById("user_id");
+		temp = user_id.value;
+		console.log(user_id.value + " / " + temp);
+		user_id.value = temp;
+		
+		
+		
+		
 		if (document.frm.admin_id.value == ""
 				|| document.frm.user_id.value == ""
 				|| document.frm.start_year.value == ""
@@ -369,12 +383,12 @@
 				console.log(admin_id);
 				alert("사업주가 비었습니다.");
 			}
-			if (document.frm.user_id.value == "") {
+			else if (document.frm.user_id.value == "") {
 				user_id = document.getElementById("user_id");
 				console.log(user_id);
 				alert("근로자가 비었습니다.");
 			}
-			if (document.frm.start_year.value == ""
+			else if (document.frm.start_year.value == ""
 					|| document.frm.start_month.value == ""
 					|| document.frm.start_day.value == ""
 					|| document.frm.end_year.value == ""
@@ -395,12 +409,12 @@
 				alert("계약기간이 비어있습니다.");
 			}
 
-			if (document.frm.work_day_1.value == "") {
+			else if (document.frm.work_day_1.value == "") {
 				work_day_1 = document.getElementById("work_day_1");
 				console.log(work_day_1);
 				alert("필수 근로일이  비었습니다.");
 			}
-			if (document.frm.work_time_1.value == ""
+			else if (document.frm.work_time_1.value == ""
 					|| document.frm.work_start_time_1.value == ""
 					|| document.frm.work_start_min_1.value == ""
 					|| document.frm.work_end_time_1.value == ""
@@ -419,7 +433,7 @@
 				alert("필수 근로시간이  비었습니다.");
 			}
 
-			if (document.frm.break_start_time_1.value == ""
+			else if (document.frm.break_start_time_1.value == ""
 					|| document.frm.break_start_min_1.value == ""
 					|| document.frm.break_end_time_1.value == ""
 					|| document.frm.break_end_min_1.value == "") {
@@ -436,7 +450,7 @@
 				alert("필수 휴게시간이  비었습니다.");
 			}
 
-			if (document.frm.pay_money.value == "") {
+			else if (document.frm.pay_money.value == "") {
 				pay_money = document.getElementById("pay_money");
 				console.log(pay_money);
 				alert("임금이 비었습니다.");
@@ -446,18 +460,18 @@
 			   console.log(bonus);
 			   bonus.value="";
 			} */
-			if (document.frm.extra_pay.value == "") {
+			else if (document.frm.extra_pay.value == "") {
 				extra_pay = document.getElementById("extra_pay");
 				console.log(extra_pay);
 				alert("가산임금률이 비었습니다.");
 			}
 
-			if (document.frm.payday.value == "") {
+			else if (document.frm.payday.value == "") {
 				payday = document.getElementById("payday");
 				console.log(payday);
 				alert("지급일이 비었습니다.");
 			}
-			if (document.frm.contract_year.value == ""
+			else if (document.frm.contract_year.value == ""
 					|| document.frm.contract_month.value == ""
 					|| document.frm.contract_day.value == "") {
 				contract_year = document.getElementById("contract_year");
@@ -468,37 +482,37 @@
 				console.log(contract_day);
 				alert("계약기간이 비었습니다.");
 			}
-			if (document.frm.company_name.value == "") {
+			else if (document.frm.company_name.value == "") {
 				company_name = document.getElementById("company_name");
 				console.log(company_name);
 				alert("회사명이 비었습니다.");
 			}
-			if (document.frm.company_num.value == "") {
+			else if (document.frm.company_num.value == "") {
 				company_num = document.getElementById("company_num");
 				console.log(company_num);
 				alert("회사전화번호가 비었습니다.");
 			}
-			if (document.frm.company_address.value == "") {
+			else if (document.frm.company_address.value == "") {
 				company_address = document.getElementById("company_address");
 				console.log(company_address);
 				alert("회사주소가 비었습니다.");
 			}
-			if (document.frm.admin_name.value == "") {
+			else if (document.frm.admin_name.value == "") {
 				admin_name = document.getElementById("admin_name");
 				console.log(admin_name);
 				alert("대표자가 비었습니다.");
 			}
-			if (document.frm.user_address.value == "") {
+			else if (document.frm.user_address.value == "") {
 				user_address = document.getElementById("user_address");
 				console.log(user_address);
 				alert("근로자 주소가 비었습니다.");
 			}
-			if (document.frm.user_num.value == "") {
+			else if (document.frm.user_num.value == "") {
 				user_num = document.getElementById("user_num");
 				console.log(user_num);
 				alert("근로자 전화번호가 비었습니다.");
 			}
-			if (document.frm.user_name.value == "") {
+			else if (document.frm.user_name.value == "") {
 				user_name = document.getElementById("user_name");
 				console.log(user_name);
 				alert("근로자이름이 비었습니다.");

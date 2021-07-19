@@ -37,7 +37,7 @@ public class UserController {
 		public String doIdCheck(@ModelAttribute UserVO vo,Model model) throws Exception{
 			
 			System.out.print("중복체크 유효성체크: ");
-			String id = vo.getUser_id();,
+			String id = vo.getUser_id();
 			String msg = vo.getUser_id()+"은(는) 사용 가능합니다.";
 			boolean res = true;
 			boolean result = true;
@@ -130,9 +130,9 @@ public class UserController {
 				}
 				
 				// 근로계약서( 표준근로계약서 - 기간)
-				@RequestMapping(value = "/ec/template/contract.do" , method = RequestMethod.GET)
+				@RequestMapping(value = "/ec/template/contract1.do" , method = RequestMethod.GET)
 				public String goContract() {
-					return "com/sillasys/ec/template/contract";
+					return "com/sillasys/ec/template/contract1";
 				}
 				// 근로계약서( 표준근로계약서 - 기간없음)
 				@RequestMapping(value = "/ec/template/contract2.do" , method = RequestMethod.GET)
@@ -160,9 +160,9 @@ public class UserController {
 					return "com/sillasys/common/card";
 				}
 				//작성체크 
-				@RequestMapping(value = "/ec/template/contractChk.do" , method = RequestMethod.POST)
+				@RequestMapping(value = "/ec/template/contract1.do" , method = RequestMethod.POST)
 				public String doTemplate() {
-					return "com/sillasys/ec/template/contractChk";
+					return "com/sillasys/ec/template/contract1";
 				}
 				
 	 /*페이지 이동 맵핑 구간 끝*/
