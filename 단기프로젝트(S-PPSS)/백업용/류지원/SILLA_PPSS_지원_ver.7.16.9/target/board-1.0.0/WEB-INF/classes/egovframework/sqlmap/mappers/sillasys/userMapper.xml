@@ -25,8 +25,8 @@
 		,#{userPw}
 		,#{userName}
 		,#{userAddress}
-		,#{userResnum_front}
-		,#{userResnum_rear}
+		,#{userResNum_front}
+		,#{userResNum_rear}
 		,#{userGender}
 		,#{userEmail}
 		,#{userPhone}
@@ -38,7 +38,7 @@
 	SELECT 
 		  user_id
 	FROM user_tb
-	WHERE user_id = #{user_id}
+	WHERE user_id = #{userId}
 </select>
 
 
@@ -55,8 +55,8 @@
 		, user_email
 		, user_phone
 	FROM user_tb
-	WHERE user_id = #{user_id}
-	AND	  user_pw = #{user_pw}
+	WHERE user_id = #{userId}
+	AND	  user_pw = #{userPw}
 </select>
 
 

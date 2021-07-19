@@ -9,7 +9,7 @@
 		content_html
 		)
 		VALUES(
-		#{frm}
+		#{start_year}
 		)
 	</insert>
 </mapper>
