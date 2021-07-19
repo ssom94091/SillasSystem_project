@@ -6,6 +6,7 @@
 		<form action="/user/join.do" method="post" name="fr" onsubmit="return blankChk();">
 			<!--  -->
 			<div class="form-group" style="margin-top:70px; background-color: #fff;">
+				<p style="font-size:9px;">*(필수입력사항입니다,)</p>
 				<p for="user_id">*아이디</p>
 				<input type="text" class="form-control" id="user_id" name="user_id" maxlength='12' onkeyup="idValidChkonKey();" style="width: 35%; display: inline-block;"> 
 				<input type="button" class="btn btn-info" id="userId_Check" onclick="duplicateChk();" style="display: inline-block;" value="중복체크">
@@ -14,7 +15,7 @@
 			</div>
 
 
-			<div class="form-group" style="background-color: #fff;">
+			<div class="form-group" style="background-color: #fff;">	
 				<label for="user_pw">*비밀번호</label> 
 				<input type="password"class="form-control" id="user_pw" name="user_pw" onkeyup="pwValidChk()" style="width: 35%;">
 					<p id="p_PwChk" style="color:red; font-size:12px; margin-left:5px;">*비밀번호를 입력해주세요. </p>
@@ -64,7 +65,7 @@
 			</div>
 
 			<div class="form-group">
-				<label for="user_phone">연락처(-없이 입력해주세요.)</label> <input type="text"
+				<label for="user_phone">*연락처(-없이 입력해주세요.)</label> <input type="text"
 					class="form-control" id="user_phone" name="user_phone"
 					style="width: 50%">
 			</div>
@@ -254,8 +255,8 @@ var childWindow;
 		var  user_email = $("#user_email ").val();
 		var  user_phone = $("#user_phone ").val();
 		
-		 console.log("dupidValid:" +dupidValid);
-		 console.log("pwValid: " +pwValid);
+		console.log("dupidValid:" +dupidValid);
+		console.log("pwValid: " +pwValid);
 		console.log("user_id: "+user_id);
 		console.log("user_pw: "+user_pw);
 		console.log("userPwRe: "+userPwRe);
