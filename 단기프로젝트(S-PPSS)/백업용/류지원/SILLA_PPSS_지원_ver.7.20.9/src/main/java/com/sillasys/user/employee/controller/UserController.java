@@ -33,13 +33,30 @@ public class UserController {
 		return "com/sillasys/user/login";
 	}
 
+	
 	// 계약서1 DB 전송
 	@RequestMapping(value = "/ec/template/contract1.do", method = RequestMethod.POST)
 	public String trmTemplate1(@ModelAttribute ContractVO vo) throws Exception {
 		ContractService.trmTemplate1(vo);
-
+		ContractService.trmTemplateWork(vo);
+		ContractService.trmTemplateEnd(vo);
+		ContractService.trmTemplateBenefit(vo);
+		
 		return "com/sillasys/ec/template/contract1";
 	}
+	
+	// 계약서2 DB 전송
+	@RequestMapping(value = "/ec/template/contract2.do", method = RequestMethod.POST)
+	public String trmTemplate2(@ModelAttribute ContractVO vo) throws Exception {
+		ContractService.trmTemplate2(vo);
+		ContractService.trmTemplateWork(vo);
+		ContractService.trmTemplateEnd(vo);
+		ContractService.trmTemplateBenefit(vo);
+
+		return "com/sillasys/ec/template/contract2";
+	}
+	
+	
 
 
 	// 중복확인
@@ -178,11 +195,7 @@ public class UserController {
 	}
 
 
-	// 작성체크
-	@RequestMapping(value = "/ec/template/contract2.do", method = RequestMethod.POST)
-	public String doTemplate2() {
-		return "com/sillasys/ec/template/contract2";
-	}
+	
 
 	// 작성체크
 	@RequestMapping(value = "/ec/template/contract3.do", method = RequestMethod.POST)

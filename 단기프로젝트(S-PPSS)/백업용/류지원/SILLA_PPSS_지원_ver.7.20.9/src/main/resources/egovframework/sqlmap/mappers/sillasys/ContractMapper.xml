@@ -7,6 +7,7 @@
 
 		INSERT INTO contract_tb (
 		admin_id
+		, type
 		, user_id
 		, start_year
 		, start_month
@@ -32,6 +33,7 @@
 		)
 		VALUES(
 		#{admin_id}
+		, #{type}
 		, #{user_id}
 		, #{start_year}
 		, #{start_month}
@@ -56,5 +58,123 @@
 		, #{canvas}
 		)
 	</insert>
+	
+	<insert id="trmTemplateWork" parameterType="ContractVO">
+	
+	INSERT INTO work_time_tb (
+	start_hour
+	, start_min
+	, end_hour
+	, end_min
+	, b_start_hour
+	, b_start_min
+	, b_end_hour
+	, b_end_min
+	, work_day
+	)
+	VALUES(
+	#{start_hour}
+	, #{start_min}
+	, #{end_hour}
+	, #{end_min}
+	, #{b_start_hour}
+	, #{b_start_min}
+	, #{b_end_hour}
+	, #{b_end_min}
+	, #{work_day}
+	)
+	</insert>
+	
+	
+	<insert id="trmTemplateEnd" parameterType="ContractVO">
+	INSERT INTO end_time_tb (
+	end_year
+	, end_month
+	, end_day
+	)
+	VALUES(
+	#{end_year}
+	, #{end_month}
+	, #{end_day}
+	)
+	</insert>
+	
+	<insert id="trmTemplateBenefit" parameterType="ContractVO">
+	INSERT INTO Benefit_tb (
+	benefit_1
+	, benefit_2
+	, benefit_3
+	, benefit_4
+	)
+	VALUES(
+	#{benefit_1}
+	, #{benefit_2}
+	, #{benefit_3}
+	, #{benefit_4}
+	)
+	</insert>
+	
+	
+	
+	
+	
+	<insert id="trmTemplate2" parameterType="ContractVO">
+
+		INSERT INTO contract_tb (
+		admin_id
+		, user_id
+		, type
+		, start_year
+		, start_month
+		, start_day
+		, work_place
+		, content
+		, work_per_week
+		, holiday
+		, pay_type
+		, pay
+		, bonus
+		, payday
+		, payfor
+		, em_insurance
+		, ac_insurance
+		, pension
+		, hlt_insurance
+		, contract_year
+		, contract_month
+		, contract_day
+		, admin_name
+		, canvas
+		)
+		VALUES(
+		#{admin_id}
+		, #{user_id}
+		, #{type}
+		, #{start_year}
+		, #{start_month}
+		, #{start_day}
+		, #{work_place}
+		, #{content}
+		, #{work_per_week}
+		, #{holiday}
+		, #{pay_type}
+		, #{pay}
+		, #{bonus}
+		, #{payday}
+		, #{payfor}
+		, #{em_insurance}
+		, #{ac_insurance}
+		, #{pension}
+		, #{hlt_insurance}
+		, #{contract_year}
+		, #{contract_month}
+		, #{contract_day}
+		, #{admin_name}
+		, #{canvas}
+		)
+	</insert>
+	
+	
+	
 </mapper>
 

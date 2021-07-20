@@ -7,8 +7,8 @@
    String start_year = request.getParameter("start_year");
    String start_month = request.getParameter("start_month");
    String start_day = request.getParameter("start_day");
-   String location = request.getParameter("location");
-   String contents = request.getParameter("contents");
+   String work_place = request.getParameter("work_place");
+   String content = request.getParameter("content");
    String start_time = request.getParameter("start_time");
    String start_min = request.getParameter("start_min");
    String end_time = request.getParameter("end_time");
@@ -19,8 +19,8 @@
    String break_end_min = request.getParameter("break_end_min");
    String work_per_week = request.getParameter("work_per_week");
    String holiday = request.getParameter("holiday");
+   String pay_type = request.getParameter("pay_type");
    String pay = request.getParameter("pay");
-   String pay_money = request.getParameter("pay_money");
    String bonus_check = request.getParameter("bonus_check");
    String bonus = request.getParameter("bonus");
    String benefit_check = request.getParameter("benefit_check");
@@ -30,10 +30,10 @@
    String benefit_4 = request.getParameter("benefit_4");
    String payday = request.getParameter("payday");
    String payfor = request.getParameter("payfor");
-   String employment_insurance = request.getParameter("employment_insurance");
-   String accident_insurance = request.getParameter("accident_insurance");
-   String national_pension = request.getParameter("national_pension");
-   String health_insurance = request.getParameter("health_insurance");
+   String em_insurance = request.getParameter("em_insurance");
+   String ac_insurance = request.getParameter("ac_insurance");
+   String pension = request.getParameter("pension");
+   String hlt_insurance = request.getParameter("hlt_insurance");
    String contract_year = request.getParameter("contract_year");
    String contract_month = request.getParameter("contract_month");
    String contract_day = request.getParameter("contract_day");
@@ -45,7 +45,7 @@
    String user_num = request.getParameter("user_num");
    String user_name = request.getParameter("user_name");
    
-   String canvas_data = request.getParameter("canvas-data");
+   String canvas = request.getParameter("canvas");
    %>
    
 <div class="container">
@@ -72,10 +72,10 @@
 		</div><br>
 		<div class="col-sm-12" style="margin-top:10px;">
 		2. 근무장소:
-		<input type="text" id="location" name="location" value="<%=location %>" style="width:350px; height:30px;display:inline-block;"></div>
+		<input type="text" id="work_place" name="work_place" value="<%=work_place %>" style="width:350px; height:30px;display:inline-block;"></div>
 		<div class="col-sm-12" style="margin-top:10px;">
 		3. 업무의 내용:
-		<input type="text" id="contents" name="contents" value="<%=contents %>" style="width:350px;height:30px;display:inline-block;"></div>
+		<input type="text" id="content" name="content" value="<%=content %>" style="width:350px;height:30px;display:inline-block;"></div>
 		<div class="col-sm-12" style="margin-top:10px;">
 		4. 소정근로시간:
 		<input type="text" id="start_time" name="start_time" value="<%=start_time %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
@@ -110,12 +110,12 @@
         </select>요일</div><br><br>
         <div class="col-sm-12">
         6. 임금<br> - 
-        <select id="pay" name="pay" value="<%=pay %>" style="width:60px;height:30px;display:inline-block;">
+        <select id="pay_type" name="pay_type" value="<%=pay_type %>" style="width:60px;height:30px;display:inline-block;">
         	<option value="1">월급</option>
         	<option value="2">주급</option>
         	<option value="3">시급</option>
         </select> : 
-        <input type="text" id="pay_money" value="<%=pay_money %>" name="pay_money" style="width:150px;height:30px;display:inline-block;" onchange="getNumber(this);"
+        <input type="text" id="pay" value="<%=pay %>" name="pay" style="width:150px;height:30px;display:inline-block;" onchange="getNumber(this);"
         	onkeyup="getNumber(this);">원<br> - 상여금:있음
         <input type="radio" id="bonus_on" name="bonus_check" value="1" style="text-align:center" onclick="toggle_bonus(true);">
         <input type="text" id="bonus" value="<%=bonus %>" name="bonus" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
@@ -142,10 +142,10 @@
 		- 연차유급휴가는 근로기준법에서 정하는 바에 따라 부여함</div><br><br>
 		<div class="col-sm-12" style="margin-top:10px;">
 		8. 사회보험 적용여부(해당란에 체크)<br>
-		<input type="checkbox" name="employment_insurance" id="employment_insurance" value="1"><label for="employment_insurance">고용보험</label>
-		<input type="checkbox" name="accident_insurance" id="accident_insurance" value="1"><label for="accident_insurance">산재보험</label>
-		<input type="checkbox" name="national_pension" id="national_pension" value="1"><label for="national_pension">국민연금</label>
-		<input type="checkbox" name="health_insurance" id="health_insurance" value="1"><label for="health_insurance">건강보험</label></div><br><br>
+		<input type="checkbox" name="em_insurance" id="em_insurance" value="1"><label for="employment_insurance">고용보험</label>
+		<input type="checkbox" name="ac_insurance" id="ac_insurance" value="1"><label for="accident_insurance">산재보험</label>
+		<input type="checkbox" name="pension" id="pension" value="1"><label for="national_pension">국민연금</label>
+		<input type="checkbox" name="hlt_insurance" id="hlt_insurance" value="1"><label for="health_insurance">건강보험</label></div><br><br>
 		<div class="col-sm-12">
 		9. 근로계약서 교부<br>- 사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제 17조 이행)<br><br>
 		10. 근로계약서 교부<br>- 사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함<br><br>
@@ -153,7 +153,7 @@
 		<div class="col-sm-12" style="text-align:right">
 		
 		<canvas class="sign-canvas" id="sign-canvas" name="sign-canvas" style="float:left;">서명칸</canvas>
-		<input type="hidden" value="<%=canvas_data %>" id="canvas-data" name="canvas-data">
+		<input type="hidden" value="<%=canvas %>" id="canvas" name="canvas">
 		
 		<input type="text" id="contract_year" value="<%=contract_year %>" name="contract_year" style="width:60px;height:30px;display:inline-block;"maxlength="4">년
 		<input type="text" id="contract_month" value="<%=contract_month %>" name="contract_month" style="width:30px;height:30px;display:inline-block;"maxlength="2">월
@@ -206,10 +206,10 @@
       holiday.value = <%=holiday %>;
       }
 
-      pay = document.getElementById("pay");
-      console.log(pay);
-      if(<%=pay%>!=null)
-      pay.value = <%=pay%>;
+      pay_type = document.getElementById("pay_type");
+      console.log(pay_type);
+      if(<%=pay_type%>!=null)
+    	pay_type.value = <%=pay_type%>;
       
      
       bonusOn = document.getElementById("bonus_on");
@@ -245,25 +245,25 @@
          for_account.checked = true;       
       }
       
-      empIn = document.getElementById("employment_insurance");
-      accIn = document.getElementById("accident_insurance");
-      natPn = document.getElementById("national_pension");
-      heaIn = document.getElementById("health_insurance");
-      if(<%=employment_insurance%>!=null)
+      empIn = document.getElementById("em_insurance");
+      accIn = document.getElementById("ac_insurance");
+      natPn = document.getElementById("pension");
+      heaIn = document.getElementById("hlt_insurance");
+      if(<%=em_insurance%>!=null)
          empIn.checked = true;
-      if(<%=accident_insurance%>!=null)
+      if(<%=ac_insurance%>!=null)
           accIn.checked = true;
-      if(<%=national_pension%>!=null)
+      if(<%=pension%>!=null)
           natPn.checked = true;
-      if(<%=health_insurance%>!=null)
+      if(<%=hlt_insurance%>!=null)
           heaIn.checked = true;
       canVas = document.getElementById("sign-canvas");
       ccpx = canVas.getContext("2d");
       console.log(canVas);
-      console.log("<%=canvas_data%>");
+      console.log("<%=canvas%>");
 
   	img = new Image();
-  	img.src = "<%=canvas_data%>";
+  	img.src = "<%=canvas%>";
   	console.log(img);
   	img.onload = function() {
   		console.log("DONE");
@@ -275,8 +275,8 @@
       if(document.getElementById("start_year").value=="null") document.getElementById("start_year").value="";
       if(document.getElementById("start_month").value=="null") document.getElementById("start_month").value="";
       if(document.getElementById("start_day").value=="null") document.getElementById("start_day").value="";
-      if(document.getElementById("location").value=="null") document.getElementById("location").value="";
-      if(document.getElementById("contents").value=="null") document.getElementById("contents").value="";
+      if(document.getElementById("work_place").value=="null") document.getElementById("work_place").value="";
+      if(document.getElementById("content").value=="null") document.getElementById("content").value="";
       
       if(document.getElementById("work_per_week").value=="null") document.getElementById("work_per_week").value="";
 
@@ -289,7 +289,7 @@
       if(document.getElementById("break_end_time").value=="null") document.getElementById("break_end_time").value="";
       if(document.getElementById("break_end_min").value=="null") document.getElementById("break_end_min").value="";
 
-      if(document.getElementById("pay_money").value=="null") document.getElementById("pay_money").value="";
+      if(document.getElementById("pay").value=="null") document.getElementById("pay").value="";
       if(document.getElementById("bonus").value=="null") document.getElementById("bonus").value="";
       if(document.getElementById("benefit_1").value=="null") document.getElementById("benefit_1").value="";
       if(document.getElementById("benefit_2").value=="null") document.getElementById("benefit_2").value="";
@@ -435,8 +435,8 @@
 				|| document.frm.start_year.value == ""
 				|| document.frm.start_month.value == ""
 				|| document.frm.start_day.value == ""
-				|| document.frm.location.value == ""
-				|| document.frm.contents.value == ""
+				|| document.frm.work_place.value == ""
+				|| document.frm.content.value == ""
 				|| document.frm.start_time.value == ""
 				|| document.frm.start_min.value == ""
 				|| document.frm.end_time.value == ""
@@ -445,7 +445,7 @@
 				|| document.frm.break_start_min.value == ""
 				|| document.frm.break_end_time.value == ""
 				|| document.frm.break_end_min.value == ""
-				|| document.frm.pay_money.value == ""
+				|| document.frm.pay.value == ""
 				|| document.frm.payday.value == ""
 				|| document.frm.contract_year.value == ""
 				|| document.frm.contract_month.value == ""
@@ -479,9 +479,9 @@
 				console.log(start_day);
 				alert("계약기간이 비어있습니다.");
 			}
-			if (document.frm.pay_money.value == "") {
-				pay_money = document.getElementById("pay_money");
-				console.log(pay_money);
+			if (document.frm.pay.value == "") {
+				pay = document.getElementById("pay");
+				console.log(pay);
 				alert("임금이 비었습니다.");
 			}
 			/* if(document.frm.bonus.value=="") {

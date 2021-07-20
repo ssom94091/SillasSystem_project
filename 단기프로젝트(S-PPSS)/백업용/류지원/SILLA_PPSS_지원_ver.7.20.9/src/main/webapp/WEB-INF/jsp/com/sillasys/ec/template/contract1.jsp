@@ -12,14 +12,14 @@
    String end_day = request.getParameter("end_day");
    String work_place = request.getParameter("work_place");
    String content = request.getParameter("content");
-   String start_time = request.getParameter("start_time");
+   String start_hour = request.getParameter("start_hour");
    String start_min = request.getParameter("start_min");
-   String end_time = request.getParameter("end_time");
+   String end_hour = request.getParameter("end_hour");
    String end_min = request.getParameter("end_min");
-   String break_start_time = request.getParameter("break_start_time");
-   String break_start_min = request.getParameter("break_start_min");
-   String break_end_time = request.getParameter("break_end_time");
-   String break_end_min = request.getParameter("break_end_min");
+   String b_start_hour = request.getParameter("b_start_hour");
+   String b_start_min = request.getParameter("b_start_min");
+   String b_end_hour = request.getParameter("b_end_hour");
+   String b_end_min = request.getParameter("b_end_min");
    String work_per_week = request.getParameter("work_per_week");
    String holiday = request.getParameter("holiday");
    String pay_type = request.getParameter("pay_type");
@@ -57,8 +57,9 @@
       <h1 style="margin:0 auto;margin-top:20pt;display:block;text-align:center">표준 근로 계약서</h1><br>
       </div>
       
-      <form action="/ec/template/contract1.do" method="post" id="frm" name="frm" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
+      <form action="/ec/template/contract1.do" method="post" id="frm1" name="frm1" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
       <div class="col-sm-12">
+      <input type="hidden" id="type" name="type" value="1">
       <input type="text" onkeyup="setValue();" id="admin_id" value="<%=admin_id %>" name="admin_id" style="width:150px; height:30px;display: inline-block;">
       (이하 "사업주"라 함)과(와)
       <input type="text" onkeyup="setValue();" id="user_id" value="<%=user_id %>" name="user_id" style="width:80px; height:30px;display: inline-block;">
@@ -84,17 +85,17 @@
       3. 업무의 내용:
       <input type="text" onkeyup="setValue();" id="content" value="<%=content %>" name="content" style="width:350px;height:30px;display:inline-block;"></div>
       <div class="col-sm-12" style="margin-top:10px;">
-      4. 소정근로시간:
-      <input type="text" onkeyup="setValue();" id="start_time" value="<%=start_time %>" name="start_time" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+      4. 소정근로시간:      <input type="text" onkeyup="setValue();" id="start_hour" value="<%=start_hour %>" name="start_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+
       <input type="text" onkeyup="setValue();" id="start_min" value="<%=start_min %>" name="start_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분부터
       
-      <input type="text" onkeyup="setValue();" id="end_time" value="<%=end_time %>" name="end_time" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+      <input type="text" onkeyup="setValue();" id="end_hour" value="<%=end_hour %>" name="end_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
       <input type="text" onkeyup="setValue();" id="end_min" value="<%=end_min %>" name="end_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분까지 (휴게시간:
       
-      <input type="text" onkeyup="setValue();" id="break_start_time" value="<%=break_start_time %>" name="break_start_time" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
-      <input type="text" onkeyup="setValue();" id="break_start_min" value="<%=break_start_min %>" name="break_start_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분~
-      <input type="text" onkeyup="setValue();" id="break_end_time" value="<%=break_end_time %>" name="break_end_time" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
-      <input type="text" onkeyup="setValue();" id="break_end_min" value="<%=break_end_min %>" name="break_end_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분</div><br><br>
+      <input type="text" onkeyup="setValue();" id="b_start_hour" value="<%=b_start_hour %>" name="b_start_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+      <input type="text" onkeyup="setValue();" id="b_start_min" value="<%=b_start_min %>" name="b_start_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분~
+      <input type="text" onkeyup="setValue();" id="b_end_hour" value="<%=b_end_hour %>" name="b_end_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+      <input type="text" onkeyup="setValue();" id="b_end_min" value="<%=b_end_min %>" name="b_end_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분</div><br><br>
       <div class="col-sm-12">
       5. 근무일/휴일:매주
       <select id="work_per_week" onkeyup="setValue();" value="<%=work_per_week %>" name="work_per_week" style="width:40px;height:30px;display:inline-block;"onchange="setWPW(this.value)">
@@ -290,14 +291,14 @@
       
       if(document.getElementById("work_per_week").value=="null") document.getElementById("work_per_week").value="";
 
-      if(document.getElementById("start_time").value=="null") document.getElementById("start_time").value="";
+      if(document.getElementById("start_hour").value=="null") document.getElementById("start_hour").value="";
       if(document.getElementById("start_min").value=="null") document.getElementById("start_min").value="";
-      if(document.getElementById("end_time").value=="null") document.getElementById("end_time").value="";
+      if(document.getElementById("end_hour").value=="null") document.getElementById("end_hour").value="";
       if(document.getElementById("end_min").value=="null") document.getElementById("end_min").value="";
-      if(document.getElementById("break_start_time").value=="null") document.getElementById("break_start_time").value="";
-      if(document.getElementById("break_start_min").value=="null") document.getElementById("break_start_min").value="";
-      if(document.getElementById("break_end_time").value=="null") document.getElementById("break_end_time").value="";
-      if(document.getElementById("break_end_min").value=="null") document.getElementById("break_end_min").value="";
+      if(document.getElementById("b_start_hour").value=="null") document.getElementById("b_start_hour").value="";
+      if(document.getElementById("b_start_min").value=="null") document.getElementById("b_start_min").value="";
+      if(document.getElementById("b_end_hour").value=="null") document.getElementById("b_end_hour").value="";
+      if(document.getElementById("b_end_min").value=="null") document.getElementById("b_end_min").value="";
 
       if(document.getElementById("pay").value=="null") document.getElementById("pay").value="";
       if(document.getElementById("bonus").value=="null") document.getElementById("bonus").value="";
@@ -323,17 +324,17 @@
       switch(event.type){
          case "mousedown":
             initDraw(event);
-            break;
+            b;
             
          case "mousemove":
             if(pos.drawable)
                draw(event);
-            break;
+            b;
             
          case "mouseout":
          case "mouseup":
             finishDraw();
-            break;
+            b;
       }
    }
    
@@ -442,53 +443,53 @@
       data = document.getElementById("canvas");
       data.value = canVas.toDataURL();
 
-      if (document.frm.admin_id.value == ""
-            || document.frm.user_id.value == ""
-            || document.frm.start_year.value == ""
-            || document.frm.start_month.value == ""
-            || document.frm.start_day.value == ""
-            || document.frm.end_year.value == ""
-            || document.frm.end_month.value == ""
-            || document.frm.end_day.value == ""
-            || document.frm.work_place.value == ""
-            || document.frm.contents.value == ""
-            || document.frm.start_time.value == ""
-            || document.frm.start_min.value == ""
-            || document.frm.end_time.value == ""
-            || document.frm.end_min.value == ""
-            || document.frm.break_start_time.value == ""
-            || document.frm.break_start_min.value == ""
-            || document.frm.break_end_time.value == ""
-            || document.frm.break_end_min.value == ""
-            || document.frm.pay.value == ""
-            || document.frm.payday.value == ""
-            || document.frm.contract_year.value == ""
-            || document.frm.contract_month.value == ""
-            || document.frm.contract_day.value == ""
-            || document.frm.company_name.value == ""
-            || document.frm.company_num.value == ""
-            || document.frm.company_address.value == ""
-            || document.frm.admin_name.value == ""
-            || document.frm.user_address.value == ""
-            || document.frm.user_num.value == ""
-            || document.frm.user_name.value == "") {
+      if (document.frm1.admin_id.value == ""
+            || document.frm1.user_id.value == ""
+            || document.frm1.start_year.value == ""
+            || document.frm1.start_month.value == ""
+            || document.frm1.start_day.value == ""
+            || document.frm1.end_year.value == ""
+            || document.frm1.end_month.value == ""
+            || document.frm1.end_day.value == ""
+            || document.frm1.work_place.value == ""
+            || document.frm1.contents.value == ""
+            || document.frm1.start_hour.value == ""
+            || document.frm1.start_min.value == ""
+            || document.frm1.end_hour.value == ""
+            || document.frm1.end_min.value == ""
+            || document.frm1.b_start_hour.value == ""
+            || document.frm1.b_start_min.value == ""
+            || document.frm1.b_end_hour.value == ""
+            || document.frm1.b_end_min.value == ""
+            || document.frm1.pay.value == ""
+            || document.frm1.payday.value == ""
+            || document.frm1.contract_year.value == ""
+            || document.frm1.contract_month.value == ""
+            || document.frm1.contract_day.value == ""
+            || document.frm1.company_name.value == ""
+            || document.frm1.company_num.value == ""
+            || document.frm1.company_address.value == ""
+            || document.frm1.admin_name.value == ""
+            || document.frm1.user_address.value == ""
+            || document.frm1.user_num.value == ""
+            || document.frm1.user_name.value == "") {
 
-         if (document.frm.admin_id.value == "") {
+         if (document.frm1.admin_id.value == "") {
             admin_id = document.getElementById("admin_id");
             console.log(admin_id);
             alert("사업주가 비었습니다.");
          }
-         if (document.frm.user_id.value == "") {
+         if (document.frm1.user_id.value == "") {
             user_id = document.getElementById("user_id");
             console.log(user_id);
             alert("근로자가 비었습니다.");
          }
-         if (document.frm.start_year.value == ""
-               || document.frm.start_month.value == ""
-               || document.frm.start_day.value == ""
-               || document.frm.end_year.value == ""
-               || document.frm.end_month.value == ""
-               || document.frm.end_day.value == "") {
+         if (document.frm1.start_year.value == ""
+               || document.frm1.start_month.value == ""
+               || document.frm1.start_day.value == ""
+               || document.frm1.end_year.value == ""
+               || document.frm1.end_month.value == ""
+               || document.frm1.end_day.value == "") {
             start_year = document.getElementById("start_year");
             start_month = document.getElementById("start_month");
             start_day = document.getElementById("start_day");
@@ -503,53 +504,53 @@
             console.log(end_day);
             alert("근로계약기간이 비어있습니다.");
          }
-         if (document.frm.start_time.value == ""
-               || document.frm.start_min.value == ""
-               || document.frm.end_time.value == ""
-               || document.frm.end_min.value == "") {
-            start_time = document.getElementById("start_time");
+         if (document.frm1.start_hour.value == ""
+               || document.frm1.start_min.value == ""
+               || document.frm1.end_hour.value == ""
+               || document.frm1.end_min.value == "") {
+            start_hour = document.getElementById("start_hour");
             start_min = document.getElementById("start_min");
-            end_time = document.getElementById("end_time");
+            end_hour = document.getElementById("end_hour");
             end_min = document.getElementById("end_min");
-            console.log(start_time);
+            console.log(start_hour);
             console.log(start_min);
-            console.log(end_time);
+            console.log(end_hour);
             console.log(end_min);
             alert("근로시간이 비어있습니다.");
          }
-         if (document.frm.break_start_time.value == ""
-               || document.frm.break_start_min.value == ""
-               || document.frm.break_end_time.value == ""
-               || document.frm.break_end_min.value == "") {
-            break_start_time = document.getElementById("break_start_time");
-            break_start_min = document.getElementById("break_start_min");
-            break_end_time = document.getElementById("break_end_time");
-            break_end_min = document.getElementById("break_end_min");
-            console.log(break_start_time);
-            console.log(break_start_min);
-            console.log(break_end_time);
-            console.log(break_end_min);
+         if (document.frm1.b_start_hour.value == ""
+               || document.frm1.b_start_min.value == ""
+               || document.frm1.b_end_hour.value == ""
+               || document.frm1.b_end_min.value == "") {
+            b_start_hour = document.getElementById("b_start_hour");
+            b_start_min = document.getElementById("b_start_min");
+            b_end_hour = document.getElementById("b_end_hour");
+            b_end_min = document.getElementById("b_end_min");
+            console.log(b_start_hour);
+            console.log(b_start_min);
+            console.log(b_end_hour);
+            console.log(b_end_min);
             alert("휴게시간이 비어있습니다.");
          }
 
-         if (document.frm.pay_money.value == "") {
+         if (document.frm1.pay_money.value == "") {
             pay_money = document.getElementById("pay");
             console.log(pay_money);
             alert("임금이 비었습니다.");
          }
-         /* if(document.frm.bonus.value=="") {
+         /* if(document.frm1.bonus.value=="") {
             bonus = document.getElementById("bonus");
             console.log(bonus);
             bonus.value="";
          } */
-         if (document.frm.payday.value == "") {
+         if (document.frm1.payday.value == "") {
             payday = document.getElementById("payday");
             console.log(payday);
             alert("지급일이 비었습니다.");
          }
-         if (document.frm.contract_year.value == ""
-               || document.frm.contract_month.value == ""
-               || document.frm.contract_day.value == "") {
+         if (document.frm1.contract_year.value == ""
+               || document.frm1.contract_month.value == ""
+               || document.frm1.contract_day.value == "") {
             contract_year = document.getElementById("contract_year");
             contract_month = document.getElementById("contract_month");
             contract_day = document.getElementById("contract_day");
@@ -558,37 +559,37 @@
             console.log(contract_day);
             alert("계약기간이 비었습니다.");
          }
-         if (document.frm.company_name.value == "") {
+         if (document.frm1.company_name.value == "") {
             company_name = document.getElementById("company_name");
             console.log(company_name);
             alert("회사명이 비었습니다.");
          }
-         if (document.frm.company_num.value == "") {
+         if (document.frm1.company_num.value == "") {
             company_num = document.getElementById("company_num");
             console.log(company_num);
             alert("회사전화번호가 비었습니다.");
          }
-         if (document.frm.company_address.value == "") {
+         if (document.frm1.company_address.value == "") {
             company_address = document.getElementById("company_address");
             console.log(company_address);
             alert("회사주소가 비었습니다.");
          }
-         if (document.frm.admin_name.value == "") {
+         if (document.frm1.admin_name.value == "") {
             admin_name = document.getElementById("admin_name");
             console.log(admin_name);
             alert("대표자가 비었습니다.");
          }
-         if (document.frm.user_address.value == "") {
+         if (document.frm1.user_address.value == "") {
             user_address = document.getElementById("user_address");
             console.log(user_address);
             alert("근로자 주소가 비었습니다.");
          }
-         if (document.frm.user_num.value == "") {
+         if (document.frm1.user_num.value == "") {
             user_num = document.getElementById("user_num");
             console.log(user_num);
             alert("근로자 전화번호가 비었습니다.");
          }
-         if (document.frm.user_name.value == "") {
+         if (document.frm1.user_name.value == "") {
             user_name = document.getElementById("user_name");
             console.log(user_name);
             alert("근로자이름이 비었습니다.");
@@ -605,4 +606,7 @@
       obj = document.getElementsByName(value);
       obj.value=value;
    }
-</script>
+   
+   
+	
+		</script>

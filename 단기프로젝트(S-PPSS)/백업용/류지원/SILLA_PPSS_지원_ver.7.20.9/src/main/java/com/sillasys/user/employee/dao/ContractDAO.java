@@ -13,17 +13,26 @@ import egovframework.rte.psl.dataaccess.EgovAbstractMapper;
 public class ContractDAO extends EgovAbstractMapper{
 	public void trmTemplate1(ContractVO param) throws Exception{
 		 insert("ContractDAO.trmTemplate1", param);
+		
 	}
 	
-	public void trmTemplate1(ContractWorkTimeVO param) throws Exception{
-		 insert("ContractDAO.trmTemplate1", param);
+	public void trmTemplate2(ContractVO param) throws Exception{
+		 insert("ContractDAO.trmTemplate2", param);
 	}
 	
-	public void trmTemplate1(ContractEndTimeVO param) throws Exception{
-		 insert("ContractDAO.trmTemplate1", param);
+	public void trmTemplateWork(ContractVO param) throws Exception{
+		 insert("ContractDAO.trmTemplateWork", param);
+		
 	}
 	
-	public void trmTemplate1(ContractBenefitVO param) throws Exception{
-		 insert("ContractDAO.trmTemplate1", param);
+	public void trmTemplateEnd(ContractVO param) throws Exception{
+		 insert("ContractDAO.trmTemplateEnd", param);
+		
 	}
+	
+	public void trmTemplateBenefit(ContractVO param) throws Exception{
+		 insert("ContractDAO.trmTemplateBenefit", param);
+		
+	}
+	
 }

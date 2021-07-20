@@ -5,19 +5,26 @@
 	<typeAliases>
 		<typeAlias alias="egovMap"
 			type="egovframework.rte.psl.dataaccess.util.EgovMap" />
+			
 		<typeAlias alias="userVO"
 			type="com.sillasys.user.employee.vo.UserVO" />
+			
 		<typeAlias alias="adminVO"
 			type="com.sillasys.admin.employer.vo.AdminVO" />
+			
 		<typeAlias type="com.sillasys.user.employee.vo.ContractVO"
 			alias="contractVO" />
-		<typeAlias type="com.sillasys.user.employee.vo.ContractVO"
-			alias="ContractWorkTimeVO" />
-		<typeAlias type="com.sillasys.user.employee.vo.ContractVO"
-			alias="ContractEndTimeVO" />
-		<typeAlias type="com.sillasys.user.employee.vo.ContractVO"
-			alias="ContractBenefitVO" />
-
+		
+		<!-- 
+		<typeAlias type="com.sillasys.user.employee.vo.ContractWorkTimeVO"
+			alias="contractWorkTimeVO" />
+		
+		<typeAlias type="com.sillasys.user.employee.vo.ContractEndTimeVO"
+			alias="contractEndTimeVO" />
+		
+		<typeAlias type="com.sillasys.user.employee.vo.ContractBenefitVO"
+			alias="contractBenefitVO" />
+ -->
 		<typeAlias alias="ecVO" type="com.sillasys.admin.ec.vo.EcVO" />
 
 		<!-- <typeAlias alias="ComDefaultCodeVO" type="egovframework.com.cmm.ComDefaultCodeVO" 

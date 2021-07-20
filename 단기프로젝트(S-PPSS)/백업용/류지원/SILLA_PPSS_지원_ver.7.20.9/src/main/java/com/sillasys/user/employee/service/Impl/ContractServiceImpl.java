@@ -19,17 +19,26 @@ public class ContractServiceImpl implements ContractService {
 	public void trmTemplate1(ContractVO param) throws Exception {
 		ContractDAO.trmTemplate1(param);
 	}
+	
 	@Override
-	public void trmTemplate1(ContractWorkTimeVO param) throws Exception {
-		ContractDAO.trmTemplate1(param);
+	public void trmTemplateWork(ContractVO param) throws Exception {
+		ContractDAO.trmTemplateWork(param);
 	}
+	
 	@Override
-	public void trmTemplate1(ContractEndTimeVO param) throws Exception {
-		ContractDAO.trmTemplate1(param);
+	public void trmTemplateEnd(ContractVO param) throws Exception {
+		ContractDAO.trmTemplateEnd(param);
 	}
+	
 	@Override
-	public void trmTemplate1(ContractBenefitVO param) throws Exception {
-		ContractDAO.trmTemplate1(param);
+	public void trmTemplateBenefit(ContractVO param) throws Exception {
+		ContractDAO.trmTemplateBenefit(param);
 	}
+	
+	@Override
+	public void  trmTemplate2(ContractVO param) throws Exception{
+		ContractDAO.trmTemplate2(param);
+	}
+	
 }
 

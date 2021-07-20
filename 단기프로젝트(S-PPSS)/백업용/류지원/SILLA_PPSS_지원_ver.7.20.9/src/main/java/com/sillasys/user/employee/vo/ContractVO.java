@@ -5,8 +5,9 @@ import com.sillasys.user.employee.vo.ContractVO;
 
 public class ContractVO {
 	private int contarct_pk;	// pk
-	private String user_id; 
 	private String admin_id;
+	private String user_id; 
+	private String type;
 	private String start_year;
 	private String start_month;
 	private String start_day;
@@ -31,11 +32,33 @@ public class ContractVO {
 	private String extra_pay;
 	private String create_date;
 	private String modify_date;
+	private String start_hour;
+	private String start_min;
+	private String end_hour;
+	private String end_min;
+	private String b_start_hour;
+	private String b_start_min;
+	private String b_end_hour;
+	private String b_end_min;
+	private String work_day;
+	private String end_year;
+	private String end_month;
+	private String end_day;
+	private String benefit_1;
+	private String benefit_2;
+	private String benefit_3;
+	private String benefit_4;
 	public int getContarct_pk() {
 		return contarct_pk;
 	}
 	public void setContarct_pk(int contarct_pk) {
 		this.contarct_pk = contarct_pk;
+	}
+	public String getAdmin_id() {
+		return admin_id;
+	}
+	public void setAdmin_id(String admin_id) {
+		this.admin_id = admin_id;
 	}
 	public String getUser_id() {
 		return user_id;
@@ -43,11 +66,11 @@ public class ContractVO {
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-	public String getAdmin_id() {
-		return admin_id;
+	public String getType() {
+		return type;
 	}
-	public void setAdmin_id(String admin_id) {
-		this.admin_id = admin_id;
+	public void setType(String type) {
+		this.type = type;
 	}
 	public String getStart_year() {
 		return start_year;
@@ -193,18 +216,120 @@ public class ContractVO {
 	public void setModify_date(String modify_date) {
 		this.modify_date = modify_date;
 	}
+	public String getStart_hour() {
+		return start_hour;
+	}
+	public void setStart_hour(String start_hour) {
+		this.start_hour = start_hour;
+	}
+	public String getStart_min() {
+		return start_min;
+	}
+	public void setStart_min(String start_min) {
+		this.start_min = start_min;
+	}
+	public String getEnd_hour() {
+		return end_hour;
+	}
+	public void setEnd_hour(String end_hour) {
+		this.end_hour = end_hour;
+	}
+	public String getEnd_min() {
+		return end_min;
+	}
+	public void setEnd_min(String end_min) {
+		this.end_min = end_min;
+	}
+	public String getB_start_hour() {
+		return b_start_hour;
+	}
+	public void setB_start_hour(String b_start_hour) {
+		this.b_start_hour = b_start_hour;
+	}
+	public String getB_start_min() {
+		return b_start_min;
+	}
+	public void setB_start_min(String b_start_min) {
+		this.b_start_min = b_start_min;
+	}
+	public String getB_end_hour() {
+		return b_end_hour;
+	}
+	public void setB_end_hour(String b_end_hour) {
+		this.b_end_hour = b_end_hour;
+	}
+	public String getB_end_min() {
+		return b_end_min;
+	}
+	public void setB_end_min(String b_end_min) {
+		this.b_end_min = b_end_min;
+	}
+	public String getWork_day() {
+		return work_day;
+	}
+	public void setWork_day(String work_day) {
+		this.work_day = work_day;
+	}
+	public String getEnd_year() {
+		return end_year;
+	}
+	public void setEnd_year(String end_year) {
+		this.end_year = end_year;
+	}
+	public String getEnd_month() {
+		return end_month;
+	}
+	public void setEnd_month(String end_month) {
+		this.end_month = end_month;
+	}
+	public String getEnd_day() {
+		return end_day;
+	}
+	public void setEnd_day(String end_day) {
+		this.end_day = end_day;
+	}
+	public String getBenefit_1() {
+		return benefit_1;
+	}
+	public void setBenefit_1(String benefit_1) {
+		this.benefit_1 = benefit_1;
+	}
+	public String getBenefit_2() {
+		return benefit_2;
+	}
+	public void setBenefit_2(String benefit_2) {
+		this.benefit_2 = benefit_2;
+	}
+	public String getBenefit_3() {
+		return benefit_3;
+	}
+	public void setBenefit_3(String benefit_3) {
+		this.benefit_3 = benefit_3;
+	}
+	public String getBenefit_4() {
+		return benefit_4;
+	}
+	public void setBenefit_4(String benefit_4) {
+		this.benefit_4 = benefit_4;
+	}
 	
 	@Override
 	public String toString() {
-		return "ContractVO [contarct_pk=" + contarct_pk + ", user_id=" + user_id + ", admin_id=" + admin_id
-				+ ", start_year=" + start_year + ", start_month=" + start_month + ", start_day=" + start_day
+		return "ContractVO [contarct_pk=" + contarct_pk + ", admin_id=" + admin_id + ", user_id=" + user_id + ", type="
+				+ type + ", start_year=" + start_year + ", start_month=" + start_month + ", start_day=" + start_day
 				+ ", work_place=" + work_place + ", content=" + content + ", work_per_week=" + work_per_week
 				+ ", holiday=" + holiday + ", pay_type=" + pay_type + ", pay=" + pay + ", bonus=" + bonus + ", payday="
 				+ payday + ", payfor=" + payfor + ", em_insurance=" + em_insurance + ", ac_insurance=" + ac_insurance
 				+ ", pension=" + pension + ", hlt_insurance=" + hlt_insurance + ", canvas=" + canvas
 				+ ", contract_year=" + contract_year + ", contract_month=" + contract_month + ", contract_day="
 				+ contract_day + ", admin_name=" + admin_name + ", extra_pay=" + extra_pay + ", create_date="
-				+ create_date + ", modify_date=" + modify_date + "]";
+				+ create_date + ", modify_date=" + modify_date + ", start_hour=" + start_hour + ", start_min="
+				+ start_min + ", end_hour=" + end_hour + ", end_min=" + end_min + ", b_start_hour=" + b_start_hour
+				+ ", b_start_min=" + b_start_min + ", b_end_hour=" + b_end_hour + ", b_end_min=" + b_end_min
+				+ ", work_day=" + work_day + ", end_year=" + end_year + ", end_month=" + end_month + ", end_day="
+				+ end_day + ", benefit_1=" + benefit_1 + ", benefit_2=" + benefit_2 + ", benefit_3=" + benefit_3
+				+ ", benefit_4=" + benefit_4 + "]";
 	}
+	
 	
 }

@@ -7,7 +7,9 @@ import com.sillasys.user.employee.vo.ContractBenefitVO;
 
 public interface ContractService {
 	public void trmTemplate1(ContractVO param) throws Exception;
-	public void trmTemplate1(ContractWorkTimeVO param) throws Exception;
-	public void trmTemplate1(ContractEndTimeVO param) throws Exception;
-	public void trmTemplate1(ContractBenefitVO param) throws Exception;
+	public void trmTemplateWork(ContractVO param) throws Exception;
+	public void trmTemplateEnd(ContractVO param) throws Exception;
+	public void trmTemplateBenefit(ContractVO param) throws Exception;
+	
+	public void trmTemplate2(ContractVO param) throws Exception;
 }
