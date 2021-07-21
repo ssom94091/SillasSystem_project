@@ -85,7 +85,7 @@ $(function() {
 
 <div class="container" >
     <div class="row" > 
-    	<p class="btn">테스트용a</p>
+    	<p class="btn"></p>
     	<!-- 1번구역 -->
         <div class="col-xs-12 col-sm-12" style="margin: 0, auto;width:100%; text-align:center;">   
         <!-- btn1(목록보기) 버튼 -->
@@ -112,16 +112,11 @@ $(function() {
 	     <img id=btn2_img src="/images/silla/main_btn2_off.png"  style="max-width: 100%; height: auto; margin:0, auto;">
 	     </button>
 	     </div>
-	     
-	     <!-- 2번구역 -->
-        <div class="col-sm-6" style=" text-align:right;"><a href="../ec/regist.do"  class="btn-btn-primary pull-right">양식 생성</a></div>
-        
-        <!-- 3번구역 -->
-        <div class="col-sm-6" style=" text-align:right;" ><a href="../ec/regist.do"  class="btn-btn-primary pull-right">삭제</a></div>
+	   
         
         <!-- 4번구역 -->
-        <div class="col-sm-12" id="content" style="height: auto; min-height: 500px; overflow: auto;   overflow: scroll;">
-        	<iframe id="iframe_set" src="../ec/content.do" scrolling="yes" style="width:100%; min-height:100vh; border: 1px dashed;" ></iframe>
+        <div class="col-sm-12" id="content" style="height: auto; width: 100%; margin-top: 20px; min-height: 500px; border:1px; overflow: auto;">
+        	<iframe id="iframe_set" src="../ec/content.do" scrolling="yes" style="width:100%; min-height:100vh; " ></iframe>
         </div>
     </div>
 </div>
