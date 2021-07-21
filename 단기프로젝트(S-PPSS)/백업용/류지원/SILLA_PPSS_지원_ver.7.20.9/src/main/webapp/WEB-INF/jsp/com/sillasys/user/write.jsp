@@ -12,7 +12,6 @@
          <a href="/user/index.do"><img
             src="/images/silla/login_silla_logo.png" style="float: right;"></a>
       </div>
-      <form action="javascript:alert('작성완료');">
          <table class="table table-striped"
             style="text-align: center; border: 1px solid #ddddd">
             <thread>
@@ -24,11 +23,9 @@
          <input type="hidden" id="index" name="index" value="<%=index %>">
          <iframe style="width:100%;height:100vh;padding:20px;" id="frame" name="frame"></iframe>
          <div style="float:right;">
+         <button type="button" class="btn btn-info active" id="homeBtn" onClick="location.href='/user/index.do'">뒤로가기</button>
          <button type="button" class="btn btn-info active" id="printBtn" onclick="printPage()">인쇄</button>
-         <button type="button" class="btn btn-primary active" id="btn" onclick="document.location.href='writeaction.do'">제출</button>
          </div>
-         
-      </form>
    </div>
 </div>
 

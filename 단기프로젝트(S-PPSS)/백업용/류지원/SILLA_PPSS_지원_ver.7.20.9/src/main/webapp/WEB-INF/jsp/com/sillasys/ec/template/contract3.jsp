@@ -124,9 +124,9 @@
             
       <div class="col-sm-12">
       <input type="hidden" id="type" name="type" value="3">
-      <input type="text" id="admin_id" onkeyup="setValue();" value="<%=admin_id %>" name="admin_id" style="width:150px; height:30px;display: inline-block;">
+      <input type="text" id="admin_id" onkeyup="setValue();" value="<%=admin_id %>" name="admin_id" style="width:150px; height:30px;display: inline-block;"maxlength="20">
       (이하 "사업주"라 함)과(와)
-      <input type="text" id="user_id" onkeyup="setValue();" value="<%=user_id %>" name="user_id" style="width:80px; height:30px;display: inline-block;">
+      <input type="text" id="user_id" onkeyup="setValue();" value="<%=user_id %>" name="user_id" style="width:80px; height:30px;display: inline-block;"maxlength="7">
       (이하 "근로자"라 함)은 다음과 같이 근로계약을 채결한다.</div><br>
       <div class="col-sm-12" style="margin-top:10px;">
       1. 근로계약기간:
@@ -144,22 +144,22 @@
       일까지</div><br>
       <div class="col-sm-12" style="margin-top:10px;">
       2. 근무장소:
-      <input type="text" id="work_place" onkeyup="setValue();" value="<%=work_place %>" name="work_place" style="width:350px; height:30px;display:inline-block;"></div>
+      <input type="text" id="work_place" onkeyup="setValue();" value="<%=work_place %>" name="work_place" style="width:350px; height:30px;display:inline-block;"maxlength="50"></div>
       <div class="col-sm-12" style="margin-top:10px;">
       3. 업무의 내용:
-      <input type="text" id="content" onkeyup="setValue();" value="<%=content %>" name="content" style="width:350px;height:30px;display:inline-block;"></div>
+      <input type="text" id="content" onkeyup="setValue();" value="<%=content %>" name="content" style="width:350px;height:30px;display:inline-block;"maxlength="50"></div>
       <div class="col-sm-12" style="margin-top:10px;">
       4. 근로일 및 근로일별 근로시간<br></div><br><br>
       <div class="col-sm-12">
          <table class="table table-bordered">
             <tr>
                <td></td>
-               <td style="text-align:center;padding:0px;"><input type="text" id="work_day" onkeyup="setValue();" value="<%=work_day %>" name="work_day" style="width:30px;height:30px;display:inline-block;">요일</td>
-               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_2" onkeyup="setValue();" value="<%=work_day_2 %>" name="work_day_2" style="width:30px;height:30px;display:inline-block;">요일</td>
-               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_3" onkeyup="setValue();" value="<%=work_day_3 %>" name="work_day_3" style="width:30px;height:30px;display:inline-block;">요일</td>
-               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_4" onkeyup="setValue();" value="<%=work_day_4 %>" name="work_day_4" style="width:30px;height:30px;display:inline-block;">요일</td>
-               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_5" onkeyup="setValue();" value="<%=work_day_5 %>" name="work_day_5" style="width:30px;height:30px;display:inline-block;">요일</td>
-               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_6" onkeyup="setValue();" value="<%=work_day_6 %>" name="work_day_6" style="width:30px;height:30px;display:inline-block;">요일</td>
+               <td style="text-align:center;padding:0px;"><input type="text" id="work_day" onkeyup="setValue();" value="<%=work_day %>" name="work_day" style="width:30px;height:30px;display:inline-block;"maxlength="1">요일</td>
+               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_2" onkeyup="setValue();" value="<%=work_day_2 %>" name="work_day_2" style="width:30px;height:30px;display:inline-block;"maxlength="1">요일</td>
+               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_3" onkeyup="setValue();" value="<%=work_day_3 %>" name="work_day_3" style="width:30px;height:30px;display:inline-block;"maxlength="1">요일</td>
+               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_4" onkeyup="setValue();" value="<%=work_day_4 %>" name="work_day_4" style="width:30px;height:30px;display:inline-block;"maxlength="1">요일</td>
+               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_5" onkeyup="setValue();" value="<%=work_day_5 %>" name="work_day_5" style="width:30px;height:30px;display:inline-block;"maxlength="1">요일</td>
+               <td style="text-align:center;padding:0px;"><input type="text" id="work_day_6" onkeyup="setValue();" value="<%=work_day_6 %>" name="work_day_6" style="width:30px;height:30px;display:inline-block;"maxlength="1">요일</td>
             </tr>
             <tr>
                <td style="text-align:center;padding:0px;">근로시간</td>
@@ -247,18 +247,18 @@
            <option value="3">월급</option>
         </select> : 
         <input type="text" id="pay" value="<%=pay %>" name="pay" style="width:150px;height:30px;display:inline-block;" onchange="getNumber(this);"
-           onkeyup="getNumber(this);">원<br> - 상여금:있음
+           onkeyup="getNumber(this);"maxlength="13">원<br> - 상여금:있음
         <input type="radio" id="bonus_on" name="bonus_check" value="1" style="text-align:center" onclick="toggle_bonus(true);">
         <input type="text" id="bonus" value="<%=bonus %>" name="bonus" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-           onkeyup="getNumber(this);">원, 없음
+           onkeyup="getNumber(this);"maxlength="13">원, 없음
         <input type="radio" id="bonus_off" onkeyup="setValue();" name="bonus_check" value="2" style="text-align:center;margin:2px;" onclick="toggle_bonus(false);" checked><br>
         - 기타급여(제수당 등):있음
       <input type="radio" id="benefit_on" name="benefit_check" value="1" style="text-align:center" onclick="toggle_benefit(true);">
       <input type="text" id="benefit_1" value="<%=benefit_1 %>" name="benefit_1" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-           onkeyup="getNumber(this);">원(내역별 기재), 없음
+           onkeyup="getNumber(this);"maxlength="13">원(내역별 기재), 없음
         <input type="radio" id="benefit_off" name="benefit_check" value="2" style="text-align:center;margin:2px;" onclick="toggle_benefit(false);"checked><br>
         - 초과근로에 대한 가산임금률:
-        <input type="text" id="extra_pay" onkeyup="setValue();" value="<%=extra_pay %>" name="extra_pay" style="width:60px;height:30px;display:inlin-block;margin:2px;">%<br>
+        <input type="text" id="extra_pay" onkeyup="setValue();" value="<%=extra_pay %>" name="extra_pay" style="width:60px;height:30px;display:inlin-block;margin:2px;"maxlength="3">%<br>
       - 임금지급일:매월(매주 또는 매일)
       <input type="text" id="payday" onkeyup="setValue();" value="<%=payday %>" name="payday" style="width:30px;height:30px;display:inline-block;" maxlength="2">일(휴일의 경우는 전일 지급)<br>
       - 지급방법:근로자에게 직접지급
@@ -284,13 +284,13 @@
       <input type="text" id="contract_year" onkeyup="setValue();" value="<%=contract_year %>" name="contract_year" style="width:60px;height:30px;display:inline-block;"maxlength="4">년
       <input type="text" id="contract_month" onkeyup="setValue();" value="<%=contract_month %>" name="contract_month" style="width:30px;height:30px;display:inline-block;"maxlength="2">월
       <input type="text" id="contract_day" onkeyup="setValue();" value="<%=contract_day %>" name="contract_day" style="width:30px;height:30px;display:inline-block;"maxlength="2">일<br><br>(사업주) 사업체명:
-      <input type="text" id="company_name" onkeyup="setValue();" value="<%=company_name %>" name="company_name" style="width:150px;height:30px;display:inline-block;">(전화:
-      <input type="text" id="company_num" onkeyup="setValue();" value="<%=company_num %>" name="company_num" style="width:120px;height:30px;display:inline-block;">)<br>주 소:
-      <input type="text" id="company_address" onkeyup="setValue();" value="<%=company_address %>" name="company_address" style="width:250px;height:30px;display:inline-block;"><br>대 표 자:
-      <input type="text" id="admin_name" onkeyup="setValue();" value="<%=admin_name %>" name="admin_name" style="width:80px;height:30px;display:inline-block;"><br>(근로자) 주 소:
-      <input type="text" id="user_address" onkeyup="setValue();" value="<%=user_address %>" name="user_address" style="width:250px;height:30px;display:inline-block;"><br>연 락 처:
-      <input type="text" id="user_num" onkeyup="setValue();" value="<%=user_num %>" name="user_num" style="width:120px;height:30px;display:inline-block;"><br>성 명:
-      <input type="text" id="user_name" onkeyup="setValue();" value="<%=user_name %>" name="user_name" style="width:80px;height:30px;display:inline-block;">
+      <input type="text" id="company_name" onkeyup="setValue();" value="<%=company_name %>" name="company_name" style="width:150px;height:30px;display:inline-block;"maxlength="20">(전화:
+      <input type="text" id="company_num" onkeyup="setValue();" value="<%=company_num %>" name="company_num" style="width:120px;height:30px;display:inline-block;"maxlength="20">)<br>주 소:
+      <input type="text" id="company_address" onkeyup="setValue();" value="<%=company_address %>" name="company_address" style="width:250px;height:30px;display:inline-block;"maxlength="40"><br>대 표 자:
+      <input type="text" id="admin_name" onkeyup="setValue();" value="<%=admin_name %>" name="admin_name" style="width:80px;height:30px;display:inline-block;"maxlength="7"><br>(근로자) 주 소:
+      <input type="text" id="user_address" onkeyup="setValue();" value="<%=user_address %>" name="user_address" style="width:250px;height:30px;display:inline-block;"maxlength="40"><br>연 락 처:
+      <input type="text" id="user_num" onkeyup="setValue();" value="<%=user_num %>" name="user_num" style="width:120px;height:30px;display:inline-block;"maxlength="20"><br>성 명:
+      <input type="text" id="user_name" onkeyup="setValue();" value="<%=user_name %>" name="user_name" style="width:80px;height:30px;display:inline-block;"maxlength="7">
       </div>
       
       <input type="submit" id="submit" value="저장"> 

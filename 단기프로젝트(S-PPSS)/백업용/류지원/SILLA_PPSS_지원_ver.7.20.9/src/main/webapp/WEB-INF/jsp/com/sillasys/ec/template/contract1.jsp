@@ -60,9 +60,9 @@
       <form action="/ec/template/contract1.do" method="post" id="frm1" name="frm1" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
       <div class="col-sm-12">
       <input type="hidden" id="type" name="type" value="1">
-      <input type="text" onkeyup="setValue();" id="admin_id" value="<%=admin_id %>" name="admin_id" style="width:150px; height:30px;display: inline-block;">
+      <input type="text" onkeyup="setValue();" id="admin_id" value="<%=admin_id %>" name="admin_id" style="width:150px; height:30px;display: inline-block;"maxlength="20">
       (이하 "사업주"라 함)과(와)
-      <input type="text" onkeyup="setValue();" id="user_id" value="<%=user_id %>" name="user_id" style="width:80px; height:30px;display: inline-block;">
+      <input type="text" onkeyup="setValue();" id="user_id" value="<%=user_id %>" name="user_id" style="width:80px; height:30px;display: inline-block;"maxlength="7">
       (이하 "근로자"라 함)은 다음과 같이 근로계약을 채결한다.</div><br>
       <div class="col-sm-12">
       1. 근로계약기간:
@@ -80,10 +80,10 @@
       일까지<br>※ 근로계약기간을 정하지 않는 경우에는 "근로개시일"만 기재</div><br>
       <div class="col-sm-12">
       2. 근무장소:
-      <input type="text" onkeyup="setValue();" id="work_place" value="<%=work_place %>" name="work_place" style="width:350px; height:30px;display:inline-block;"></div>
+      <input type="text" onkeyup="setValue();" id="work_place" value="<%=work_place %>" name="work_place" style="width:350px; height:30px;display:inline-block;"maxlength="50"></div>
       <div class="col-sm-12" style="margin-top:10px;">
       3. 업무의 내용:
-      <input type="text" onkeyup="setValue();" id="content" value="<%=content %>" name="content" style="width:350px;height:30px;display:inline-block;"></div>
+      <input type="text" onkeyup="setValue();" id="content" value="<%=content %>" name="content" style="width:350px;height:30px;display:inline-block;"maxlength="50"></div>
       <div class="col-sm-12" style="margin-top:10px;">
       4. 소정근로시간:      <input type="text" onkeyup="setValue();" id="start_hour" value="<%=start_hour %>" name="start_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
 
@@ -123,23 +123,23 @@
            <option value="2">주급</option>
            <option value="3">시급</option>
         </select> : 
-        <input type="text" onkeyup="setValue();" id="pay" value="<%=pay %>" name="pay" style="width:150px;height:30px;display:inline-block;" onchange="getNumber(this);"
+        <input type="text" maxlength="13"id="pay" value="<%=pay %>" name="pay" style="width:150px;height:30px;display:inline-block;" onchange="getNumber(this);"
            onkeyup="getNumber(this);">원<br> - 상여금:있음
         <input type="radio" onkeyup="setValue();" id="bonus_on" name="bonus_check" value="1" style="text-align:center" onclick="toggle_bonus(true);">
-        <input type="text" onkeyup="setValue();"id="bonus" value="<%=bonus %>" name="bonus" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
+        <input type="text" maxlength="13"id="bonus" value="<%=bonus %>" name="bonus" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
            onkeyup="getNumber(this);" onkeyup="setValue();">원, 없음
         <input type="radio" onkeyup="setValue();" id="bonus_off" name="bonus_check" value="2" style="text-align:center;margin:2px;" onclick="toggle_bonus(false);" checked><br>
         - 기타급여(제수당 등):있음
       <input type="radio" onkeyup="setValue();" id="benefit_on" name="benefit_check" value="1" style="text-align:center" onclick="toggle_benefit(true);">없음
         <input type="radio" onkeyup="setValue();" id="benefit_off" name="benefit_check" value="2" style="text-align:center;margin:2px;" onclick="toggle_benefit(false);" checked><br>
       <input type="text" id="benefit_1" value="<%=benefit_1 %>" name="benefit_1" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-           onkeyup="getNumber(this);" onkeyup="setValue();">원
+           onkeyup="getNumber(this);" maxlength="13">원
       <input type="text" id="benefit_2" value="<%=benefit_2 %>" name="benefit_2" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-           onkeyup="getNumber(this);" onkeyup="setValue();">원<br>
+           onkeyup="getNumber(this);" maxlength="13">원<br>
       <input type="text" id="benefit_3" value="<%=benefit_3 %>" name="benefit_3" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-           onkeyup="getNumber(this);" onkeyup="setValue();">원
+           onkeyup="getNumber(this);" maxlength="13">원
       <input type="text" id="benefit_4" value="<%=benefit_4 %>" name="benefit_4" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-           onkeyup="getNumber(this);" onkeyup="setValue();">원<br>
+           onkeyup="getNumber(this);" maxlength="13">원<br>
       - 임금지급일:매월(매주 또는 매일)
       <input type="text" onkeyup="setValue();" id="payday" value="<%=payday %>" name="payday" style="width:30px;height:30px;display:inline-block;" maxlength="2">일(휴일의 경우는 전일 지급)<br>
       - 지급방법:근로자에게 직접지급
@@ -166,13 +166,13 @@
       <input type="text" onkeyup="setValue();" id="contract_year" value="<%=contract_year %>" name="contract_year" style="width:60px;height:30px;display:inline-block;"maxlength="4">년
       <input type="text" onkeyup="setValue();" id="contract_month" value="<%=contract_month %>" name="contract_month" style="width:30px;height:30px;display:inline-block;"maxlength="2">월
       <input type="text" onkeyup="setValue();" id="contract_day" value="<%=contract_day %>" name="contract_day" style="width:30px;height:30px;display:inline-block;"maxlength="2">일<br><br>(사업주) 사업체명:
-      <input type="text" onkeyup="setValue();" id="company_name" value="<%=company_name %>" name="company_name" style="width:150px;height:30px;display:inline-block;">(전화:
-      <input type="text" onkeyup="setValue();" id="company_num" value="<%=company_num %>" name="company_num" style="width:120px;height:30px;display:inline-block;">)<br>주 소:
-      <input type="text" onkeyup="setValue();" id="company_address" value="<%=company_address %>" name="company_address" style="width:250px;height:30px;display:inline-block;"><br>대 표 자:
-      <input type="text" onkeyup="setValue();" id="admin_name" value="<%=admin_name %>" name="admin_name" style="width:80px;height:30px;display:inline-block;"><br>(근로자) 주 소:
-      <input type="text" onkeyup="setValue();" id="user_address" value="<%=user_address %>" name="user_address" style="width:250px;height:30px;display:inline-block;"><br>연 락 처:
-      <input type="text" onkeyup="setValue();" id="user_num" value="<%=user_num %>" name="user_num" style="width:120px;height:30px;display:inline-block;"><br>성 명:
-      <input type="text" onkeyup="setValue();" id="user_name" value="<%=user_name %>" name="user_name" style="width:80px;height:30px;display:inline-block;">
+      <input type="text" onkeyup="setValue();" id="company_name" value="<%=company_name %>" name="company_name" style="width:150px;height:30px;display:inline-block;"maxlength="20">(전화:
+      <input type="text" onkeyup="setValue();" id="company_num" value="<%=company_num %>" name="company_num" style="width:120px;height:30px;display:inline-block;"maxlength="20">)<br>주 소:
+      <input type="text" onkeyup="setValue();" id="company_address" value="<%=company_address %>" name="company_address" style="width:250px;height:30px;display:inline-block;"maxlength="40"><br>대 표 자:
+      <input type="text" onkeyup="setValue();" id="admin_name" value="<%=admin_name %>" name="admin_name" style="width:80px;height:30px;display:inline-block;"maxlength="7"><br>(근로자) 주 소:
+      <input type="text" onkeyup="setValue();" id="user_address" value="<%=user_address %>" name="user_address" style="width:250px;height:30px;display:inline-block;"maxlength="40"><br>연 락 처:
+      <input type="text" onkeyup="setValue();" id="user_num" value="<%=user_num %>" name="user_num" style="width:120px;height:30px;display:inline-block;"maxlength="20"><br>성 명:
+      <input type="text" onkeyup="setValue();" id="user_name" value="<%=user_name %>" name="user_name" style="width:80px;height:30px;display:inline-block;"maxlength="7">
       </div>
       
       <input type="submit" id="submit" value="저장"> 
@@ -206,7 +206,7 @@
       
       work_per_week = document.getElementById("work_per_week");
       if(<%=work_per_week%>!=null) {
-    	  work_per_week.value = <%=work_per_week%>;
+         work_per_week.value = <%=work_per_week%>;
       }
       holiday = document.getElementById("holiday");
       console.log(holiday);
@@ -270,13 +270,13 @@
       console.log(canVas);
       console.log("<%=canvas%>");
 
-  	img = new Image();
-  	img.src = "<%=canvas%>";
-  	console.log(img);
-  	img.onload = function() {
-  		console.log("DONE");
-  		ccpx.drawImage(img,0,0);
-  	}
+     img = new Image();
+     img.src = "<%=canvas%>";
+     console.log(img);
+     img.onload = function() {
+        console.log("DONE");
+        ccpx.drawImage(img,0,0);
+     }
       console.log(document.getElementById("admin_id").value);
       if(document.getElementById("admin_id").value=="null") document.getElementById("admin_id").value="";
       if(document.getElementById("user_id").value=="null") document.getElementById("user_id").value="";
@@ -324,17 +324,17 @@
       switch(event.type){
          case "mousedown":
             initDraw(event);
-            b;
+            break;
             
          case "mousemove":
             if(pos.drawable)
                draw(event);
-            b;
+            break;
             
          case "mouseout":
          case "mouseup":
             finishDraw();
-            b;
+            break;
       }
    }
    
@@ -452,7 +452,7 @@
             || document.frm1.end_month.value == ""
             || document.frm1.end_day.value == ""
             || document.frm1.work_place.value == ""
-            || document.frm1.contents.value == ""
+            || document.frm1.content.value == ""
             || document.frm1.start_hour.value == ""
             || document.frm1.start_min.value == ""
             || document.frm1.end_hour.value == ""
@@ -596,7 +596,7 @@
          }
          return false;
       } else {
-         alert("작성해주셔서 감사합니다.");
+
          return true;
       }
    }
@@ -608,5 +608,5 @@
    }
    
    
-	
-		</script>
+   
+      </script>

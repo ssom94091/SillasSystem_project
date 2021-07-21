@@ -49,129 +49,129 @@
    %>
    
 <div class="container">
-	<div class="row">
-		<div style="margin:0 auto;">
-			<h1 style="margin:0 auto;margin-top:20pt;display:block;text-align:center">표준 근로 계약서</h1><br>
-		</div>
-		
-		<form action="/ec/template/contract2.do" method="post" name="frm" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
-		
-		<div class="col-sm-12">
-		<input type="hidden" id="type" name="type" value="2">
-		<input type="text" id="admin_id" name="admin_id" value="<%=admin_id %>" style="width:150px; height:30px;display: inline-block;">
-		(이하 "사업주"라 함)과(와)
-		<input type="text" id="user_id" name="user_id" value="<%=user_id %>" style="width:80px; height:30px;display: inline-block;">
-		(이하 "근로자"라 함)은 다음과 같이 근로계약을 채결한다.</div><br>
-		<div class="col-sm-12" style="margin-top:10px;">
-		1. 근로개시일:
-		<input type="text" id="start_year" value="<%=start_year %>" name="start_year" style="width:60px; height:30px;display: inline-block;" maxlength="4">
-		년
-		<input type="text" id="start_month" value="<%=start_month %>" name="start_month" style="width:30px; height:30px;display: inline-block;" maxlength="2">
-		월
-		<input type="text" id="start_day" value="<%=start_day %>" name="start_day" style="width:30px; height:30px;display: inline-block;" maxlength="2">
-		일부터
-		</div><br>
-		<div class="col-sm-12" style="margin-top:10px;">
-		2. 근무장소:
-		<input type="text" id="work_place" name="work_place" value="<%=work_place %>" style="width:350px; height:30px;display:inline-block;"></div>
-		<div class="col-sm-12" style="margin-top:10px;">
-		3. 업무의 내용:
-		<input type="text" id="content" name="content" value="<%=content %>" style="width:350px;height:30px;display:inline-block;"></div>
-		<div class="col-sm-12" style="margin-top:10px;">
-		4. 소정근로시간:
-		<input type="text" id="start_hour" name="start_hour" value="<%=start_hour %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
-		<input type="text" id="start_min" name="start_min" value="<%=start_min %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">분부터
-		
-		<input type="text" id="end_hour" name="end_hour" value="<%=end_hour %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
-		<input type="text" id="end_min" name="end_min" value="<%=end_min %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">분까지 (휴게시간:
-		
-		<input type="text" id="b_start_hour" value="<%=b_start_hour %>" name="b_start_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
-		<input type="text" id="b_start_min" value="<%=b_start_min %>" name="b_start_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분~
-		<input type="text" id="b_end_hour" value="<%=b_end_hour %>" name="b_end_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
-		<input type="text" id="b_end_min" value="<%=b_end_min %>" name="b_end_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분</div><br><br>
-		<div class="col-sm-12">
-		5. 근무일/휴일:매주
-		<select id="work_per_week" name="work_per_week" value="<%=work_per_week %>" style="width:40px;height:30px;display:inline-block;">
-        	<option value="1">1</option>
+   <div class="row">
+      <div style="margin:0 auto;">
+         <h1 style="margin:0 auto;margin-top:20pt;display:block;text-align:center">표준 근로 계약서</h1><br>
+      </div>
+      
+      <form action="/ec/template/contract2.do" method="post" name="frm" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
+      
+      <div class="col-sm-12">
+      <input type="hidden" id="type" name="type" value="2">
+      <input type="text" id="admin_id" name="admin_id" value="<%=admin_id %>" style="width:150px; height:30px;display: inline-block;"maxlength="20">
+      (이하 "사업주"라 함)과(와)
+      <input type="text" id="user_id" name="user_id" value="<%=user_id %>" style="width:80px; height:30px;display: inline-block;"maxlength="7">
+      (이하 "근로자"라 함)은 다음과 같이 근로계약을 채결한다.</div><br>
+      <div class="col-sm-12" style="margin-top:10px;">
+      1. 근로개시일:
+      <input type="text" id="start_year" value="<%=start_year %>" name="start_year" style="width:60px; height:30px;display: inline-block;" maxlength="4">
+      년
+      <input type="text" id="start_month" value="<%=start_month %>" name="start_month" style="width:30px; height:30px;display: inline-block;" maxlength="2">
+      월
+      <input type="text" id="start_day" value="<%=start_day %>" name="start_day" style="width:30px; height:30px;display: inline-block;" maxlength="2">
+      일부터
+      </div><br>
+      <div class="col-sm-12" style="margin-top:10px;">
+      2. 근무장소:
+      <input type="text" id="work_place" name="work_place" value="<%=work_place %>" style="width:350px; height:30px;display:inline-block;"maxlength="50"></div>
+      <div class="col-sm-12" style="margin-top:10px;">
+      3. 업무의 내용:
+      <input type="text" id="content" name="content" value="<%=content %>" style="width:350px;height:30px;display:inline-block;"maxlength="50"></div>
+      <div class="col-sm-12" style="margin-top:10px;">
+      4. 소정근로시간:
+      <input type="text" id="start_hour" name="start_hour" value="<%=start_hour %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+      <input type="text" id="start_min" name="start_min" value="<%=start_min %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">분부터
+      
+      <input type="text" id="end_hour" name="end_hour" value="<%=end_hour %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+      <input type="text" id="end_min" name="end_min" value="<%=end_min %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">분까지 (휴게시간:
+      
+      <input type="text" id="b_start_hour" value="<%=b_start_hour %>" name="b_start_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+      <input type="text" id="b_start_min" value="<%=b_start_min %>" name="b_start_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분~
+      <input type="text" id="b_end_hour" value="<%=b_end_hour %>" name="b_end_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+      <input type="text" id="b_end_min" value="<%=b_end_min %>" name="b_end_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분</div><br><br>
+      <div class="col-sm-12">
+      5. 근무일/휴일:매주
+      <select id="work_per_week" name="work_per_week" value="<%=work_per_week %>" style="width:40px;height:30px;display:inline-block;">
+           <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-        	<option value="4">4</option>
+           <option value="4">4</option>
             <option value="5">5</option>
             <option value="6">6</option>
             <option value="7">7</option>
         </select>일(또는 매일단위)근무,주휴일 매주
         <select id="holiday" name="holiday" value="<%=holiday %>" style="width:40px;height:30px;display:inline-block;">
-        	<option value="1">월</option>
-        	<option value="2">화</option>
-        	<option value="3">수</option>
-        	<option value="4">목</option>
-        	<option value="5">금</option>
-        	<option value="6">토</option>
-        	<option value="7">일</option>
+           <option value="1">월</option>
+           <option value="2">화</option>
+           <option value="3">수</option>
+           <option value="4">목</option>
+           <option value="5">금</option>
+           <option value="6">토</option>
+           <option value="7">일</option>
         </select>요일</div><br><br>
         <div class="col-sm-12">
         6. 임금<br> - 
         <select id="pay_type" name="pay_type" value="<%=pay_type %>" style="width:60px;height:30px;display:inline-block;">
-        	<option value="1">월급</option>
-        	<option value="2">주급</option>
-        	<option value="3">시급</option>
+           <option value="1">월급</option>
+           <option value="2">주급</option>
+           <option value="3">시급</option>
         </select> : 
         <input type="text" id="pay" value="<%=pay %>" name="pay" style="width:150px;height:30px;display:inline-block;" onchange="getNumber(this);"
-        	onkeyup="getNumber(this);">원<br> - 상여금:있음
+           onkeyup="getNumber(this);"maxlength="13">원<br> - 상여금:있음
         <input type="radio" id="bonus_on" name="bonus_check" value="1" style="text-align:center" onclick="toggle_bonus(true);">
         <input type="text" id="bonus" value="<%=bonus %>" name="bonus" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-        	onkeyup="getNumber(this);">원, 없음
+           onkeyup="getNumber(this);"maxlength="13">원, 없음
         <input type="radio" id="bonus_off" name="bonus_check" value="2" style="text-align:center;margin:2px;" onclick="toggle_bonus(false);" checked><br>
         - 기타급여(제수당 등):있음
-		<input type="radio" id="benefit_on" name="benefit_check" value="1" style="text-align:center" onclick="toggle_benefit(true);">없음
+      <input type="radio" id="benefit_on" name="benefit_check" value="1" style="text-align:center" onclick="toggle_benefit(true);">없음
         <input type="radio" id="benefit_off" name="benefit_check" value="2" style="text-align:center;margin:2px;" onclick="toggle_benefit(false);"checked><br>
-		<input type="text" id="benefit_1" value="<%=benefit_1 %>" name="benefit_1" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-        	onkeyup="getNumber(this);">원
-		<input type="text" id="benefit_2" value="<%=benefit_2 %>" name="benefit_2" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-        	onkeyup="getNumber(this);">원<br>
-		<input type="text" id="benefit_3" value="<%=benefit_3 %>" name="benefit_3" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-        	onkeyup="getNumber(this);">원
-		<input type="text" id="benefit_4" value="<%=benefit_4 %>" name="benefit_4" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
-        	onkeyup="getNumber(this);">원<br>
-		- 임금지급일:매월(매주 또는 매일)
-		<input type="text" id="payday" value="<%=payday %>" name="payday" style="width:30px;height:30px;display:inline-block;" maxlength="2">일(휴일의 경우는 전일 지급)<br>
-		- 지급방법:근로자에게 직접지급
-		<input type="radio" id="for_worker" name="payfor" value="1" style="text-align:center">, 근로자 명의 예금통장에 입금
-		<input type="radio" id="for_account" name="payfor" value="2" style="text-align:center" checked></div><br><br>
-		<div class="col-sm-12" style="margin-top:10px;">
-		7. 연차유급휴가<br>
-		- 연차유급휴가는 근로기준법에서 정하는 바에 따라 부여함</div><br><br>
-		<div class="col-sm-12" style="margin-top:10px;">
-		8. 사회보험 적용여부(해당란에 체크)<br>
-		<input type="checkbox" name="em_insurance" id="em_insurance" value="1"><label for="employment_insurance">고용보험</label>
-		<input type="checkbox" name="ac_insurance" id="ac_insurance" value="1"><label for="accident_insurance">산재보험</label>
-		<input type="checkbox" name="pension" id="pension" value="1"><label for="national_pension">국민연금</label>
-		<input type="checkbox" name="hlt_insurance" id="hlt_insurance" value="1"><label for="health_insurance">건강보험</label></div><br><br>
-		<div class="col-sm-12">
-		9. 근로계약서 교부<br>- 사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제 17조 이행)<br><br>
-		10. 근로계약서 교부<br>- 사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함<br><br>
-		11. 근로계약, 취업규칙 등의 성실한 이행의무<br>- 이 계약에 정함이 없는 사항은 근로기준법령에 의함</div></br>
-		<div class="col-sm-12" style="text-align:right">
-		
-		<canvas class="sign-canvas" id="sign-canvas" name="sign-canvas" style="float:left;">서명칸</canvas>
-		<input type="hidden" value="<%=canvas %>" id="canvas" name="canvas">
-		
-		<input type="text" id="contract_year" value="<%=contract_year %>" name="contract_year" style="width:60px;height:30px;display:inline-block;"maxlength="4">년
-		<input type="text" id="contract_month" value="<%=contract_month %>" name="contract_month" style="width:30px;height:30px;display:inline-block;"maxlength="2">월
-		<input type="text" id="contract_day" value="<%=contract_day %>" name="contract_day" style="width:30px;height:30px;display:inline-block;"maxlength="2">일<br><br>(사업주) 사업체명:
-		<input type="text" id="company_name" value="<%=company_name %>" name="company_name" style="width:150px;height:30px;display:inline-block;">(전화:
-		<input type="text" id="company_num" value="<%=company_num %>" name="company_num" style="width:120px;height:30px;display:inline-block;">)<br>주 소:
-		<input type="text" id="company_address" value="<%=company_address %>" name="company_address" style="width:250px;height:30px;display:inline-block;"><br>대 표 자:
-		<input type="text" id="admin_name" value="<%=admin_name %>" name="admin_name" style="width:80px;height:30px;display:inline-block;"><br>(근로자) 주 소:
-		<input type="text" id="user_address" value="<%=user_address %>" name="user_address" style="width:250px;height:30px;display:inline-block;"><br>연 락 처:
-		<input type="text" id="user_num" value="<%=user_num %>" name="user_num" style="width:120px;height:30px;display:inline-block;"><br>성 명:
-		<input type="text" id="user_name" value="<%=user_name %>" name="user_name" style="width:80px;height:30px;display:inline-block;">
-		</div>
-		
-		<input type="submit" id="submit" value="저장"> 
-		
-		</form>
-	</div>
+      <input type="text" id="benefit_1" value="<%=benefit_1 %>" name="benefit_1" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
+           onkeyup="getNumber(this);"maxlength="13">원
+      <input type="text" id="benefit_2" value="<%=benefit_2 %>" name="benefit_2" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
+           onkeyup="getNumber(this);"maxlength="13">원<br>
+      <input type="text" id="benefit_3" value="<%=benefit_3 %>" name="benefit_3" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
+           onkeyup="getNumber(this);"maxlength="13">원
+      <input type="text" id="benefit_4" value="<%=benefit_4 %>" name="benefit_4" style="width:150px;height:30px;display:inline-block;margin:2px;" onchange="getNumber(this);"
+           onkeyup="getNumber(this);"maxlength="13">원<br>
+      - 임금지급일:매월(매주 또는 매일)
+      <input type="text" id="payday" value="<%=payday %>" name="payday" style="width:30px;height:30px;display:inline-block;" maxlength="2">일(휴일의 경우는 전일 지급)<br>
+      - 지급방법:근로자에게 직접지급
+      <input type="radio" id="for_worker" name="payfor" value="1" style="text-align:center">, 근로자 명의 예금통장에 입금
+      <input type="radio" id="for_account" name="payfor" value="2" style="text-align:center" checked></div><br><br>
+      <div class="col-sm-12" style="margin-top:10px;">
+      7. 연차유급휴가<br>
+      - 연차유급휴가는 근로기준법에서 정하는 바에 따라 부여함</div><br><br>
+      <div class="col-sm-12" style="margin-top:10px;">
+      8. 사회보험 적용여부(해당란에 체크)<br>
+      <input type="checkbox" name="em_insurance" id="em_insurance" value="1"><label for="employment_insurance">고용보험</label>
+      <input type="checkbox" name="ac_insurance" id="ac_insurance" value="1"><label for="accident_insurance">산재보험</label>
+      <input type="checkbox" name="pension" id="pension" value="1"><label for="national_pension">국민연금</label>
+      <input type="checkbox" name="hlt_insurance" id="hlt_insurance" value="1"><label for="health_insurance">건강보험</label></div><br><br>
+      <div class="col-sm-12">
+      9. 근로계약서 교부<br>- 사업주는 근로계약을 체결함과 동시에 본 계약서를 사본하여 근로자의 교부요구와 관계없이 근로자에게 교부함(근로기준법 제 17조 이행)<br><br>
+      10. 근로계약서 교부<br>- 사업주와 근로자는 각자가 근로계약, 취업규칙, 단체협약을 지키고 성실하게 이행하여야 함<br><br>
+      11. 근로계약, 취업규칙 등의 성실한 이행의무<br>- 이 계약에 정함이 없는 사항은 근로기준법령에 의함</div></br>
+      <div class="col-sm-12" style="text-align:right">
+      
+      <canvas class="sign-canvas" id="sign-canvas" name="sign-canvas" style="float:left;">서명칸</canvas>
+      <input type="hidden" value="<%=canvas %>" id="canvas" name="canvas">
+      
+      <input type="text" id="contract_year" value="<%=contract_year %>" name="contract_year" style="width:60px;height:30px;display:inline-block;"maxlength="4">년
+      <input type="text" id="contract_month" value="<%=contract_month %>" name="contract_month" style="width:30px;height:30px;display:inline-block;"maxlength="2">월
+      <input type="text" id="contract_day" value="<%=contract_day %>" name="contract_day" style="width:30px;height:30px;display:inline-block;"maxlength="2">일<br><br>(사업주) 사업체명:
+      <input type="text" id="company_name" value="<%=company_name %>" name="company_name" style="width:150px;height:30px;display:inline-block;"maxlength="20">(전화:
+      <input type="text" id="company_num" value="<%=company_num %>" name="company_num" style="width:120px;height:30px;display:inline-block;"maxlength="20">)<br>주 소:
+      <input type="text" id="company_address" value="<%=company_address %>" name="company_address" style="width:250px;height:30px;display:inline-block;"maxlength="40"><br>대 표 자:
+      <input type="text" id="admin_name" value="<%=admin_name %>" name="admin_name" style="width:80px;height:30px;display:inline-block;"maxlength="7"><br>(근로자) 주 소:
+      <input type="text" id="user_address" value="<%=user_address %>" name="user_address" style="width:250px;height:30px;display:inline-block;"maxlength="40"><br>연 락 처:
+      <input type="text" id="user_num" value="<%=user_num %>" name="user_num" style="width:120px;height:30px;display:inline-block;"maxlength="20"><br>성 명:
+      <input type="text" id="user_name" value="<%=user_name %>" name="user_name" style="width:80px;height:30px;display:inline-block;"maxlength="7">
+      </div>
+      
+      <input type="submit" id="submit" value="저장"> 
+      
+      </form>
+   </div>
 </div>
 
 <style>
@@ -199,7 +199,7 @@
       
       work_per_week = document.getElementById("work_per_week");
       if(<%=work_per_week%>!=null) {
-    	  work_per_week.value = <%=work_per_week%>;
+         work_per_week.value = <%=work_per_week%>;
       }
       holiday = document.getElementById("holiday");
       console.log(holiday);
@@ -210,7 +210,7 @@
       pay_type = document.getElementById("pay_type");
       console.log(pay_type);
       if(<%=pay_type%>!=null)
-    	pay_type.value = <%=pay_type%>;
+       pay_type.value = <%=pay_type%>;
       
      
       bonusOn = document.getElementById("bonus_on");
@@ -263,13 +263,13 @@
       console.log(canVas);
       console.log("<%=canvas%>");
 
-  	img = new Image();
-  	img.src = "<%=canvas%>";
-  	console.log(img);
-  	img.onload = function() {
-  		console.log("DONE");
-  		ccpx.drawImage(img,0,0);
-  	}
+     img = new Image();
+     img.src = "<%=canvas%>";
+     console.log(img);
+     img.onload = function() {
+        console.log("DONE");
+        ccpx.drawImage(img,0,0);
+     }
       console.log(document.getElementById("admin_id").value);
       if(document.getElementById("admin_id").value=="null") document.getElementById("admin_id").value="";
       if(document.getElementById("user_id").value=="null") document.getElementById("user_id").value="";
@@ -314,17 +314,17 @@
       switch(event.type){
          case "mousedown":
             initDraw(event);
-            b;
+            break;
             
          case "mousemove":
             if(pos.drawable)
                draw(event);
-            b;
+            break;
             
          case "mouseout":
          case "mouseup":
             finishDraw();
-            b;
+            break;
       }
    }
    
@@ -403,148 +403,148 @@
    
    /* function canvasStr()
    {
-	   canVas = document.getElementById("sign-canvas");
-	   console.log(canVas.toDataURL());
-	   data = document.getElementById("canvas-data");
-	   data.value=canVas.toDataURL();
+      canVas = document.getElementById("sign-canvas");
+      console.log(canVas.toDataURL());
+      data = document.getElementById("canvas-data");
+      data.value=canVas.toDataURL();
    } */
    
    function getNumber(obj) {
-	   num1 = obj.value;
-	   num2 = num1.replace(rgx1,"");
-	   num1 = setComma(num2);
-	   obj.value = num1;
+      num1 = obj.value;
+      num2 = num1.replace(rgx1,"");
+      num1 = setComma(num2);
+      obj.value = num1;
    }
    
    function setComma(inNum){
-	   outNum = inNum;
-	   while(rgx2.test(outNum)) {
-		   outNum = outNum.replace(rgx2,'$1'+','+'$2');
-	   }
-	   return outNum;
+      outNum = inNum;
+      while(rgx2.test(outNum)) {
+         outNum = outNum.replace(rgx2,'$1'+','+'$2');
+      }
+      return outNum;
    }
    
-	function Check() {
+   function Check() {
 
-		canVas = document.getElementById("sign-canvas");
-		console.log(canVas.toDataURL());
-		data = document.getElementById("canvas-data");
-		data.value = canVas.toDataURL();
+      canVas = document.getElementById("sign-canvas");
+      console.log(canVas.toDataURL());
+      data = document.getElementById("canvas-data");
+      data.value = canVas.toDataURL();
 
-		if (document.frm.admin_id.value == ""
-				|| document.frm.user_id.value == ""
-				|| document.frm.start_year.value == ""
-				|| document.frm.start_month.value == ""
-				|| document.frm.start_day.value == ""
-				|| document.frm.work_place.value == ""
-				|| document.frm.content.value == ""
-				|| document.frm.start_hour.value == ""
-				|| document.frm.start_min.value == ""
-				|| document.frm.end_hour.value == ""
-				|| document.frm.end_min.value == ""
-				|| document.frm.b_start_hour.value == ""
-				|| document.frm.b_start_min.value == ""
-				|| document.frm.b_end_hour.value == ""
-				|| document.frm.b_end_min.value == ""
-				|| document.frm.pay.value == ""
-				|| document.frm.payday.value == ""
-				|| document.frm.contract_year.value == ""
-				|| document.frm.contract_month.value == ""
-				|| document.frm.contract_day.value == ""
-				|| document.frm.company_name.value == ""
-				|| document.frm.company_num.value == ""
-				|| document.frm.company_address.value == ""
-				|| document.frm.admin_name.value == ""
-				|| document.frm.user_address.value == ""
-				|| document.frm.user_num.value == ""
-				|| document.frm.user_name.value == "") {
+      if (document.frm.admin_id.value == ""
+            || document.frm.user_id.value == ""
+            || document.frm.start_year.value == ""
+            || document.frm.start_month.value == ""
+            || document.frm.start_day.value == ""
+            || document.frm.work_place.value == ""
+            || document.frm.content.value == ""
+            || document.frm.start_hour.value == ""
+            || document.frm.start_min.value == ""
+            || document.frm.end_hour.value == ""
+            || document.frm.end_min.value == ""
+            || document.frm.b_start_hour.value == ""
+            || document.frm.b_start_min.value == ""
+            || document.frm.b_end_hour.value == ""
+            || document.frm.b_end_min.value == ""
+            || document.frm.pay.value == ""
+            || document.frm.payday.value == ""
+            || document.frm.contract_year.value == ""
+            || document.frm.contract_month.value == ""
+            || document.frm.contract_day.value == ""
+            || document.frm.company_name.value == ""
+            || document.frm.company_num.value == ""
+            || document.frm.company_address.value == ""
+            || document.frm.admin_name.value == ""
+            || document.frm.user_address.value == ""
+            || document.frm.user_num.value == ""
+            || document.frm.user_name.value == "") {
 
-			if (document.frm.admin_id.value == "") {
-				admin_id = document.getElementById("admin_id");
-				console.log(admin_id);
-				alert("사업주가 비었습니다.");
-			}
-			if (document.frm.user_id.value == "") {
-				user_id = document.getElementById("user_id");
-				console.log(user_id);
-				alert("근로자가 비었습니다.");
-			}
-			if (document.frm.start_year.value == ""
-					|| document.frm.start_month.value == ""
-					|| document.frm.start_day.value == "") {
-				start_year = document.getElementById("start_year");
-				start_month = document.getElementById("start_month");
-				start_day = document.getElementById("start_day");
-				console.log(start_year);
-				console.log(start_month);
-				console.log(start_day);
-				alert("계약기간이 비어있습니다.");
-			}
-			if (document.frm.pay.value == "") {
-				pay = document.getElementById("pay");
-				console.log(pay);
-				alert("임금이 비었습니다.");
-			}
-			/* if(document.frm.bonus.value=="") {
-			   bonus = document.getElementById("bonus");
-			   console.log(bonus);
-			   bonus.value="";
-			} */
-			if (document.frm.payday.value == "") {
-				payday = document.getElementById("payday");
-				console.log(payday);
-				alert("지급일이 비었습니다.");
-			}
-			if (document.frm.contract_year.value == ""
-					|| document.frm.contract_month.value == ""
-					|| document.frm.contract_day.value == "") {
-				contract_year = document.getElementById("contract_year");
-				contract_month = document.getElementById("contract_month");
-				contract_day = document.getElementById("contract_day");
-				console.log(contract_year);
-				console.log(contract_month);
-				console.log(contract_day);
-				alert("계약기간이 비었습니다.");
-			}
-			if (document.frm.company_name.value == "") {
-				company_name = document.getElementById("company_name");
-				console.log(company_name);
-				alert("회사명이 비었습니다.");
-			}
-			if (document.frm.company_num.value == "") {
-				company_num = document.getElementById("company_num");
-				console.log(company_num);
-				alert("회사전화번호가 비었습니다.");
-			}
-			if (document.frm.company_address.value == "") {
-				company_address = document.getElementById("company_address");
-				console.log(company_address);
-				alert("회사주소가 비었습니다.");
-			}
-			if (document.frm.admin_name.value == "") {
-				admin_name = document.getElementById("admin_name");
-				console.log(admin_name);
-				alert("대표자가 비었습니다.");
-			}
-			if (document.frm.user_address.value == "") {
-				user_address = document.getElementById("user_address");
-				console.log(user_address);
-				alert("근로자 주소가 비었습니다.");
-			}
-			if (document.frm.user_num.value == "") {
-				user_num = document.getElementById("user_num");
-				console.log(user_num);
-				alert("근로자 전화번호가 비었습니다.");
-			}
-			if (document.frm.user_name.value == "") {
-				user_name = document.getElementById("user_name");
-				console.log(user_name);
-				alert("근로자이름이 비었습니다.");
-			}
-			return false;
-		} else {
-			alert("작성해주셔서 감사합니다.");
-			return true;
-		}
-	}
+         if (document.frm.admin_id.value == "") {
+            admin_id = document.getElementById("admin_id");
+            console.log(admin_id);
+            alert("사업주가 비었습니다.");
+         }
+         if (document.frm.user_id.value == "") {
+            user_id = document.getElementById("user_id");
+            console.log(user_id);
+            alert("근로자가 비었습니다.");
+         }
+         if (document.frm.start_year.value == ""
+               || document.frm.start_month.value == ""
+               || document.frm.start_day.value == "") {
+            start_year = document.getElementById("start_year");
+            start_month = document.getElementById("start_month");
+            start_day = document.getElementById("start_day");
+            console.log(start_year);
+            console.log(start_month);
+            console.log(start_day);
+            alert("계약기간이 비어있습니다.");
+         }
+         if (document.frm.pay.value == "") {
+            pay = document.getElementById("pay");
+            console.log(pay);
+            alert("임금이 비었습니다.");
+         }
+         /* if(document.frm.bonus.value=="") {
+            bonus = document.getElementById("bonus");
+            console.log(bonus);
+            bonus.value="";
+         } */
+         if (document.frm.payday.value == "") {
+            payday = document.getElementById("payday");
+            console.log(payday);
+            alert("지급일이 비었습니다.");
+         }
+         if (document.frm.contract_year.value == ""
+               || document.frm.contract_month.value == ""
+               || document.frm.contract_day.value == "") {
+            contract_year = document.getElementById("contract_year");
+            contract_month = document.getElementById("contract_month");
+            contract_day = document.getElementById("contract_day");
+            console.log(contract_year);
+            console.log(contract_month);
+            console.log(contract_day);
+            alert("계약기간이 비었습니다.");
+         }
+         if (document.frm.company_name.value == "") {
+            company_name = document.getElementById("company_name");
+            console.log(company_name);
+            alert("회사명이 비었습니다.");
+         }
+         if (document.frm.company_num.value == "") {
+            company_num = document.getElementById("company_num");
+            console.log(company_num);
+            alert("회사전화번호가 비었습니다.");
+         }
+         if (document.frm.company_address.value == "") {
+            company_address = document.getElementById("company_address");
+            console.log(company_address);
+            alert("회사주소가 비었습니다.");
+         }
+         if (document.frm.admin_name.value == "") {
+            admin_name = document.getElementById("admin_name");
+            console.log(admin_name);
+            alert("대표자가 비었습니다.");
+         }
+         if (document.frm.user_address.value == "") {
+            user_address = document.getElementById("user_address");
+            console.log(user_address);
+            alert("근로자 주소가 비었습니다.");
+         }
+         if (document.frm.user_num.value == "") {
+            user_num = document.getElementById("user_num");
+            console.log(user_num);
+            alert("근로자 전화번호가 비었습니다.");
+         }
+         if (document.frm.user_name.value == "") {
+            user_name = document.getElementById("user_name");
+            console.log(user_name);
+            alert("근로자이름이 비었습니다.");
+         }
+         return false;
+      } else {
+         alert("작성해주셔서 감사합니다.");
+         return true;
+      }
+   }
 </script>
