@@ -48,15 +48,25 @@ public class EcController {
 		System.out.println("param : "+vo);
 		ecService.insertEcInfo(vo);
 		
-		
-		
-		
-		System.out.println("vo : "+vo);
-		
-		
-		
-		
 		return "";
 	}
+	@RequestMapping(value = "/ec/list.do", method = RequestMethod.POST)
+	public String doList(@ModelAttribute EcVO vo, HttpServletRequest request) throws Exception{
+		HttpSession hs = request.getSession();
+		EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
+		System.out.println("loginAdmin : "+loginAdmin);
+		if(loginAdmin == null) { // 로그인 안하고 등록
+			return "redirect:/login.do";
+		} else { //로그인 한 사용자
+			String companyNm = loginAdmin.get("companyNm").toString();
+			String employerNm = loginAdmin.get("id").toString();
+		}
+		System.out.println("param : "+vo);
+		ecService.insertEcInfo(vo);
+		System.out.println("vo : "+vo);
+		
+	
+	
+	
 	
 }
