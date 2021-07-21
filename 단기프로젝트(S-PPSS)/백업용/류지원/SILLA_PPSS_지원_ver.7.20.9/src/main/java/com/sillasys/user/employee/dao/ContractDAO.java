@@ -20,10 +20,25 @@ public class ContractDAO extends EgovAbstractMapper{
 		 insert("ContractDAO.trmTemplate2", param);
 	}
 	
+	 public void trmTemplate3(ContractVO param) throws Exception{
+	       insert("ContractDAO.trmTemplate3", param);
+	   }
+	   
+	   public void trmTemplate4(ContractVO param) throws Exception{
+	       insert("ContractDAO.trmTemplate4", param);
+	   }
+
+	
 	public void trmTemplateWork(ContractVO param) throws Exception{
 		 insert("ContractDAO.trmTemplateWork", param);
 		
 	}
+	
+	public void trmTemplateStWork(ContractVO param) throws Exception{
+	       insert("ContractDAO.trmTemplateStWork", param);
+	      
+	   }
+
 	
 	public void trmTemplateEnd(ContractVO param) throws Exception{
 		 insert("ContractDAO.trmTemplateEnd", param);

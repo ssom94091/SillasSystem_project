@@ -26,6 +26,12 @@ public class ContractServiceImpl implements ContractService {
 	}
 	
 	@Override
+	   public void trmTemplateStWork(ContractVO param) throws Exception {
+	      ContractDAO.trmTemplateStWork(param);
+	   }
+
+	
+	@Override
 	public void trmTemplateEnd(ContractVO param) throws Exception {
 		ContractDAO.trmTemplateEnd(param);
 	}
@@ -39,6 +45,19 @@ public class ContractServiceImpl implements ContractService {
 	public void  trmTemplate2(ContractVO param) throws Exception{
 		ContractDAO.trmTemplate2(param);
 	}
+	
+	@Override
+	   public void  trmTemplate3(ContractVO param) throws Exception{
+	      ContractDAO.trmTemplate3(param);
+	   }
+	   
+	   @Override
+	   public void  trmTemplate4(ContractVO param) throws Exception{
+	      ContractDAO.trmTemplate4(param);
+	   }
+
+	
+	
 	
 }
 

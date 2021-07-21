@@ -9,14 +9,14 @@
    String start_day = request.getParameter("start_day");
    String work_place = request.getParameter("work_place");
    String content = request.getParameter("content");
-   String start_time = request.getParameter("start_time");
+   String start_hour = request.getParameter("start_hour");
    String start_min = request.getParameter("start_min");
-   String end_time = request.getParameter("end_time");
+   String end_hour = request.getParameter("end_hour");
    String end_min = request.getParameter("end_min");
-   String break_start_time = request.getParameter("break_start_time");
-   String break_start_min = request.getParameter("break_start_min");
-   String break_end_time = request.getParameter("break_end_time");
-   String break_end_min = request.getParameter("break_end_min");
+   String b_start_hour = request.getParameter("b_start_hour");
+   String b_start_min = request.getParameter("b_start_min");
+   String b_end_hour = request.getParameter("b_end_hour");
+   String b_end_min = request.getParameter("b_end_min");
    String work_per_week = request.getParameter("work_per_week");
    String holiday = request.getParameter("holiday");
    String pay_type = request.getParameter("pay_type");
@@ -57,6 +57,7 @@
 		<form action="/ec/template/contract2.do" method="post" name="frm" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
 		
 		<div class="col-sm-12">
+		<input type="hidden" id="type" name="type" value="2">
 		<input type="text" id="admin_id" name="admin_id" value="<%=admin_id %>" style="width:150px; height:30px;display: inline-block;">
 		(이하 "사업주"라 함)과(와)
 		<input type="text" id="user_id" name="user_id" value="<%=user_id %>" style="width:80px; height:30px;display: inline-block;">
@@ -78,16 +79,16 @@
 		<input type="text" id="content" name="content" value="<%=content %>" style="width:350px;height:30px;display:inline-block;"></div>
 		<div class="col-sm-12" style="margin-top:10px;">
 		4. 소정근로시간:
-		<input type="text" id="start_time" name="start_time" value="<%=start_time %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+		<input type="text" id="start_hour" name="start_hour" value="<%=start_hour %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
 		<input type="text" id="start_min" name="start_min" value="<%=start_min %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">분부터
 		
-		<input type="text" id="end_time" name="end_time" value="<%=end_time %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+		<input type="text" id="end_hour" name="end_hour" value="<%=end_hour %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
 		<input type="text" id="end_min" name="end_min" value="<%=end_min %>" style="width:30px;height:30px;display:inline-block;"maxlength="2">분까지 (휴게시간:
 		
-		<input type="text" id="break_start_time" value="<%=break_start_time %>" name="break_start_time" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
-		<input type="text" id="break_start_min" value="<%=break_start_min %>" name="break_start_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분~
-		<input type="text" id="break_end_time" value="<%=break_end_time %>" name="break_end_time" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
-		<input type="text" id="break_end_min" value="<%=break_end_min %>" name="break_end_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분</div><br><br>
+		<input type="text" id="b_start_hour" value="<%=b_start_hour %>" name="b_start_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+		<input type="text" id="b_start_min" value="<%=b_start_min %>" name="b_start_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분~
+		<input type="text" id="b_end_hour" value="<%=b_end_hour %>" name="b_end_hour" style="width:30px;height:30px;display:inline-block;"maxlength="2">시
+		<input type="text" id="b_end_min" value="<%=b_end_min %>" name="b_end_min" style="width:30px;height:30px;display:inline-block;"maxlength="2">분</div><br><br>
 		<div class="col-sm-12">
 		5. 근무일/휴일:매주
 		<select id="work_per_week" name="work_per_week" value="<%=work_per_week %>" style="width:40px;height:30px;display:inline-block;">
@@ -280,14 +281,14 @@
       
       if(document.getElementById("work_per_week").value=="null") document.getElementById("work_per_week").value="";
 
-      if(document.getElementById("start_time").value=="null") document.getElementById("start_time").value="";
+      if(document.getElementById("start_hour").value=="null") document.getElementById("start_hour").value="";
       if(document.getElementById("start_min").value=="null") document.getElementById("start_min").value="";
-      if(document.getElementById("end_time").value=="null") document.getElementById("end_time").value="";
+      if(document.getElementById("end_hour").value=="null") document.getElementById("end_hour").value="";
       if(document.getElementById("end_min").value=="null") document.getElementById("end_min").value="";
-      if(document.getElementById("break_start_time").value=="null") document.getElementById("break_start_time").value="";
-      if(document.getElementById("break_start_min").value=="null") document.getElementById("break_start_min").value="";
-      if(document.getElementById("break_end_time").value=="null") document.getElementById("break_end_time").value="";
-      if(document.getElementById("break_end_min").value=="null") document.getElementById("break_end_min").value="";
+      if(document.getElementById("b_start_hour").value=="null") document.getElementById("b_start_hour").value="";
+      if(document.getElementById("b_start_min").value=="null") document.getElementById("b_start_min").value="";
+      if(document.getElementById("b_end_hour").value=="null") document.getElementById("b_end_hour").value="";
+      if(document.getElementById("b_end_min").value=="null") document.getElementById("b_end_min").value="";
 
       if(document.getElementById("pay").value=="null") document.getElementById("pay").value="";
       if(document.getElementById("bonus").value=="null") document.getElementById("bonus").value="";
@@ -313,17 +314,17 @@
       switch(event.type){
          case "mousedown":
             initDraw(event);
-            break;
+            b;
             
          case "mousemove":
             if(pos.drawable)
                draw(event);
-            break;
+            b;
             
          case "mouseout":
          case "mouseup":
             finishDraw();
-            break;
+            b;
       }
    }
    
@@ -437,14 +438,14 @@
 				|| document.frm.start_day.value == ""
 				|| document.frm.work_place.value == ""
 				|| document.frm.content.value == ""
-				|| document.frm.start_time.value == ""
+				|| document.frm.start_hour.value == ""
 				|| document.frm.start_min.value == ""
-				|| document.frm.end_time.value == ""
+				|| document.frm.end_hour.value == ""
 				|| document.frm.end_min.value == ""
-				|| document.frm.break_start_time.value == ""
-				|| document.frm.break_start_min.value == ""
-				|| document.frm.break_end_time.value == ""
-				|| document.frm.break_end_min.value == ""
+				|| document.frm.b_start_hour.value == ""
+				|| document.frm.b_start_min.value == ""
+				|| document.frm.b_end_hour.value == ""
+				|| document.frm.b_end_min.value == ""
 				|| document.frm.pay.value == ""
 				|| document.frm.payday.value == ""
 				|| document.frm.contract_year.value == ""

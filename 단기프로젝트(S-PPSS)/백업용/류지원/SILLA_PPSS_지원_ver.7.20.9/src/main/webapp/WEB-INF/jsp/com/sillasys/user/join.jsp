@@ -38,7 +38,7 @@
 				<input type="button" id="member_postbtn" onclick="findAddr()" value="주소찾기">
 				
 				<input id="user_address" name="user_address" type="text" placeholder="주소" readonly style="width: 50%; display: block;"> 
-				<input id="detail_Address" type="text" placeholder="상세주소" style="width: 50%; display: block;">
+				<input id="user_address_detail" name="user_address_detail" type="text" placeholder="상세주소" style="width: 50%; display: block;">
 			</div>
 
 			<div class="form-group">

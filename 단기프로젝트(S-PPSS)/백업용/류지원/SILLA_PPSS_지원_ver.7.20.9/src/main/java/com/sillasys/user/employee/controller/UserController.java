@@ -197,17 +197,27 @@ public class UserController {
 
 	
 
-	// 작성체크
-	@RequestMapping(value = "/ec/template/contract3.do", method = RequestMethod.POST)
-	public String doTemplate3() {
-		return "com/sillasys/ec/template/contract3";
-	}
+	 // 계약서3 DB 전송
+	   @RequestMapping(value = "/ec/template/contract3.do", method = RequestMethod.POST)
+	   public String trmTemplate3(@ModelAttribute ContractVO vo) throws Exception {
+	      ContractService.trmTemplate3(vo);
+	      ContractService.trmTemplateStWork(vo);
+	      ContractService.trmTemplateEnd(vo);
+	      ContractService.trmTemplateBenefit(vo);
+	      
+	      return "com/sillasys/ec/template/contract3";
+	   }
 
-	// 작성체크
-	@RequestMapping(value = "/ec/template/contract4.do", method = RequestMethod.POST)
-	public String doTemplate4() {
-		return "com/sillasys/ec/template/contract4";
-	}
+	   // 계약서4 DB 전송
+	   @RequestMapping(value = "/ec/template/contract4.do", method = RequestMethod.POST)
+	   public String trmTemplate4(@ModelAttribute ContractVO vo) throws Exception {
+	      ContractService.trmTemplate4(vo);
+	      ContractService.trmTemplateStWork(vo);
+	      ContractService.trmTemplateBenefit(vo);
+	      
+	      return "com/sillasys/ec/template/contract4";
+	   }
+
 
 	/* 페이지 이동 맵핑 구간 끝 */
 	

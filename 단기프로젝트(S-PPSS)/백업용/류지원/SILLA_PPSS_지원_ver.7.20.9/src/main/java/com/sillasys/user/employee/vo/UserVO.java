@@ -5,6 +5,7 @@ public class UserVO {   //DB
 	   private String user_pw;				/* 유저 비밀번호 */
 	   private String user_name;			/* 유저 이륾 */
 	   private String user_address;			/* 유저 주소*/
+	   private String user_address_detail;	/* 유저 상세 주소*/
 	   private String user_resnum_front;	/* 유저 주민등록번호 앞 */
 	   private String user_resnum_rear;		/* 유저 주민등록번호 뒤 */
 	   private String user_gender;			/* 유저 성별 */
@@ -33,6 +34,12 @@ public class UserVO {   //DB
 	}
 	public void setUser_address(String user_address) {
 		this.user_address = user_address;
+	}
+	public String getUser_address_detail() {
+		return user_address_detail;
+	}
+	public void setUser_address_detail(String user_address_detail) {
+		this.user_address_detail = user_address_detail;
 	}
 	public String getUser_resnum_front() {
 		return user_resnum_front;
@@ -64,14 +71,12 @@ public class UserVO {   //DB
 	public void setUser_phone(String user_phone) {
 		this.user_phone = user_phone;
 	}
+	
 	@Override
 	public String toString() {
 		return "UserVO [user_id=" + user_id + ", user_pw=" + user_pw + ", user_name=" + user_name + ", user_address="
-				+ user_address + ", user_resnum_front=" + user_resnum_front + ", user_resnum_rear=" + user_resnum_rear
-				+ ", user_gender=" + user_gender + ", user_email=" + user_email + ", user_phone=" + user_phone + "]";
+				+ user_address + ", user_address_detail=" + user_address_detail + ", user_resnum_front="
+				+ user_resnum_front + ", user_resnum_rear=" + user_resnum_rear + ", user_gender=" + user_gender
+				+ ", user_email=" + user_email + ", user_phone=" + user_phone + "]";
 	}
-	   
-	
-	   
-	
 }

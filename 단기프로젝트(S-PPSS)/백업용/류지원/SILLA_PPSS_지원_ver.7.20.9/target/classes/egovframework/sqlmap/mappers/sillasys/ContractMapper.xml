@@ -174,6 +174,232 @@
 		)
 	</insert>
 	
+	<insert id="trmTemplateStWork" parameterType="ContractVO">
+   
+   INSERT INTO work_stime_tb (
+   start_hour
+   , start_min
+   , end_hour
+   , end_min
+   , b_start_hour
+   , b_start_min
+   , b_end_hour
+   , b_end_min
+   , work_day
+   , start_hour_2
+   , start_min_2
+   , end_hour_2
+   , end_min_2
+   , b_start_hour_2
+   , b_start_min_2
+   , b_end_hour_2
+   , b_end_min_2
+   , work_day_2
+   , start_hour_3
+   , start_min_3
+   , end_hour_3
+   , end_min_3
+   , b_start_hour_3
+   , b_start_min_3
+   , b_end_hour_3
+   , b_end_min_3
+   , work_day_3
+   , start_hour_4
+   , start_min_4
+   , end_hour_4
+   , end_min_4
+   , b_start_hour_4
+   , b_start_min_4
+   , b_end_hour_4
+   , b_end_min_4
+   , work_day_4
+   , start_hour_5
+   , start_min_5
+   , end_hour_5
+   , end_min_5
+   , b_start_hour_5
+   , b_start_min_5
+   , b_end_hour_5
+   , b_end_min_5
+   , work_day_5
+   , start_hour_6
+   , start_min_6
+   , end_hour_6
+   , end_min_6
+   , b_start_hour_6
+   , b_start_min_6
+   , b_end_hour_6
+   , b_end_min_6
+   , work_day_6
+   )
+   VALUES(
+   #{start_hour}
+   , #{start_min}
+   , #{end_hour}
+   , #{end_min}
+   , #{b_start_hour}
+   , #{b_start_min}
+   , #{b_end_hour}
+   , #{b_end_min}
+   , #{work_day}
+   , #{start_hour_2}
+   , #{start_min_2}
+   , #{end_hour_2}
+   , #{end_min_2}
+   , #{b_start_hour_2}
+   , #{b_start_min_2}
+   , #{b_end_hour_2}
+   , #{b_end_min_2}
+   , #{work_day_2}
+   , #{start_hour_3}
+   , #{start_min_3}
+   , #{end_hour_3}
+   , #{end_min_3}
+   , #{b_start_hour_3}
+   , #{b_start_min_3}
+   , #{b_end_hour_3}
+   , #{b_end_min_3}
+   , #{work_day_3}
+   , #{start_hour_4}
+   , #{start_min_4}
+   , #{end_hour_4}
+   , #{end_min_4}
+   , #{b_start_hour_4}
+   , #{b_start_min_4}
+   , #{b_end_hour_4}
+   , #{b_end_min_4}
+   , #{work_day_4}
+   , #{start_hour_5}
+   , #{start_min_5}
+   , #{end_hour_5}
+   , #{end_min_5}
+   , #{b_start_hour_5}
+   , #{b_start_min_5}
+   , #{b_end_hour_5}
+   , #{b_end_min_5}
+   , #{work_day_5}
+   , #{start_hour_6}
+   , #{start_min_6}
+   , #{end_hour_6}
+   , #{end_min_6}
+   , #{b_start_hour_6}
+   , #{b_start_min_6}
+   , #{b_end_hour_6}
+   , #{b_end_min_6}
+   , #{work_day_6}
+   )
+   </insert>
+	
+	<insert id="trmTemplate3" parameterType="ContractVO">
+
+      INSERT INTO contract_tb (
+      admin_id
+      , type
+      , user_id
+      , start_year
+      , start_month
+      , start_day
+      , work_place
+      , content
+      , holiday
+      , pay_type
+      , pay
+      , bonus
+      , payday
+      , payfor
+      , em_insurance
+      , ac_insurance
+      , pension
+      , hlt_insurance
+      , contract_year
+      , contract_month
+      , contract_day
+      , admin_name
+      , canvas
+      )
+      VALUES(
+      #{admin_id}
+      , #{type}
+      , #{user_id}
+      , #{start_year}
+      , #{start_month}
+      , #{start_day}
+      , #{work_place}
+      , #{content}
+      , #{holiday}
+      , #{pay_type}
+      , #{pay}
+      , #{bonus}
+      , #{payday}
+      , #{payfor}
+      , #{em_insurance}
+      , #{ac_insurance}
+      , #{pension}
+      , #{hlt_insurance}
+      , #{contract_year}
+      , #{contract_month}
+      , #{contract_day}
+      , #{admin_name}
+      , #{canvas}
+      )
+      
+      
+   </insert>
+	
+	<insert id="trmTemplate4" parameterType="ContractVO">
+
+      INSERT INTO contract_tb (
+      admin_id
+      , type
+      , user_id
+      , start_year
+      , start_month
+      , start_day
+      , work_place
+      , content
+      , holiday
+      , pay_type
+      , pay
+      , bonus
+      , payday
+      , payfor
+      , em_insurance
+      , ac_insurance
+      , pension
+      , hlt_insurance
+      , contract_year
+      , contract_month
+      , contract_day
+      , admin_name
+      , canvas
+      )
+      VALUES(
+      #{admin_id}
+      , #{type}
+      , #{user_id}
+      , #{start_year}
+      , #{start_month}
+      , #{start_day}
+      , #{work_place}
+      , #{content}
+      , #{holiday}
+      , #{pay_type}
+      , #{pay}
+      , #{bonus}
+      , #{payday}
+      , #{payfor}
+      , #{em_insurance}
+      , #{ac_insurance}
+      , #{pension}
+      , #{hlt_insurance}
+      , #{contract_year}
+      , #{contract_month}
+      , #{contract_day}
+      , #{admin_name}
+      , #{canvas}
+      )
+   </insert>
+	
 	
 	
 </mapper>

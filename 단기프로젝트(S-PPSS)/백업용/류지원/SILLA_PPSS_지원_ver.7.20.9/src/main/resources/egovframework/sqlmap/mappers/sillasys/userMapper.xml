@@ -13,6 +13,7 @@
 		, user_pw
 		, user_name
 		, user_address
+		, user_address_detail
 		, user_resnum_front
 		, user_resnum_rear
 		, user_gender
@@ -25,6 +26,7 @@
 		,#{user_pw}
 		,#{user_name}
 		,#{user_address}
+		,#{user_address_detail}
 		,#{user_resnum_front}
 		,#{user_resnum_rear}
 		,#{user_gender}
