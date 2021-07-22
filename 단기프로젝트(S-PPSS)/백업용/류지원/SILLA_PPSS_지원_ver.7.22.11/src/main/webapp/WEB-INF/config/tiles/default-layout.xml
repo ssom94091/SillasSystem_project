@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles COnfiguration 2.1//EN"
+        "tiles-config_2_1.dtd">
+       <!--  "http://tiles.apache.org/dtds/tiles-config_2_1.dtd" -->
+<tiles-definitions>
+	<!-- 근로자 -->
+    <definition name="layout-tiles" template="/WEB-INF/tiles/user/template2.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/user/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/user/foot.jsp" />
+    </definition>
+    
+    
+    <definition name="com/sillasys/user/*" extends="layout-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/user/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/user/*/*" extends="layout-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/user/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/user/*/*/*" extends="layout-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/user/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/user/*/*/*/*" extends="layout-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/user/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    <!--근로자 끝  -->
+    
+    <!--관리자 -->
+    <definition name="layout-admin-tiles" template="/WEB-INF/tiles/admin/template.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/admin/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/admin/foot.jsp" />
+    </definition>
+    
+     <definition name="com/sillasys/admin/*" extends="layout-admin-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/admin/*/*" extends="layout-admin-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/admin/*/*/*" extends="layout-admin-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/admin/*/*/*/*" extends="layout-admin-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    
+    
+    
+    
+    
+    <!--관리자 끝  -->
+    
+    <!--근로계약서 -->
+    <definition name="layout-contract-tiles" template="/WEB-INF/tiles/contract/template3.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/contract/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/contract/foot.jsp" />
+    </definition>
+    
+     <definition name="com/sillasys/contract/*" extends="layout-contract-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/contract/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/contract/*/*" extends="layout-contract-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/contract/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/contract/*/*/*" extends="layout-contract-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/contract/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/contract/*/*/*/*" extends="layout-contract-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/contract/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    
+    <!--common -->
+    <definition name="layout-contract-tiles" template="/WEB-INF/tiles/common/template4.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/common/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/common/foot.jsp" />
+    </definition>
+    
+     <definition name="com/sillasys/common/*" extends="layout-contract-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*" extends="layout-contract-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*/*" extends="layout-contract-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*/*/*" extends="layout-contract-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    
+</tiles-definitions>
+
+
+ 
