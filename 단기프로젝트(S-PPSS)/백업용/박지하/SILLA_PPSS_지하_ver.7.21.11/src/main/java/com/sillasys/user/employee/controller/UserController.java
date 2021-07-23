@@ -33,6 +33,12 @@ public class UserController {
 		return "com/sillasys/user/login";
 	}
 
+	// 임시 DB 전송
+		@RequestMapping(value = "/ec/template/modify/contractModify1.do", method = RequestMethod.POST)
+		public String trmModifyTemplate(@ModelAttribute ContractVO vo) throws Exception {
+			ContractService.trmModifyTemplate(vo);
+			return "com/sillasys/ec/template/modify/contractModify1";
+		}
 	
 	// 계약서1 DB 전송
 	@RequestMapping(value = "/ec/template/contract1.do", method = RequestMethod.POST)
@@ -50,7 +56,6 @@ public class UserController {
 	public String trmTemplate2(@ModelAttribute ContractVO vo) throws Exception {
 		ContractService.trmTemplate2(vo);
 		ContractService.trmTemplateWork(vo);
-		ContractService.trmTemplateEnd(vo);
 		ContractService.trmTemplateBenefit(vo);
 
 		return "com/sillasys/ec/template/contract2";

@@ -400,7 +400,31 @@
       )
    </insert>
 	
+	<select id="trmModifyTemplate" parameterType="ContractVO">
 	
+	SELECT  work_time_tb (
+	start_hour
+	, start_min
+	, end_hour
+	, end_min
+	, b_start_hour
+	, b_start_min
+	, b_end_hour
+	, b_end_min
+	, work_day
+	)
+	VALUES(
+	#{start_hour}
+	, #{start_min}
+	, #{end_hour}
+	, #{end_min}
+	, #{b_start_hour}
+	, #{b_start_min}
+	, #{b_end_hour}
+	, #{b_end_min}
+	, #{work_day}
+	)
+	</insert>
 	
 </mapper>
 

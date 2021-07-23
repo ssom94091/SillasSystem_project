@@ -20,7 +20,6 @@
    <input type="hidden" id="index" name="index">
    </form>
 </div>
-
 <script>
 function CheckIndex(value) {
    index = document.getElementById("index");

@@ -56,6 +56,46 @@
 			</tbody>
 		</table>
 		</div>
+		<div>
+		<form action="" method="post" name="frm" id="frm">
+		
+		<input type="hidden" id="index" name="index" value="">
+		</form>
+		<input type="button" onclick="btnLookup(5);" value="조회" style="background-color:red">
+		<input type="button" onclick="btnModify();" value="수정" style="background-color:blue">
+		<input type="button" onclick="btnDelete();" value="삭제" style="background-color:gray">
+		</div>
 		
 		
 	</div>
+	
+	<script>
+
+		
+		function btnLookup(value) {
+			console.log("lookup ON");
+
+			index = document.getElementById("index");
+			index = value;
+			console.log(index);
+			parent.moveToModify(index);
+		}
+		function btnModify() {
+			frm = document.getElementById("frm");
+			index = document.getElementById("index");
+			index.value = "1";
+			console.log("parent " + document.getElementById("index").value);
+			frm.submit();
+			console.log("Modify ON");
+		}
+		function btnDelete() {
+			console.log("Delete ON");
+		}
+
+		function CheckIndex(value) {
+			index = document.getElementById("index");
+			index = value;
+			console.log(index);
+			parent.moveToModify(index);
+		}
+	</script>

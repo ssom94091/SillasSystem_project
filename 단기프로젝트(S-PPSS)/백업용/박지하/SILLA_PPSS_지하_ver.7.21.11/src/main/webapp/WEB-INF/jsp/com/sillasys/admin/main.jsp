@@ -84,6 +84,14 @@ $(function() {
       console.log("parent "+document.getElementById("index").value);
       frm.submit();
    }
+   function moveToModify(value) {
+	   frm = document.getElementById("frm");
+	   index = document.getElementById("index");
+	   index.value = value;
+	   console.log("parent "+document.getElementById("index").value);
+	   frm.action = "/ec/template/modify/contractModify1.do";
+	   frm.submit();
+   }
    
 </script>
 
@@ -123,7 +131,9 @@ $(function() {
  
         <!-- 4번구역 -->
         <div class="col-sm-12" id="content" style="height: auto; min-height: 500px; overflow: auto;   overflow: scroll;">
-           <iframe id="iframe_set" src="../ec/content.do" scrolling="yes" style="width:100%; min-height:100vh; border: 1px dashed;" ></iframe>
+           <!-- <iframe id="iframe_set" src="../ec/content.do" scrolling="yes" style="width:100%; min-height:100vh; border: 1px dashed;" ></iframe> -->
+           <iframe id="iframe_set" src="../common/cardIndex.do" scrolling="yes" style="width:100%; min-height:100vh; border: 1px dashed;" ></iframe>
+           
         </div>
         <form action="/user/write.do" method="post" name="frm" id="frm">
            <input type="hidden" id="index" name="index" value="0">
