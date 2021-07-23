@@ -107,6 +107,12 @@ public class AdminController {
 				return "com/sillasys/index";
 					
 				}
+				
+				//임시 직원정보 카드보기페이지 이동
+				@RequestMapping(value = "/common/cardIndex.do" , method = RequestMethod.GET)
+				public String goCardList() {
+					return "com/sillasys/common/cardIndex";
+				}
 			
 			/*페이지 이동 맵핑 구간 끝 */
 }

@@ -56,7 +56,10 @@ public class ContractServiceImpl implements ContractService {
 	      ContractDAO.trmTemplate4(param);
 	   }
 
-	
+	   @Override
+	   public void trmModifyTemplate(ContractVO param) throws Exception {
+	      ContractDAO.trmModifyTemplate(param);
+	   }
 	
 	
 }

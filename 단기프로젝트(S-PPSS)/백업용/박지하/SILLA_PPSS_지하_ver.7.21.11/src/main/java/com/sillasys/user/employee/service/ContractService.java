@@ -15,4 +15,6 @@ public interface ContractService {
 	public void trmTemplate2(ContractVO param) throws Exception;
 	public void trmTemplate3(ContractVO param) throws Exception;
 	public void trmTemplate4(ContractVO param) throws Exception;
+	
+	public void trmModifyTemplate(ContractVO param) throws Exception;
 }

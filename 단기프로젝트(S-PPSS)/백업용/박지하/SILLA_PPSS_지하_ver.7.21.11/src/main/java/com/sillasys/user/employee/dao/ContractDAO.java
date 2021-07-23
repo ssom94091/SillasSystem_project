@@ -50,4 +50,8 @@ public class ContractDAO extends EgovAbstractMapper{
 		
 	}
 	
+	public void trmModifyTemplate(ContractVO param) throws Exception{
+		 insert("ContractDAO.trmModifyTemplate", param);
+		
+	}
 }
