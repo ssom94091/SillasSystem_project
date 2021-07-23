@@ -3,8 +3,8 @@
     
 <%
    String admin_id = request.getParameter("admin_id");
+   String contract_type = request.getParameter("contract_type");
    String user_id = request.getParameter("user_id");
-   String type = request.getParameter("type");
    String start_year = request.getParameter("start_year");
    String start_month = request.getParameter("start_month");
    String start_day = request.getParameter("start_day");
@@ -48,6 +48,7 @@
    String user_address = request.getParameter("user_address");
    String user_num = request.getParameter("user_num");
    String user_name = request.getParameter("user_name");
+  
    
    String canvas = request.getParameter("canvas");
    %>
@@ -60,7 +61,7 @@
       
       <form action="/contract/template/contract1.do" method="post" id="frm1" name="frm1" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
       <div class="col-sm-12">
-      <input type="hidden" id="type" name="type" value="1">
+      <input type="hidden" id="contract_type" name="contract_type" value="표준(기간있음)">
       <input type="text" onkeyup="setValue();" id="admin_id" value="<%=admin_id %>" name="admin_id" style="width:150px; height:30px;display: inline-block;"maxlength="20">
       (이하 "사업주"라 함)과(와)
       <input type="text" onkeyup="setValue();" id="user_id" value="<%=user_id %>" name="user_id" style="width:80px; height:30px;display: inline-block;"maxlength="7">

@@ -2,8 +2,8 @@ package com.sillasys.contract.vo;
 
 public class ContractWorkVO {
 	
-	private int time_pk; //pk
 	private int contract_pk; //외래키
+	private int flag;
 	private String start_hour;
 	private String start_min;
 	private String end_hour;
@@ -13,17 +13,18 @@ public class ContractWorkVO {
 	private String b_end_hour;
 	private String b_end_min;
 	private String work_day;
-	public int getTime_pk() {
-		return time_pk;
-	}
-	public void setTime_pk(int time_pk) {
-		this.time_pk = time_pk;
-	}
+	private String work_time;
 	public int getContract_pk() {
 		return contract_pk;
 	}
 	public void setContract_pk(int contract_pk) {
 		this.contract_pk = contract_pk;
+	}
+	public int getFlag() {
+		return flag;
+	}
+	public void setFlag(int flag) {
+		this.flag = flag;
 	}
 	public String getStart_hour() {
 		return start_hour;
@@ -79,13 +80,20 @@ public class ContractWorkVO {
 	public void setWork_day(String work_day) {
 		this.work_day = work_day;
 	}
+	public String getWork_time() {
+		return work_time;
+	}
+	public void setWork_time(String work_time) {
+		this.work_time = work_time;
+	}
 	@Override
 	public String toString() {
-		return "EcWorkTimeVO [time_pk=" + time_pk + ", contract_pk=" + contract_pk + ", start_hour=" + start_hour
+		return "ContractWorkVO [contract_pk=" + contract_pk + ", flag=" + flag + ", start_hour=" + start_hour
 				+ ", start_min=" + start_min + ", end_hour=" + end_hour + ", end_min=" + end_min + ", b_start_hour="
 				+ b_start_hour + ", b_start_min=" + b_start_min + ", b_end_hour=" + b_end_hour + ", b_end_min="
-				+ b_end_min + ", work_day=" + work_day + "]";
+				+ b_end_min + ", work_day=" + work_day + ", work_time=" + work_time + "]";
 	}
+	
 	
 	
 }

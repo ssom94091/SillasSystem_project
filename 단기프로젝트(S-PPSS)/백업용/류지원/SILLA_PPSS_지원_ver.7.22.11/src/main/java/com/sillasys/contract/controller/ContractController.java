@@ -26,48 +26,83 @@ public class ContractController {
 
 	@Resource(name = "contractService")
 	private ContractService contractService;
-	
-	/*
-	@RequestMapping(value = "/ec/regist.do", method = RequestMethod.POST)
-	public String doRegist(@ModelAttribute ContractVO vo, HttpServletRequest request) throws Exception{
-		HttpSession hs = request.getSession();
-		EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
-		System.out.println("loginAdmin : "+loginAdmin);
-		if(loginAdmin == null) { // 로그인 안하고 등록
-			return "redirect:/login.do";
-		} else { //로그인 한 사용자
-			String companyNm = loginAdmin.get("companyNm").toString();
-			String employerNm = loginAdmin.get("id").toString();
-		}
-		System.out.println("param : "+vo);
-		
-		System.out.println("vo : "+vo);
-		
-		
-		return "";
-	}
-		*/
-	
-	@RequestMapping(value = "/contract/template/contract1.do", method = RequestMethod.POST)
-	public String trmTemplate(@ModelAttribute ContractVO vo, @ModelAttribute ContractWorkVO vo2,
-			 @ModelAttribute ContractEndVO vo3, @ModelAttribute ContractBenefitVO vo4) throws Exception {
-
-		contractService.trmTemplate(vo);
-		contractService.trmTemplateWork(vo2);
-		contractService.trmTemplateEnd(vo3);
-		//
-		
-		if(vo4.getBenefit_check()==1) {
-			contractService.trmTemplateBenefit(vo4);
-		}
-
-		return "com/sillasys/contract/template/contract1";
-	}
 
 	// 근로계약서( 표준근로계약서 - 기간)
 	@RequestMapping(value = "/contract/template/contract1.do", method = RequestMethod.GET)
 	public String goContract() {
 		return "com/sillasys/contract/template/contract1";
 	}
+
+	// 근로계약서( 표준근로계약서 - 기간없음)
+	@RequestMapping(value = "/contract/template/contract2.do", method = RequestMethod.GET)
+	public String goContract2() {
+		return "com/sillasys/contract/template/contract2";
+	}
+
+	// 근로계약서( 단기간근로계약서 - 기간)
+	@RequestMapping(value = "/contract/template/contract3.do", method = RequestMethod.GET)
+	public String goContract3() {
+		return "com/sillasys/contract/template/contract3";
+	}
+
+	// 근로계약서( 단기간근로계약서 - 기간없음)
+	@RequestMapping(value = "/contract/template/contract4.do", method = RequestMethod.GET)
+	public String goContract4() {
+		return "com/sillasys/contract/template/contract4";
+	}
+	
+	// 근로계약서 DB전송( 표준근로계약서 - 기간)
+	@RequestMapping(value = "/contract/template/contract1.do", method = RequestMethod.POST)
+	public String trmTemplate(@ModelAttribute ContractVO vo, @ModelAttribute ContractWorkVO vo2,
+			@ModelAttribute ContractEndVO vo3, @ModelAttribute ContractBenefitVO vo4) throws Exception {
+
+		contractService.trmTemplate(vo);
+		contractService.trmTemplateWork(vo2);
+		contractService.trmTemplateEnd(vo3);
+		if (vo4.getBenefit_check() == 1) {
+			contractService.trmTemplateBenefit(vo4);
+		}
+
+		return "com/sillasys/contract/template/contract1";
+	}
+
+	// 근로계약서 DB전송( 표준근로계약서 - 기간없음)
+	@RequestMapping(value = "/contract/template/contract2.do", method = RequestMethod.POST)
+	public String trmTemplate2(@ModelAttribute ContractVO vo, @ModelAttribute ContractWorkVO vo2,
+			@ModelAttribute ContractEndVO vo3, @ModelAttribute ContractBenefitVO vo4) throws Exception {
+
+		contractService.trmTemplate(vo);
+		contractService.trmTemplateWork(vo2);
+		if (vo4.getBenefit_check() == 1) {
+			contractService.trmTemplateBenefit(vo4);
+		}
+
+		return "com/sillasys/contract/template/contract2";
+	}
+	
+	//근로계약서 목록보기페이지 이동
+	@RequestMapping(value = "/contract/list.do" , method = RequestMethod.GET)
+	public String goList() {
+		return "com/sillasys/contract/list";
+	}
+	
+	// 근로계약서 DB삭제
+	@RequestMapping(value = "/contract/list.do", method = RequestMethod.POST)
+	public String delete(@ModelAttribute ContractVO vo, @ModelAttribute ContractWorkVO vo2,
+			@ModelAttribute ContractEndVO vo3, @ModelAttribute ContractBenefitVO vo4) throws Exception {
+	
+		contractService.delTemplate(vo);
+		contractService.delTemplateWork(vo2);
+		System.out.println(vo.getContract_pk());
+		if (vo3.getEnd_year() != null && vo3.getEnd_month() != null && vo3.getEnd_day()!= null) {
+			contractService.delTemplateEnd(vo3);
+		}
+		if (vo4.getBenefit_check() == 1) {
+			contractService.delTemplateBenefit(vo4);
+		}
+
+		return "com/sillasys/contract/list";
+	}
+	
 	
 }

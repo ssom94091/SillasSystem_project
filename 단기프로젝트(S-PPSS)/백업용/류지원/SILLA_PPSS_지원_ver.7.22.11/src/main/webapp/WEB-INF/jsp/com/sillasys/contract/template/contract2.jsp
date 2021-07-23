@@ -3,6 +3,7 @@
     
     <%
    String admin_id = request.getParameter("admin_id");
+   String contract_type = request.getParameter("contract_type");
    String user_id = request.getParameter("user_id");
    String start_year = request.getParameter("start_year");
    String start_month = request.getParameter("start_month");
@@ -57,7 +58,7 @@
       <form action="/contract/template/contract2.do" method="post" name="frm" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
       
       <div class="col-sm-12">
-      <input type="hidden" id="type" name="type" value="2">
+      <input type="hidden" id="contract_type" name="contract_type" value="표준(기간없음)">
       <input type="text" id="admin_id" name="admin_id" value="<%=admin_id %>" style="width:150px; height:30px;display: inline-block;"maxlength="20">
       (이하 "사업주"라 함)과(와)
       <input type="text" id="user_id" name="user_id" value="<%=user_id %>" style="width:80px; height:30px;display: inline-block;"maxlength="7">

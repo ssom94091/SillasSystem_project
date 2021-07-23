@@ -65,16 +65,7 @@ public class AdminController {
 			return "com/sillasys/common/common";
 		} 
 		
-		/*
-		@RequestMapping(value="ec/list.do")
-		public String selectMainList(@ModelAttribute("paramMap")EgovMap paramMap, HttpServletResponse response, ModelMap model) throws Exception{
-			
-			List<EgovMap> contentList = ContractService.selectList(paramMap);
-			
-			model.addAttribute("contentList", contentList);
-			System.out.println(contentList);
-			return "com/sillasys/contract/list";
-		}*/
+	
 	
 		/*페이지 이동 맵핑 구간 시작*/
 		
@@ -101,11 +92,7 @@ public class AdminController {
 		
 					return "com/sillasys/admin/main";
 				}
-				//근로계약서 목록보기페이지 이동
-				@RequestMapping(value = "/contract/list.do" , method = RequestMethod.GET)
-				public String goList() {
-					return "com/sillasys/contract/list";
-				}
+
 				//근로계약서 양식작성페이지 이동
 				@RequestMapping(value = "/contract/content.do" , method = RequestMethod.GET)
 				public String goContent() {

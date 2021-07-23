@@ -64,5 +64,16 @@
 		</table>
 		</div>
 		
+		<div>
+      <form action="/contract/list.do" method="post" name="frm" id="frm">
+			<input type="hidden" id="contarct_pk" name="contarct_pk" value=15>
+			<input type="submit"  value="삭제">
+      </form>
+      	
+      </div>
 		
 	</div>
+	
+	<%
+		String contarct_pk = request.getParameter("contract_pk");
+	%>

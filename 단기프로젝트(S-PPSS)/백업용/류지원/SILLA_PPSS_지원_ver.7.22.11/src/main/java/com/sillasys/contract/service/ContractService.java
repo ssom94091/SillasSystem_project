@@ -18,5 +18,10 @@ public interface ContractService {
 	public void trmTemplateEnd(ContractEndVO param) throws Exception;
 	public void trmTemplateBenefit(ContractBenefitVO param) throws Exception;
 	
+	public void delTemplate(ContractVO param) throws Exception;
+	public void delTemplateWork(ContractWorkVO param) throws Exception;
+	public void delTemplateEnd(ContractEndVO param) throws Exception;
+	public void delTemplateBenefit(ContractBenefitVO param) throws Exception;
+	
 
 }

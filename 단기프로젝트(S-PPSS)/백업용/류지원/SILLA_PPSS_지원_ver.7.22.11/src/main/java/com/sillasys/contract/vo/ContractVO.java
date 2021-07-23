@@ -2,8 +2,8 @@ package com.sillasys.contract.vo;
 
 public class ContractVO {
 	
-	private int contarct_pk;	// pk
-	private String type;
+	private int contract_pk;	// pk
+	private String contract_type;
 	private String user_id; 
 	private String admin_id;
 	private String start_year;
@@ -31,17 +31,17 @@ public class ContractVO {
 	private String create_date;
 	private String modify_date;
 	
-	public int getContarct_pk() {
-		return contarct_pk;
+	public int getContract_pk() {
+		return contract_pk;
 	}
-	public void setContarct_pk(int contarct_pk) {
-		this.contarct_pk = contarct_pk;
+	public void setContract_pk(int contract_pk) {
+		this.contract_pk = contract_pk;
 	}
-	public String getType() {
-		return type;
+	public String getContract_type() {
+		return contract_type;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setContract_type(String contract_type) {
+		this.contract_type = contract_type;
 	}
 	public String getUser_id() {
 		return user_id;
@@ -202,14 +202,14 @@ public class ContractVO {
 	
 	@Override
 	public String toString() {
-		return "ContractVO [contarct_pk=" + contarct_pk + ", type=" + type + ", user_id=" + user_id + ", admin_id="
-				+ admin_id + ", start_year=" + start_year + ", start_month=" + start_month + ", start_day=" + start_day
-				+ ", work_place=" + work_place + ", content=" + content + ", work_per_week=" + work_per_week
-				+ ", holiday=" + holiday + ", pay_type=" + pay_type + ", pay=" + pay + ", bonus=" + bonus + ", payday="
-				+ payday + ", payfor=" + payfor + ", em_insurance=" + em_insurance + ", ac_insurance=" + ac_insurance
-				+ ", pension=" + pension + ", hlt_insurance=" + hlt_insurance + ", canvas=" + canvas
-				+ ", contract_year=" + contract_year + ", contract_month=" + contract_month + ", contract_day="
-				+ contract_day + ", admin_name=" + admin_name + ", extra_pay=" + extra_pay + ", create_date="
-				+ create_date + ", modify_date=" + modify_date + "]";
+		return "ContractVO [contract_pk=" + contract_pk + ", contract_type=" + contract_type + ", user_id=" + user_id
+				+ ", admin_id=" + admin_id + ", start_year=" + start_year + ", start_month=" + start_month
+				+ ", start_day=" + start_day + ", work_place=" + work_place + ", content=" + content
+				+ ", work_per_week=" + work_per_week + ", holiday=" + holiday + ", pay_type=" + pay_type + ", pay="
+				+ pay + ", bonus=" + bonus + ", payday=" + payday + ", payfor=" + payfor + ", em_insurance="
+				+ em_insurance + ", ac_insurance=" + ac_insurance + ", pension=" + pension + ", hlt_insurance="
+				+ hlt_insurance + ", canvas=" + canvas + ", contract_year=" + contract_year + ", contract_month="
+				+ contract_month + ", contract_day=" + contract_day + ", admin_name=" + admin_name + ", extra_pay="
+				+ extra_pay + ", create_date=" + create_date + ", modify_date=" + modify_date + "]";
 	}
 }

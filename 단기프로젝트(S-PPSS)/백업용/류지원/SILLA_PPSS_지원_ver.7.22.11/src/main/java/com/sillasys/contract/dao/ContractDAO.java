@@ -19,6 +19,7 @@ public class ContractDAO extends EgovAbstractMapper{
 		return selectList("contractDAO.selectList", egovMap);
 	}
 
+	
 	public void trmTemplate(ContractVO param) throws Exception {
 		insert("contractDAO.trmTemplate", param);
 	}
@@ -34,7 +35,23 @@ public class ContractDAO extends EgovAbstractMapper{
 	public void trmTemplateBenefit(ContractBenefitVO param) throws Exception {
 		insert("contractDAO.trmTemplateBenefit", param);
 	}
+	
+	
+	public void delTemplate(ContractVO param) throws Exception {
+		delete("contractDAO.delTemplate", param);
+	}
 
+	public void delTemplateWork(ContractWorkVO param) throws Exception {
+		delete("contractDAO.delTemplateWork", param);
+	}
+
+	public void delTemplateEnd(ContractEndVO param) throws Exception {
+		delete("contractDAO.delTemplateEnd", param);
+	}
+
+	public void delTemplateBenefit(ContractBenefitVO param) throws Exception {
+		delete("contractDAO.delTemplateBenefit", param);
+	}
 	
 
 	

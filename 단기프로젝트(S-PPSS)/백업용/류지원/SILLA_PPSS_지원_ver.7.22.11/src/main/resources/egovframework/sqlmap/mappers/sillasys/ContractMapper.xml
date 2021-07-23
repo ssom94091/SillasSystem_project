@@ -7,7 +7,7 @@
 
 		INSERT INTO contract_tb (
 		admin_id
-		, type
+		, contract_type
 		, user_id
 		, start_year
 		, start_month
@@ -33,7 +33,7 @@
 		)
 		VALUES(
 		#{admin_id}
-		, #{type}
+		, #{contract_type}
 		, #{user_id}
 		, #{start_year}
 		, #{start_month}
@@ -114,6 +114,30 @@
 	)
 	</insert>
 	
+	<delete id="delTemplate" parameterType="contractVO">
+	DELETE FROM contract_tb 
+	WHERE contract_pk = #{contract_pk}
+	
+	</delete>
+	
+	<delete id="delTemplateWork" parameterType="ContractWorkVO">
+	
+	DELETE FROM work_time_tb 
+	WHERE contract_pk = #{contract_pk}
+	
+		</delete>
+	
+	<delete id="delTemplateEnd" parameterType="ContractEndVO">
+	DELETE FROM end_time_tb 
+	WHERE contract_pk = #{contract_pk}
+	
+	</delete>
+	
+	<delete id="delTemplateBenefit" parameterType="ContractBenefitVO">
+	DELETE FROM benefit_tb 
+	WHERE contract_pk = #{contract_pk}
+	
+	</delete>
 	
 	
 	

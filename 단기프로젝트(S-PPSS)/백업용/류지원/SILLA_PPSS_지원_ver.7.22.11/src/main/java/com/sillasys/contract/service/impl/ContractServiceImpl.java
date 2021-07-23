@@ -48,4 +48,21 @@ public class ContractServiceImpl implements ContractService{
 		contractDAO.trmTemplateBenefit(param);
 	}
 	
+	
+	public void delTemplate(ContractVO param) throws Exception {
+		contractDAO.delTemplate(param);
+	}
+	
+	public void delTemplateWork(ContractWorkVO param) throws Exception {
+		contractDAO.delTemplateWork(param);
+	}
+	
+	public void delTemplateEnd(ContractEndVO param) throws Exception {
+		contractDAO.delTemplateEnd(param);
+	}
+	
+	public void delTemplateBenefit(ContractBenefitVO param) throws Exception {
+		contractDAO.delTemplateBenefit(param);
+	}
+	
 }

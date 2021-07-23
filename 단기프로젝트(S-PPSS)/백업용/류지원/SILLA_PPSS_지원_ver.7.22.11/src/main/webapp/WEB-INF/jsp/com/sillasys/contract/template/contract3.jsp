@@ -123,7 +123,7 @@
       <form action="/contract/template/contract3.do" method="post" name="frm" onsubmit="return Check()">  <!-- 자기자신에게 input에 입력된 값을 보낸다. -->
             
       <div class="col-sm-12">
-      <input type="hidden" id="type" name="type" value="3">
+      <input type="hidden" id="type" name="type" value="단기간(기간있음)">
       <input type="text" id="admin_id" onkeyup="setValue();" value="<%=admin_id %>" name="admin_id" style="width:150px; height:30px;display: inline-block;"maxlength="20">
       (이하 "사업주"라 함)과(와)
       <input type="text" id="user_id" onkeyup="setValue();" value="<%=user_id %>" name="user_id" style="width:80px; height:30px;display: inline-block;"maxlength="7">
