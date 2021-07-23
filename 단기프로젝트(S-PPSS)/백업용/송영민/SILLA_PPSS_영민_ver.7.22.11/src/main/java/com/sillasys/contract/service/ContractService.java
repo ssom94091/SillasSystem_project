@@ -7,7 +7,7 @@ import egovframework.rte.psl.dataaccess.util.EgovMap;
 
 public interface ContractService {
 	
-	public List<EgovMap> selectList(EgovMap egovMap) throws Exception;
+	public List<EgovMap> selectList(ContractVO vo) throws Exception;
 	
 
 }

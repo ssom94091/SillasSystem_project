@@ -12,8 +12,8 @@ import egovframework.rte.psl.dataaccess.util.EgovMap;
 @Repository("contractDAO")
 public class ContractDAO extends EgovAbstractMapper{
 
-	public List<EgovMap> selectList(EgovMap egovMap){
-		return selectList("contractDAO.selectList", egovMap);
+	public List<EgovMap> selectList(ContractVO vo){
+		return selectList("contractDAO.selectList", vo);
 	}
 
 	

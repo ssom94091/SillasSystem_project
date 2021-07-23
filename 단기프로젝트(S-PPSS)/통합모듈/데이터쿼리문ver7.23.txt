@@ -1,0 +1,254 @@
+INSERT INTO admin_tb(
+	admin_id
+	,admin_pw
+	,company_name
+)
+VALUES(
+	"silla"
+	,"123"
+	,"(주)신라시스템"
+);
+INSERT INTO admin_tb(
+	admin_id
+	,admin_pw
+	,company_name
+)
+VALUES(
+	"asd"
+	,"123"
+	,"(주)신라시스템"
+);
+INSERT INTO admin_tb(
+	admin_id
+	,admin_pw
+	,company_name
+)
+VALUES(
+	"knu"
+	,"123"
+	,"(주)경북대학교"
+);
+INSERT INTO admin_tb(
+	admin_id
+	,admin_pw
+	,company_name
+)
+VALUES(
+	"knut"
+	,"123"
+	,"(주)한국교통대학교"
+);
+
+INSERT INTO company_tb (
+	company_name
+	, company_phone
+	, company_address
+)
+VALUES(
+	"(주)신라시스템"
+	,"053 . 710 . 1234"
+	,"대구광역시 동구 매여로 52 2층"
+);
+INSERT INTO company_tb (
+	company_name
+	, company_phone
+	, company_address
+)
+VALUES(
+	"(주)경북대학교"
+	,"053-950-5114"
+	,"우)41566 대구광역시 북구 대학로 80 (산격동,경북대학교)"
+);
+INSERT INTO company_tb (
+	company_name
+	, company_phone
+	, company_address
+)
+VALUES(
+	"(주)한국교통대학교"
+	,"043-841-5114"
+	,"충청북도 충주시 대학로 50"
+);
+
+INSERT INTO user_tb (
+		user_id
+		, user_pw
+		, user_name
+		, user_address
+		, user_address_detail
+		, user_resnum_front
+		, user_resnum_rear
+		, user_gender
+		, user_email
+		, user_phone
+		
+	)
+	VALUES(
+		"asd"
+		,"123"
+		, "홍길동"
+		,"경상북도 경산시 진량읍"
+		,"우방힐 105동"
+		,"940901"
+		,"1725189"
+		,"남자"
+		,"abc@naver.com"
+		,"010-1234-2255"
+	);
+
+INSERT INTO user_tb (
+		user_id
+		, user_pw
+		, user_name
+		, user_address
+		, user_address_detail
+		, user_resnum_front
+		, user_resnum_rear
+		, user_gender
+		, user_email
+		, user_phone
+		
+	)
+	VALUES(
+		"test1"
+		,"123"
+		,"테스트1"
+		,"대구광역시 테스트1 구역"
+		,"101동 101호"
+		,"910111"
+		,"1725111"
+		,"남자"
+		,"abc1@naver.com"
+		,"010-1234-2251"
+	);
+
+INSERT INTO user_tb (
+		user_id
+		, user_pw
+		, user_name
+		, user_address
+		, user_address_detail
+		, user_resnum_front
+		, user_resnum_rear
+		, user_gender
+		, user_email
+		, user_phone
+		
+	)
+	VALUES(
+		"test2"
+		,"123"
+		, "테스트2"
+		,"대구광역시 테스트2 구역"
+		,"102동 102호"
+		,"920112"
+		,"1625112"
+		,'여자'
+		,'abc2@naver.com'
+		,'010-1231-1251'
+	);
+
+INSERT INTO user_tb (
+		user_id
+		, user_pw
+		, user_name
+		, user_address
+		, user_address_detail
+		, user_resnum_front
+		, user_resnum_rear
+		, user_gender
+		, user_email
+		, user_phone
+		
+	)
+	VALUES(
+		'test3'
+		,'123'
+		,'테스트3'
+		,'서울특별시 테스트3 구역'
+		,'103동 103호'
+		,'930111'
+		,'1625111'
+		,'여자'
+		,'abc4@naver.com'
+		,'010-2234-2251'
+	);
+
+INSERT INTO user_tb (
+		user_id
+		, user_pw
+		, user_name
+		, user_address
+		, user_address_detail
+		, user_resnum_front
+		, user_resnum_rear
+		, user_gender
+		, user_email
+		, user_phone
+		
+	)
+	VALUES(
+		'test4'
+		,'123'
+		,'테스트4'
+		,'서울특별시 테스트4 구역'
+		,'104동 104호'
+		,'940111'
+		,'1725121'
+		,'남자'
+		,'aaa4@naver.com'
+		,'010-2224-2251'
+	);
+
+INSERT INTO user_tb (
+		user_id
+		, user_pw
+		, user_name
+		, user_address
+		, user_address_detail
+		, user_resnum_front
+		, user_resnum_rear
+		, user_gender
+		, user_email
+		, user_phone
+		
+	)
+	VALUES(
+		'test5'
+		,'123'
+		,'테스트5'
+		,'서울특별시 테스트5 구역'
+		,'105동 105호'
+		,'950111'
+		,'1725115'
+		,'남자'
+		,'aaa5@naver.com'
+		,'010-2224-2251'
+	);
+
+INSERT INTO user_tb (
+		user_id
+		, user_pw
+		, user_name
+		, user_address
+		, user_address_detail
+		, user_resnum_front
+		, user_resnum_rear
+		, user_gender
+		, user_email
+		, user_phone
+		
+	)
+	VALUES(
+		'test6'
+		,'123'
+		,'테스트6'
+		,'부산광역시 테스트6 구역'
+		,'106동 106호'
+		,'960111'
+		,'1625111'
+		,'여자'
+		,'aaa5@naver.com'
+		,'010-2324-2251'
+	);
+

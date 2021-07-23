@@ -28,36 +28,36 @@
 			<thead>
 				<tr>
 					<th style="backgroud-color: #fafafa; text-align: center;">No.</th>
-					<th style="backgroud-color: #fafafa; text-align: center;">제목</th>
-					<th style="backgroud-color: #fafafa; text-align: center;">유형</th>
 					<th style="backgroud-color: #fafafa; text-align: center;">근로자</th>
-					<th style="backgroud-color: #fafafa; text-align: center;">계약기간</th>
+					<th style="backgroud-color: #fafafa; text-align: center;">유형</th>
+					<th style="backgroud-color: #fafafa; text-align: center;">업무내용</th>
 					<th style="backgroud-color: #fafafa; text-align: center;">작성일</th>
+					<th style="backgroud-color: #fafafa; text-align: center;">수정일</th>
 				</tr>
 			</thead>
 			<tbody>
 					<tr>
 						<td>1</td>
-						<td><a href="" >박창병 근로계약서</a></td>
+						<td><a href="" >송영민</a></td>
 						<td>표준</td>
-						<td>박창병</td>
-						<td>2021.09.16 ~ 2022.09.16</td>
+						<td>프론트엔드 개발</td>
+						<td>2021년 9월 16일 오전 4시 16분</td>
 						<td>2021년 9월 16일 오전 4시 16분</td>
 					</tr>
 					<tr>
 						<td>2</td>
-						<td><a href="" >홍길동 근로계약서</a></td>
+						<td><a href="" >홍길동</a></td>
 						<td>표준</td>
-						<td>홍길동</td>
-						<td>2021.09.16 ~ 2022.09.16</td>
+						<td>백엔드 개발</td>
+						<td>2021년 9월 16일 오전 4시 16분</td>
 						<td>2021년 9월 16일 오전 4시 16분</td>
 					</tr>
 					<tr>
 						<td>3</td>
-						<td><a href="" >박지하 근로계약서</a></td>
+						<td><a href="" >박지하</a></td>
 						<td>단기간</td>
-						<td>박지하</td>
-						<td>2021.09.16 ~ 2022.09.16</td>
+						<td>예약관리시스템 개발</td>
+						<td>2021년 9월 16일 오전 4시 16분</td>
 						<td>2021년 9월 16일 오전 4시 16분</td>
 					</tr>
 			</tbody>

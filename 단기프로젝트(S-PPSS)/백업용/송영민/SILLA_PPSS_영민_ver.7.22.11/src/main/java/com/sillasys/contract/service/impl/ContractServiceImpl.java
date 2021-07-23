@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.sillasys.contract.dao.ContractDAO;
 import com.sillasys.contract.service.ContractService;
+import com.sillasys.contract.vo.ContractVO;
+
 import egovframework.rte.psl.dataaccess.util.EgovMap;
 
 
@@ -19,7 +21,7 @@ public class ContractServiceImpl implements ContractService{
 
 
 	@Override
-	public List<EgovMap> selectList(EgovMap egovMap) throws Exception {
-		return contractDAO.selectList(egovMap);
+	public List<EgovMap> selectList(ContractVO vo) throws Exception {
+		return contractDAO.selectList(vo);
 	}
 }
