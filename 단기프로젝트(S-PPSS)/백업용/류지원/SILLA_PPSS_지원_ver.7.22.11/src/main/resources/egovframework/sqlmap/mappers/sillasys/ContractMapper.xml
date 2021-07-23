@@ -59,10 +59,21 @@
 		)
 	</insert>
 	
-		<insert id="trmTemplateWork" parameterType="ContractWorkVO">
+	<select id="resultpk" parameterType="ContractVO" resultType="egovMap">
+	SELECT 
+		 contract_pk
+	FROM  contract_tb
+	WHERE user_id = #{user_id}
+	AND	  admin_id = #{admin_id}
 	
-	INSERT INTO work_time_tb (
-	start_hour
+	</select>
+	
+	<insert id="trmTemplateWork" parameterType="ContractWorkVO">
+	
+	INSERT INTO work_time_tb(
+	contract_pk
+	, flag
+	, start_hour
 	, start_min
 	, end_hour
 	, end_min
@@ -71,9 +82,12 @@
 	, b_end_hour
 	, b_end_min
 	, work_day
+	, work_time
 	)
 	VALUES(
-	#{start_hour}
+	  #{contract_pk}
+	, #{flag}
+	, #{start_hour}
 	, #{start_min}
 	, #{end_hour}
 	, #{end_min}
@@ -82,9 +96,9 @@
 	, #{b_end_hour}
 	, #{b_end_min}
 	, #{work_day}
+	, #{work_time}
 	)
 	</insert>
-	
 	
 	<insert id="trmTemplateEnd" parameterType="ContractEndVO">
 	INSERT INTO end_time_tb (

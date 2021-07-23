@@ -15,54 +15,56 @@ import com.sillasys.contract.vo.ContractWorkVO;
 
 import egovframework.rte.psl.dataaccess.util.EgovMap;
 
-
 @Service("contractService")
-public class ContractServiceImpl implements ContractService{
-	
+public class ContractServiceImpl implements ContractService {
+
 	@Resource(name = "contractDAO")
 	private ContractDAO contractDAO;
-
 
 	@Override
 	public List<EgovMap> selectList(EgovMap egovMap) throws Exception {
 		return contractDAO.selectList(egovMap);
 	}
-	
+
 	@Override
-	public void trmTemplate(ContractVO param) throws Exception {
-		contractDAO.trmTemplate(param);
+	public EgovMap trmTemplate(ContractVO param) throws Exception {
+		return contractDAO.trmTemplate(param);
+
 	}
-	
+
 	@Override
 	public void trmTemplateWork(ContractWorkVO param) throws Exception {
 		contractDAO.trmTemplateWork(param);
 	}
-	
+
 	@Override
 	public void trmTemplateEnd(ContractEndVO param) throws Exception {
 		contractDAO.trmTemplateEnd(param);
 	}
-	
+
 	@Override
 	public void trmTemplateBenefit(ContractBenefitVO param) throws Exception {
 		contractDAO.trmTemplateBenefit(param);
 	}
-	
-	
+
+	@Override
 	public void delTemplate(ContractVO param) throws Exception {
 		contractDAO.delTemplate(param);
 	}
-	
+
+	@Override
 	public void delTemplateWork(ContractWorkVO param) throws Exception {
 		contractDAO.delTemplateWork(param);
 	}
-	
+
+	@Override
 	public void delTemplateEnd(ContractEndVO param) throws Exception {
 		contractDAO.delTemplateEnd(param);
 	}
-	
+
+	@Override
 	public void delTemplateBenefit(ContractBenefitVO param) throws Exception {
 		contractDAO.delTemplateBenefit(param);
 	}
-	
+
 }
