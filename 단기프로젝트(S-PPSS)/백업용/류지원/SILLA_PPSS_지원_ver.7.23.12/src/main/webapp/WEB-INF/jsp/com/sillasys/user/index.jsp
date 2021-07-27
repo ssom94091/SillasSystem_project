@@ -17,16 +17,16 @@
 					<th style="background-color: #dadada; text-align: center;width:25%;">기업명</th>
 					<th style="background-color: #dadada; text-align: center;width:18%;border-right:1px solid;border-left:1px solid;">사업주</th>
 					<th style="background-color: #dadada; text-align: center;width:47%;">계약유형</th>
-					<th style="background-color: #dadada; text-align: center;width:10%;border-left:1px solid""></th>
+					<th style="background-color: #dadada; text-align: center;width:10%;border-left:1px solid"></th>
 				</tr>
 			</thead>
 	<tbody>
 	<c:forEach items="${contentList}" var="contentList">
                <tr style="border-bottom:1px solid">
-                  <td><c:out value="${contentList.adminName}"/></td>
+                  <td><c:out value="${contentList.companyName}"/></td>
                   <td style="border-right:1px solid;border-left:1px solid;"><c:out value="${contentList.adminName}"/></td>
                   <td><c:out value="${contentList.contractType}"/></td>
-                  <td style="border-left:1px solid"><c:out value="${contentList.contractType}"/></td>
+                  <td style="border-left:1px solid"><input type="button" value="<c:out value="${contentList.chk}" default="작성필요"/>" onclick="cont_type_chk('<c:out value="${contentList.contractType}"/>');"></td>
                </tr>
     </c:forEach>
 	</tbody>
@@ -70,4 +70,20 @@
 	      console.log("parent "+document.getElementById("index").value);
 	      frm.submit();
 	   }
+	
+	function cont_type_chk(value) {
+		if (value == "표준(기간있음)") {
+			location.href="/user/template/contract1.do";
+		}
+		else if (value == "표준(기간없음)") {
+			location.href="/user/template/contract2.do";
+		}
+		else if (value == "단기간(기간있음)") {
+			location.href="/user/template/contract3.do";
+		}
+		else if (value == "단기간(기간없음)"){
+			location.href="/user/template/contract4.do";
+		}
+	}
+	
 </script>

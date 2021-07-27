@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.sillasys.contract.vo.ContractBenefitVO;
+import com.sillasys.contract.vo.ContractEndVO;
 import com.sillasys.contract.vo.ContractVO;
+import com.sillasys.contract.vo.ContractWorkVO;
 import com.sillasys.user.employee.service.UserService;
 import com.sillasys.user.employee.vo.CompanyVO;
 import com.sillasys.user.employee.vo.UserVO;
@@ -244,4 +247,76 @@ public class UserController {
        model.addAttribute("contentList", contentList);   
        return "/com/sillasys/common/colist";
     }
+
+	// 기업선택페이지 이동
+	@RequestMapping(value = "/user/template/contract1.do", method = RequestMethod.POST)
+	public String goContract1() {
+		return "com/sillasys/user/template/contract1";
+	}
+	
+	@RequestMapping(value = "/user/template/contract1.do", method = RequestMethod.GET)
+	public String doContract1(@ModelAttribute ContractVO vo, @ModelAttribute ContractEndVO vo2, @ModelAttribute ContractWorkVO vo3, 
+			@ModelAttribute ContractBenefitVO vo4, @ModelAttribute CompanyVO vo5, @ModelAttribute UserVO vo6, HttpServletRequest request, ModelMap model)
+			throws Exception {
+
+		HttpSession hs = request.getSession();
+		System.out.println("" + hs.toString());
+		EgovMap loginUser = (EgovMap) hs.getAttribute("loginUser");
+		vo.setUser_id(loginUser.get("userId").toString());
+		System.out.println("vo.userId" + vo.getUser_id());
+		List<EgovMap> contentList = userService.writeContract(vo);
+		List<EgovMap> endList = userService.writeEndContract(vo2);
+		List<EgovMap> workList = userService.writeWorkContract(vo3);
+		List<EgovMap> benefitList = userService.writeBenefitContract(vo4);
+		List<EgovMap> companyList = userService.writeCompanyContract(vo5);
+		List<EgovMap> userList = userService.writeUserContract(vo6);
+		
+		System.out.println("조회 된 레코드 수" + contentList.size());
+		System.out.println(contentList.toString());
+		
+		System.out.println("조회 된 레코드 수" + endList.size());
+		System.out.println(endList.toString());
+		
+		System.out.println("조회 된 레코드 수" + workList.size());
+		System.out.println(workList.toString());
+		
+		System.out.println("조회 된 레코드 수" + benefitList.size());
+		System.out.println(benefitList.toString());
+		
+		System.out.println("조회 된 레코드 수" + companyList.size());
+		System.out.println(companyList.toString());
+		
+		System.out.println("조회 된 레코드 수" + userList.size());
+		System.out.println(userList.toString());
+
+
+		
+		model.addAttribute("contentList", contentList);
+		model.addAttribute("endList", endList);
+		model.addAttribute("workList", workList);
+		model.addAttribute("companyList", companyList);
+		model.addAttribute("userList", userList);
+		if (benefitList.size() != 0) {
+			model.addAttribute("benefitList", benefitList);
+		}
+		return "com/sillasys/user/template/contract1";
+	}
+
+	// 기업선택페이지 이동
+	@RequestMapping(value = "/user/template/contract2.do", method = RequestMethod.GET)
+	public String goContract2() {
+		return "com/sillasys/user/template/contract2";
+	}
+
+	// 기업선택페이지 이동
+	@RequestMapping(value = "/user/template/contract3.do", method = RequestMethod.GET)
+	public String goContract3() {
+		return "com/sillasys/user/template/contract3";
+	}
+
+	// 기업선택페이지 이동
+	@RequestMapping(value = "/user/template/contract4.do", method = RequestMethod.GET)
+	public String goContract4() {
+		return "com/sillasys/user/template/contract4";
+	}
 }

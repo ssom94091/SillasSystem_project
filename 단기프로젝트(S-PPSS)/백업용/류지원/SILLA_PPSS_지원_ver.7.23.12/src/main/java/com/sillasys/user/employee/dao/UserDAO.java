@@ -5,7 +5,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import com.sillasys.contract.vo.ContractBenefitVO;
+import com.sillasys.contract.vo.ContractEndVO;
 import com.sillasys.contract.vo.ContractVO;
+import com.sillasys.contract.vo.ContractWorkVO;
 import com.sillasys.user.employee.vo.CompanyVO;
 import com.sillasys.user.employee.vo.UserVO;
 
@@ -40,5 +43,27 @@ public class UserDAO extends EgovAbstractMapper{
 		return selectList("userDAO.getContract",param);
 	}
 	
+	public List<EgovMap> writeContract(ContractVO param) throws Exception {
+		return selectList("userDAO.writeContract", param);
+	}
 	
+	public List<EgovMap> writeWorkContract(ContractWorkVO param) throws Exception {
+		return selectList("userDAO.writeWorkContract", param);
+	}
+	
+	public List<EgovMap> writeEndContract(ContractEndVO param) throws Exception {
+		return selectList("userDAO.writeEndContract", param);
+	}
+	
+	public List<EgovMap> writeBenefitContract(ContractBenefitVO param) throws Exception {
+		return selectList("userDAO.writeBenefitContract", param);
+	}
+	
+	public List<EgovMap> writeCompanyContract(CompanyVO param) throws Exception {
+		return selectList("userDAO.writeCompanyContract", param);
+	}
+	
+	public List<EgovMap> writeUserContract(UserVO param) throws Exception {
+		return selectList("userDAO.writeUserContract", param);
+	}
 }

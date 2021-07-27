@@ -30,6 +30,7 @@ public class ContractVO {
 	private String extra_pay;
 	private String create_date;
 	private String modify_date;
+	private String company_name;
 	
 	public int getContract_pk() {
 		return contract_pk;
@@ -199,6 +200,12 @@ public class ContractVO {
 	public void setModify_date(String modify_date) {
 		this.modify_date = modify_date;
 	}
+	public String getCompany_name() {
+		return company_name;
+	}
+	public void setCompany_name(String company_name) {
+		this.company_name = company_name;
+	}
 	
 	@Override
 	public String toString() {
@@ -210,6 +217,7 @@ public class ContractVO {
 				+ em_insurance + ", ac_insurance=" + ac_insurance + ", pension=" + pension + ", hlt_insurance="
 				+ hlt_insurance + ", canvas=" + canvas + ", contract_year=" + contract_year + ", contract_month="
 				+ contract_month + ", contract_day=" + contract_day + ", admin_name=" + admin_name + ", extra_pay="
-				+ extra_pay + ", create_date=" + create_date + ", modify_date=" + modify_date + "]";
+				+ extra_pay + ", create_date=" + create_date + ", modify_date=" + modify_date + ", company_name="
+				+ company_name + "]";
 	}
 }

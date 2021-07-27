@@ -90,16 +90,112 @@
 
 	<select id="getContract" parameterType="String" resultType="egovMap">
 	SELECT
-		admin_name
-		, contract_type
-		
-	FROM contract_tb
-	WHERE user_id = #{user_id}
-	
-	
-	
-	
+		admin_tb.company_name
+		, contract_tb.admin_name
+		, contract_tb.contract_type
+		, contract_tb.chk
+		FROM contract_tb 
+		INNER JOIN admin_tb
+		ON contract_tb.admin_id = admin_tb.admin_id
+		WHERE contract_tb.user_id = #{user_id}
 	</select>
+	
+	<select id="writeContract" parameterType="String" resultType="egovMap">
+	SELECT
+      admin_id
+      , contract_type
+      , user_id
+      , start_year
+      , start_month
+      , start_day
+      , work_place
+      , content
+      , work_per_week
+      , holiday
+      , pay_type
+      , pay
+      , bonus
+      , payday
+      , payfor
+      , em_insurance
+      , ac_insurance
+      , pension
+      , hlt_insurance
+      , contract_year
+      , contract_month
+      , contract_day
+      , admin_name
+      
+      FROM contract_tb
+      WHERE contract_tb.user_id = #{user_id}
+	</select>
+	
+	<select id="writeWorkContract" parameterType="String" resultType="egovMap">
+	SELECT
+      work_time_tb.start_hour
+      , work_time_tb.start_min
+      , work_time_tb.end_hour
+      , work_time_tb.end_min
+      , work_time_tb.b_start_hour
+      , work_time_tb.b_start_min
+      , work_time_tb.b_end_hour
+      , work_time_tb.b_end_min
+      , work_time_tb.work_day
+      , work_time_tb.work_time
+      
+      FROM work_time_tb
+      INNER JOIN contract_tb
+      ON contract_tb.contract_pk = work_time_tb.contract_pk
+      <!-- WHERE work_time_tb.flag = #{flag} -->
+	</select>
+	
+	
+	
+	<select id="writeEndContract" parameterType="String" resultType="egovMap">
+	SELECT
+      end_time_tb.end_year
+      , end_time_tb.end_month
+      , end_time_tb.end_day
+      
+      FROM end_time_tb
+      INNER JOIN contract_tb
+      ON contract_tb.contract_pk = end_time_tb.contract_pk
+	</select>
+	
+	<select id="writeBenefitContract" parameterType="String" resultType="egovMap">
+	SELECT
+      benefit_tb.benefit_1
+      , benefit_tb.benefit_2
+      , benefit_tb.benefit_3
+      , benefit_tb.benefit_4
+      
+      FROM benefit_tb
+      INNER JOIN contract_tb
+      ON contract_tb.contract_pk = benefit_tb.contract_pk
+	</select>
+	
+	<select id="writeCompanyContract" parameterType="String" resultType="egovMap">
+	SELECT
+      company_tb.company_name
+      , company_tb.company_phone
+      , company_tb.company_address
+      FROM company_tb , admin_tb, contract_tb
+      WHERE admin_tb.company_name = company_tb.company_name
+      AND contract_tb.admin_id = admin_tb.admin_id
+	</select>
+	
+	<select id="writeUserContract" parameterType="String" resultType="egovMap">
+	SELECT
+      user.user_address
+      , user.user_phone
+      , user.user_name
+    FROM user_tb user
+    INNER JOIN contract_tb cont
+   ON cont.user_id = user.user_id
+      
+	</select>
+	
+	
 	
 
 

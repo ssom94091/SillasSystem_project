@@ -6,7 +6,10 @@ import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
 
+import com.sillasys.contract.vo.ContractBenefitVO;
+import com.sillasys.contract.vo.ContractEndVO;
 import com.sillasys.contract.vo.ContractVO;
+import com.sillasys.contract.vo.ContractWorkVO;
 import com.sillasys.user.employee.dao.UserDAO;
 import com.sillasys.user.employee.service.UserService;
 import com.sillasys.user.employee.vo.CompanyVO;
@@ -53,4 +56,35 @@ public class UserServiceImpl implements UserService{
 	public List<EgovMap> getContract(ContractVO param) throws Exception {
 		return userDAO.getContract(param);
 	}
+	
+	@Override
+	public List<EgovMap> writeContract(ContractVO param) throws Exception {
+		return userDAO.writeContract(param);
+	}
+	
+	@Override
+	public List<EgovMap> writeEndContract(ContractEndVO param) throws Exception {
+		return userDAO.writeEndContract(param);
+	}
+	
+	@Override
+	public List<EgovMap> writeWorkContract(ContractWorkVO param) throws Exception {
+		return userDAO.writeWorkContract(param);
+	}
+	
+	@Override
+	public List<EgovMap> writeBenefitContract(ContractBenefitVO param) throws Exception {
+		return userDAO.writeBenefitContract(param);
+	}
+	
+	@Override
+	public List<EgovMap> writeCompanyContract(CompanyVO param) throws Exception {
+		return userDAO.writeCompanyContract(param);
+	}
+	
+	@Override
+	public List<EgovMap> writeUserContract(UserVO param) throws Exception {
+		return userDAO.writeUserContract(param);
+	}
+	
 }

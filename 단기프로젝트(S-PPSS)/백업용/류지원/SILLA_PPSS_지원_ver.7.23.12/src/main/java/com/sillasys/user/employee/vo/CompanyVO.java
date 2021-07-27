@@ -29,7 +29,4 @@ public class CompanyVO {
 		return "CompanyVO [company_name=" + company_name + ", company_phone=" + company_phone + ", company_address="
 				+ company_address + "]";
 	}
-	
-	
-	
 }

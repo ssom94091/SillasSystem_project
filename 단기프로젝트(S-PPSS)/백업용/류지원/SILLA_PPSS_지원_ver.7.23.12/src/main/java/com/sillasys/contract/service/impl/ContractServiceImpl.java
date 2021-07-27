@@ -27,6 +27,7 @@ public class ContractServiceImpl implements ContractService{
 	public List<EgovMap> selectList(ContractVO vo) throws Exception {
 		return contractDAO.selectList(vo);
 	}
+	
 	@Override
 	public EgovMap trmTemplate(ContractVO param) throws Exception {
 		return contractDAO.trmTemplate(param);
