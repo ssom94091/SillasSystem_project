@@ -166,10 +166,16 @@ public class UserController {
 		EgovMap loginUser = (EgovMap) hs.getAttribute("loginUser");
 		vo.setUser_id(loginUser.get("userId").toString());
 		userService.updateCoop(vo);
-
 		return "/com/sillasys/user/mypage";
 	}
-
+	   
+	
+	// 근로계약서( 표준근로계약서 - 기간)
+	   @RequestMapping(value = "/user/mypage.do", method = RequestMethod.GET)
+	   public String gomypage() {
+	      return "com/sillasys/user/mypage";
+	   }
+	   
 	// 기업리스트 페이지로 이동
 	@RequestMapping(value = "/common/colist.do", method = RequestMethod.GET)
 	public String goColist() {
