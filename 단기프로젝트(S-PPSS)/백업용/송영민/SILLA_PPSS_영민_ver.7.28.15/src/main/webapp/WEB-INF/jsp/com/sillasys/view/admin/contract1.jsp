@@ -150,7 +150,7 @@
 					<option value="2">주급</option>
 					<option value="3">시급</option>
 				</select> : 
-				<input type="text" maxlength="13" id="pay" value=""<c:out value="${result.pay}"/>" 
+				<input type="text" maxlength="13" id="pay" value="<c:out value="${result.pay}"/>"
 					name="pay" readonly
 					style="width: 150px; height: 30px; display: inline-block;"
 					onchange="getNumber(this);" onkeyup="getNumber(this);">원<br>
