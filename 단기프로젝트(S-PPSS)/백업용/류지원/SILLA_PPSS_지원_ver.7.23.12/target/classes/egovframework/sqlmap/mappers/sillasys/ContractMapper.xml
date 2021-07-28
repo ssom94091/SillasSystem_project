@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="contractDAO">
+
+   <select id="selectList"  parameterType="String" resultType="egovMap">
+      SELECT 
+          contract.contract_pk
+         , user.user_name            <!--근로자      user_name-->
+         , contract.contract_type      <!--유형     contract_type-->
+         , contract.content         <!--업무내용     content-->  
+         , contract.create_date      <!--작성일        create_date-->
+         , contract.modify_date      <!--수정일         modify_date --> 
+   FROM user_tb, admin_tb, contract_tb
+   WHERE admin.admin_id = #{admin_id}  
+   AND user.user_id = contract.user_id
+   ORDER BY contract.modify_date DESC;
+   </select>
+
+   <insert id="trmTemplate" parameterType="ContractVO">
+
+      INSERT INTO contract_tb (
+      admin_id
+      , contract_type
+      , user_id
+      , start_year
+      , start_month
+      , start_day
+      , work_place
+      , content
+      , work_per_week
+      , holiday
+      , pay_type
+      , pay
+      , bonus
+      , payday
+      , payfor
+      , em_insurance
+      , ac_insurance
+      , pension
+      , hlt_insurance
+      , contract_year
+      , contract_month
+      , contract_day
+      , admin_name
+      , canvas
+      )
+      VALUES(
+      #{admin_id}
+      , #{contract_type}
+      , #{user_id}
+      , #{start_year}
+      , #{start_month}
+      , #{start_day}
+      , #{work_place}
+      , #{content}
+      , #{work_per_week}
+      , #{holiday}
+      , #{pay_type}
+      , #{pay}
+      , #{bonus}
+      , #{payday}
+      , #{payfor}
+      , #{em_insurance}
+      , #{ac_insurance}
+      , #{pension}
+      , #{hlt_insurance}
+      , #{contract_year}
+      , #{contract_month}
+      , #{contract_day}
+      , #{admin_name}
+      , #{canvas}
+      )
+   </insert>
+   
+   <select id="resultpk" parameterType="ContractVO" resultType="egovMap">
+   SELECT 
+       contract_pk
+   FROM  contract_tb
+   WHERE user_id = #{user_id}
+   AND     admin_id = #{admin_id}
+   
+   </select>
+   
+   <insert id="trmTemplateWork" parameterType="ContractWorkVO">
+   
+   INSERT INTO work_time_tb(
+   contract_pk
+   , flag
+   , start_hour
+   , start_min
+   , end_hour
+   , end_min
+   , b_start_hour
+   , b_start_min
+   , b_end_hour
+   , b_end_min
+   , work_day
+   , work_time
+   )
+   VALUES(
+     #{contract_pk}
+   , #{flag}
+   , #{start_hour}
+   , #{start_min}
+   , #{end_hour}
+   , #{end_min}
+   , #{b_start_hour}
+   , #{b_start_min}
+   , #{b_end_hour}
+   , #{b_end_min}
+   , #{work_day}
+   , #{work_time}
+   )
+   </insert>
+   
+   <insert id="trmTemplateEnd" parameterType="ContractEndVO">
+   INSERT INTO end_time_tb (
+   contract_pk
+   , end_year
+   , end_month
+   , end_day
+   )
+   VALUES(
+   #{contract_pk}
+   , #{end_year}
+   , #{end_month}
+   , #{end_day}
+   )
+   </insert>
+   
+   <insert id="trmTemplateBenefit" parameterType="ContractBenefitVO">
+   INSERT INTO Benefit_tb (
+   contract_pk
+   , benefit_1
+   , benefit_2
+   , benefit_3
+   , benefit_4
+   )
+   VALUES(
+   #{contract_pk}
+   , #{benefit_1}
+   , #{benefit_2}
+   , #{benefit_3}
+   , #{benefit_4}
+   )
+   </insert>
+   
+   <delete id="delTemplate" parameterType="contractVO">
+   DELETE FROM contract_tb 
+   WHERE contract_pk = #{contract_pk}
+   
+   </delete>
+   
+   <delete id="delTemplateWork" parameterType="ContractWorkVO">
+   
+   DELETE FROM work_time_tb 
+   WHERE contract_pk = #{contract_pk}
+   
+      </delete>
+   
+   <delete id="delTemplateEnd" parameterType="ContractEndVO">
+   DELETE FROM end_time_tb 
+   WHERE contract_pk = #{contract_pk}
+   
+   </delete>
+   
+   <delete id="delTemplateBenefit" parameterType="ContractBenefitVO">
+   DELETE FROM benefit_tb 
+   WHERE contract_pk = #{contract_pk}
+   
+   </delete>
+   
+   
+   
+</mapper>
