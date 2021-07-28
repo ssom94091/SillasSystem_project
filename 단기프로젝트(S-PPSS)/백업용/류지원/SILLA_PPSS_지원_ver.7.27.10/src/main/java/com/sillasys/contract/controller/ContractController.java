@@ -1,4 +1,5 @@
- package com.sillasys.contract.controller;
+
+package com.sillasys.contract.controller;
 
 import java.util.List;
 
@@ -97,12 +98,7 @@ public class ContractController {
    public String goContract4() {
       return "com/sillasys/contract/template/contract4";
    }
-   
-// 근로계약서( 표준근로계약서 - 기간)
-   @RequestMapping(value = "/user/mypage.do", method = RequestMethod.GET)
-   public String gomypage() {
-      return "com/sillasys/user/mypage";
-   }
+
 
    // 근로계약서 DB전송( 표준근로계약서 - 기간)
    @RequestMapping(value = "/contract/template/contract1.do", method = RequestMethod.POST)
