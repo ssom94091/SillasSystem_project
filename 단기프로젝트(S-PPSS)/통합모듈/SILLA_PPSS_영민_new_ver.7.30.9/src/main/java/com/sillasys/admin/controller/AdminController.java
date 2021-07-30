@@ -48,7 +48,7 @@ public class AdminController {
 	}
 	
 	
-	/* 로그아웃 */
+		/* 로그아웃 */
 		@RequestMapping(value = "admin/logout.do", method = RequestMethod.GET)
 		public String doLogout(HttpServletRequest request, Model model) {
 			HttpSession hs = request.getSession();       
@@ -96,6 +96,14 @@ public class AdminController {
 		
 					return "com/sillasys/main";
 				}
+				
+				//양식 관리페이지 이동
+				@RequestMapping(value = "/admin/contlist.do", method = RequestMethod.GET)
+				public String goContList() throws Exception {
+					return "com/sillasys/admin/contlist";
+				}
+				
+			
 			
 			
 				
