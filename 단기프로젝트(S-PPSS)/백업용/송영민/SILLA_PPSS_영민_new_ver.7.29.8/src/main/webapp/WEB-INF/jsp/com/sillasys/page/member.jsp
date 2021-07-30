@@ -6,18 +6,42 @@
             <!-- About-->
             <section class="resume-section" id="home">
                 <div class="resume-section-content">
-               <img id="home_img" src="/images/silla/home_logo1.png" style="max-width: 100%; height: auto; margin-top:10px;">
-                    
+                 
                     <div class="subheading mb-5">
-                        		 <span class="text-primary"> 직원관리</span>
+                        		 <h4><span class="text-primary">Member_</span></h4>
                         <a href="http://www.sillasystem.com"> 신라시스템</a>
                     </div>
-                    <div class="social-icons">
-                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                   <div class="container">
+                   <!-- 카드 리스트 부분 -->
+			<div class="row">
+				<c:forEach items="${contentList}" var="contentList">
+					<div class="col-3" style="margin-top:30px;">
+						<div class="card">
+							<div class="card-header"><b>No. <c:out value="${contentList.contractPk}"/></b></div>
+							<img src="/images/silla/profile_basic.png"  style="min-width:200px;min-height:200px;"/>
+							<div class="card-body">
+								<h5 class="card-title">이름 : <c:out value="${contentList.userName}"/></h5>
+								
+								<p class="card-text" style="font-size:small;">
+								<b>생년월일   :  </b> <c:out value="${contentList.userResnumFront}"/><br>
+								<b>이메일 :</b> <c:out value="${contentList.userEmail}"/></p>
+								<hr>
+								<p class="card-text" style="font-size:small;">
+								<b>작성일 : </b><c:out value="${contentList.modifyDate}"/> <br>
+								<b>유형 : </b> <c:out value="${contentList.contractType}"/><br>
+								<b>업무내용 </b><br>　<c:out value="${contentList.content}"/><br>
+								
+								</p>
+								
+								<a href="#" class="btn btn-primary" style="margin:0, auto;">보기</a>
+								<a href="#" class="btn btn-danger" style="margin-left:10px;">삭제</a>
+							</div>
+						</div>
+					</div>
+			</c:forEach>
+		</div>
+	</div>
+                
                 </div>
             </section>
         </div>

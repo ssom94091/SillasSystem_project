@@ -26,21 +26,6 @@
             </section>
         </div>
          <hr class="m-0" />
-         
-        <!-- Page Content-->
-        <div class="container-fluid p-0">
-            <!-- About-->
-            <section class="resume-section" id="member">
-                <div class="resume-section-content">
-                    <iframe id="iframe_set"  
-   
-                    src="/admin/login.do" scrolling="no" style="min-width:80vw; min-height:100vh; border: 0px dashed; overflow-y: auto;  overflow-x: hidden;display: block;  " >
-                    </iframe>
-                </div>
-            </section>
-        </div>
-         <hr class="m-0" />
-         
          <!-- Experience-->
             <section class="resume-section" id="contract">
                 <div class="resume-section-content">
