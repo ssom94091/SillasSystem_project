@@ -37,7 +37,7 @@ public class AdminController {
 			HttpSession hs = request.getSession();
 			hs.setAttribute("loginAdmin", loginAdmin);
 			
-			url = "/main.do";
+			url = "/admin/main.do";
 			msg = "로그인에 성공했습니다.";
 			
 		}
@@ -48,7 +48,7 @@ public class AdminController {
 	}
 	
 	
-		/* 로그아웃 */
+	/* 로그아웃 */
 		@RequestMapping(value = "admin/logout.do", method = RequestMethod.GET)
 		public String doLogout(HttpServletRequest request, Model model) {
 			HttpSession hs = request.getSession();       
@@ -80,13 +80,13 @@ public class AdminController {
 					EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
 		
 					if(loginAdmin != null)
-						return "redirect:/main.do";
+						return "redirect:/admin/main.do";
 		
 					return "com/sillasys/admin/login";
 				}
 				
 				//로그인 시 메인페이지 이동
-				@RequestMapping(value = "/main.do", method = RequestMethod.GET)
+				@RequestMapping(value = "/admin/main.do", method = RequestMethod.GET)
 				public String goMain(HttpServletRequest request) throws Exception {
 					HttpSession hs = request.getSession();
 					EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
@@ -94,16 +94,8 @@ public class AdminController {
 					if(loginAdmin == null)
 						return "redirect:/admin/login.do";
 		
-					return "com/sillasys/main";
+					return "com/sillasys/admin/main";
 				}
-				
-				//양식 관리페이지 이동
-				@RequestMapping(value = "/admin/contlist.do", method = RequestMethod.GET)
-				public String goContList() throws Exception {
-					return "com/sillasys/admin/contlist";
-				}
-				
-			
 			
 			
 				
