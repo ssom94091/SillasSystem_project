@@ -28,7 +28,28 @@
         <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}/{2}/{3}/{4}.jsp" />
     </definition>
     
+     <!--페이지 -->
+    <definition name="layout-page-tiles" template="/WEB-INF/tiles/page/template2.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/page/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/page/foot.jsp" />
+    </definition>
     
+     <definition name="com/sillasys/page/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/page/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/page/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/page/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/page/*/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/page/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/page/*/*/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/page/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
     
 </tiles-definitions>
 

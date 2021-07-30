@@ -2,21 +2,23 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><!-- java standard tag library -->
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>직원관리 페이지</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-
-<body>
-
-
-</body>
-
-</html>
+ <div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="home">
+                <div class="resume-section-content">
+               <img id="home_img" src="/images/silla/home_logo1.png" style="max-width: 100%; height: auto; margin-top:10px;">
+                    
+                    <div class="subheading mb-5">
+                        		 <span class="text-primary"> 직원관리</span>
+                        <a href="http://www.sillasystem.com"> 신라시스템</a>
+                    </div>
+                    <div class="social-icons">
+                        <a class="social-icon" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-github"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="social-icon" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+         <hr class="m-0" />

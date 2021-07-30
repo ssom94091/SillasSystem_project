@@ -1,0 +1,30 @@
+
+INSERT INTO admin_tb(
+admin_id,
+admin_pw,
+company_name,
+company_phone,
+company_address
+)VALUES
+(
+'silla',
+'123',
+'(주)신라시스템',
+'053. 710. 1234',
+'대구광역시 동구 매여로 52  2층'
+)
+
+INSERT INTO admin_tb(
+admin_id,
+admin_pw,
+company_name,
+company_phone,
+company_address
+)VALUES
+(
+'asd',
+'123',
+'(주)신라시스템',
+'053. 710. 1234',
+'대구광역시 동구 매여로 52  2층'
+)

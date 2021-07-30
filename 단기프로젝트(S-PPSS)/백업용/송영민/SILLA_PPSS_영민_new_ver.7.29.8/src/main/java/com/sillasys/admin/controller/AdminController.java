@@ -37,7 +37,7 @@ public class AdminController {
 			HttpSession hs = request.getSession();
 			hs.setAttribute("loginAdmin", loginAdmin);
 			
-			url = "/main.do";
+			url = "/page/main.do";
 			msg = "로그인에 성공했습니다.";
 			
 		}
@@ -80,13 +80,13 @@ public class AdminController {
 					EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
 		
 					if(loginAdmin != null)
-						return "redirect:/main.do";
+						return "redirect:/page/main.do";
 		
 					return "com/sillasys/admin/login";
 				}
 				
 				//로그인 시 메인페이지 이동
-				@RequestMapping(value = "/main.do", method = RequestMethod.GET)
+				@RequestMapping(value = "/page/main.do", method = RequestMethod.GET)
 				public String goMain(HttpServletRequest request) throws Exception {
 					HttpSession hs = request.getSession();
 					EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
@@ -94,7 +94,7 @@ public class AdminController {
 					if(loginAdmin == null)
 						return "redirect:/admin/login.do";
 		
-					return "com/sillasys/main";
+					return "com/sillasys/page/main";
 				}
 			
 			

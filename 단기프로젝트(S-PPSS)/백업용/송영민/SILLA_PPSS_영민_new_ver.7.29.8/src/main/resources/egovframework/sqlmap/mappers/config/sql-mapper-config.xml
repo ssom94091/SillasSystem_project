@@ -9,7 +9,9 @@
 		<typeAlias alias="adminVO"
 			type="com.sillasys.admin.vo.AdminVO" />
 			
-		
+		<typeAlias alias="memberVO"
+			type="com.sillasys.member.vo.MemberVO" />
+			
 		<!-- 
 		<typeAlias type="com.sillasys.user.employee.vo.ContractWorkTimeVO"
 			alias="contractWorkTimeVO" />

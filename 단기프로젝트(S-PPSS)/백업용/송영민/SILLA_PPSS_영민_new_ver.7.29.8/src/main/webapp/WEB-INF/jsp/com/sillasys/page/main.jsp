@@ -2,66 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><!-- java standard tag library -->
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-    
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="/js/scripts.js"></script>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>신라 전자관리시스템</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/silla/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-    
-    <!--헤더 부분 -->
-  	  <header>
-   		
-    </header>
-        <!-- Navigation-->
-        <iframe> </iframe>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-                <span class="d-block d-lg-none">S-PPSS</span>
-                <span class="d-none d-lg-block"><img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="/images/silla/profile_basic.png" alt="..." /></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-             <div style="background:#606060;text-align:right">
-			<c:if test="${loginAdmin != null }">
-			<a class="a_tag" href="/admin/logout.do">로그아웃</a>	
-			</c:if>
-			<c:if test="${loginAdmin == null }">
-			<a class="a_tag" href="/admin/login.do">로그인</a>
-			</c:if>
-			<a class="a_tag" href="/main.do">Home</a>
-			</div>
-    <h5 style= "font-color: #fff;text-align:right">(관리자용)</h5>
-            
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#home">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#member">직원관리</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contract">계약서관리</a></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <!-- Page Content-->
+        <!-- HOME 화면-->
         <div class="container-fluid p-0">
             <!-- About-->
             <section class="resume-section" id="home">
                 <div class="resume-section-content">
+               <img id="home_img" src="/images/silla/home_logo1.png" style="max-width: 100%; height: auto; margin-top:10px;">
                     <h1 class="mb-0">
                         SILLA
                         <span class="text-primary"> SYSTEM</span>
@@ -86,8 +32,9 @@
             <!-- About-->
             <section class="resume-section" id="member">
                 <div class="resume-section-content">
-                    <iframe>
-                    
+                    <iframe id="iframe_set"  
+   
+                    src="/admin/login.do" scrolling="no" style="min-width:80vw; min-height:100vh; border: 0px dashed; overflow-y: auto;  overflow-x: hidden;display: block;  " >
                     </iframe>
                 </div>
             </section>
@@ -133,6 +80,4 @@
                 </div>
             </section>
             <hr class="m-0" />
-    </body>
-</html>
       
