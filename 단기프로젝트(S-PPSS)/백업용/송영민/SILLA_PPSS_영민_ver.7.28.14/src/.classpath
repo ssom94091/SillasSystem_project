@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="egovframework/com/cmm/service/impl/|egovframework/com/cmm/service/|egovframework/com/cmm/web/" kind="src" path="main/java"/>
+	<classpathentry excluding="impl/" kind="src" path="main/java/egovframework/com/cmm/service"/>
+	<classpathentry kind="src" path="main/java/egovframework/com/cmm/service/impl"/>
+	<classpathentry kind="src" path="main/java/egovframework/com/cmm/web"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
