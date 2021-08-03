@@ -9,7 +9,7 @@ PRIMARY KEY(admin_id),
 
 
 CREATE TABLE member_tb (
-member_pk		INT		NOT NULL	AUTO_INCREMENT,
+member_pk		VARCHAR(10)          NOT NULL,
 member_name		VARCHAR(10)	NOT NULL,
 member_resnum_front	VARCHAR(6) 	NOT NULL,
 member_resnum_rear	VARCHAR(7) 	NOT NULL,
@@ -19,17 +19,20 @@ member_email		VARCHAR(20) 	NOT NULL,
 member_number		VARCHAR(20) 	NOT NULL,
 member_position		VARCHAR(10)	NOT NULL,
 member_e_year		VARCHAR(4)	NOT NULL,
+member_department	VARCHAR(10)	NOT NULL,
 contract_flag		TINYINT		NOT NULL,
-PRIMARY KEY(member_pk),
+PRIMARY KEY(member_pk)
 )
 
 
 
 CREATE TABLE contract_tb (
 contract_pk		INT		NOT NULL	AUTO_INCREMENT,			
-member_pk		INT		NOT NULL,
-content			MAXTEXT		NOT NULL,
+member_pk		VARCHAR(10)		NOT NULL,
+content			MEDIUMTEXT		NOT NULL,
 complate			TINYINT		NOT NULL DEFAULT 0,
+create_date		DATETIME DEFAULT CURRENT_TIMESTAMP,
+modify_date		DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 PRIMARY KEY(contract_pk),
 FOREIGN KEY(member_pk) REFERENCES member_tb(member_pk) ON  DELETE CASCADE
 )
