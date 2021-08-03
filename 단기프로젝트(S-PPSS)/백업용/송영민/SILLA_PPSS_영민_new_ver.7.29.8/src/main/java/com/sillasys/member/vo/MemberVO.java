@@ -1,60 +1,97 @@
 package com.sillasys.member.vo;
 
 public class MemberVO {
-	private String admin_id;  		 // 관리자 아이디
-	private String admin_pw; 		 // 관리자 비밀번호 
-	private String company_name;	 // 회사명
-	private String company_phone;	 // 회사연락처
-	private String company_address;	 // 회사주소
-
-	
-
-	public String getAdmin_id() {
-		return admin_id;
+	private String member_pk;
+	private String member_name;
+	private String member_resnum_front;
+	private String member_resnum_rear;
+	private String member_gender;	
+	private String member_address;
+	private String member_email;
+	private String member_number;
+	private String member_position;
+	private String member_e_year;
+	private String member_department;
+	private int contract_flag;
+	public String getMember_pk() {
+		return member_pk;
 	}
-
-	public void setAdmin_id(String admin_id) {
-		this.admin_id = admin_id;
+	public void setMember_pk(String member_pk) {
+		this.member_pk = member_pk;
 	}
-
-	public String getAdmin_pw() {
-		return admin_pw;
+	public String getMember_name() {
+		return member_name;
 	}
-
-	public void setAdmin_pw(String admin_pw) {
-		this.admin_pw = admin_pw;
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
 	}
-
-	public String getCompany_name() {
-		return company_name;
+	public String getMember_resnum_front() {
+		return member_resnum_front;
 	}
-
-	public void setCompany_name(String company_name) {
-		this.company_name = company_name;
+	public void setMember_resnum_front(String member_resnum_front) {
+		this.member_resnum_front = member_resnum_front;
 	}
-
-	public String getCompany_phone() {
-		return company_phone;
+	public String getMember_resnum_rear() {
+		return member_resnum_rear;
 	}
-
-	public void setCompany_phone(String company_phone) {
-		this.company_phone = company_phone;
+	public void setMember_resnum_rear(String member_resnum_rear) {
+		this.member_resnum_rear = member_resnum_rear;
 	}
-
-	public String getCompany_address() {
-		return company_address;
+	public String getMember_gender() {
+		return member_gender;
 	}
-
-	public void setCompany_address(String company_address) {
-		this.company_address = company_address;
+	public void setMember_gender(String member_gender) {
+		this.member_gender = member_gender;
 	}
-
+	public String getMember_address() {
+		return member_address;
+	}
+	public void setMember_address(String member_address) {
+		this.member_address = member_address;
+	}
+	public String getMember_email() {
+		return member_email;
+	}
+	public void setMember_email(String member_email) {
+		this.member_email = member_email;
+	}
+	public String getMember_number() {
+		return member_number;
+	}
+	public void setMember_number(String member_number) {
+		this.member_number = member_number;
+	}
+	public String getMember_position() {
+		return member_position;
+	}
+	public void setMember_position(String member_position) {
+		this.member_position = member_position;
+	}
+	public String getMember_e_year() {
+		return member_e_year;
+	}
+	public void setMember_e_year(String member_e_year) {
+		this.member_e_year = member_e_year;
+	}
+	public String getMember_department() {
+		return member_department;
+	}
+	public void setMember_department(String member_department) {
+		this.member_department = member_department;
+	}
+	public int getContract_flag() {
+		return contract_flag;
+	}
+	public void setContract_flag(int contract_flag) {
+		this.contract_flag = contract_flag;
+	}
 	@Override
 	public String toString() {
-		return "AdminVO [admin_id=" + admin_id + ", admin_pw=" + admin_pw + ", company_name=" + company_name
-				+ ", company_phone=" + company_phone + ", company_address=" + company_address + "]";
+		return "MemberVO [member_pk=" + member_pk + ", member_name=" + member_name + ", member_resnum_front="
+				+ member_resnum_front + ", member_resnum_rear=" + member_resnum_rear + ", member_gender="
+				+ member_gender + ", member_address=" + member_address + ", member_email=" + member_email
+				+ ", member_number=" + member_number + ", member_position=" + member_position + ", member_e_year="
+				+ member_e_year + ", member_department=" + member_department + ", contract_flag=" + contract_flag + "]";
 	}
-	
-	
-	
+
 }

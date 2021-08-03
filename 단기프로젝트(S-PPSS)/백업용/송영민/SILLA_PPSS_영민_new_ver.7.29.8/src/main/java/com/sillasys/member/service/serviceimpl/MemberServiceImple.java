@@ -19,10 +19,11 @@ public class MemberServiceImple implements MemberService{
 	@Resource(name = "memberDAO")
 	private MemberDAO memberDAO;
 
+	
 	@Override
-	public EgovMap selectAdmin(MemberVO param) throws Exception {
-
-		return memberDAO.selectMember(param);
+	public List<EgovMap> selectMemberList(MemberVO vo) throws Exception {
+		
+		return memberDAO.selectMember(vo); 
 	}
 	
 	
