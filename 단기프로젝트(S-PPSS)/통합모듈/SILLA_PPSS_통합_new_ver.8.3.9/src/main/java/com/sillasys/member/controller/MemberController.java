@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.sillasys.contract.vo.ContractVO;
 import com.sillasys.member.service.MemberService;
 import com.sillasys.member.vo.MemberVO;
 
@@ -71,6 +72,22 @@ public class MemberController {
 			System.out.println("Model contentList addAttribute Set success");
 			System.out.println("--------------------------------------------------------------\n");
 			return "com/sillasys/page/member";
+		}
+		
+		/* 프로필 */
+		@RequestMapping(value = "/page/member/profile.do", method = RequestMethod.GET)
+		public String goWritePage(@ModelAttribute ContractVO vo, HttpServletRequest request, ModelMap model)
+				throws Exception {
+			System.out.println("\n--------------------------------------------------------------");
+			System.out.println("＆profile.do : get방식 실행됨＆");
+			HttpSession hs = request.getSession();
+			EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
+			if (loginAdmin == null)
+				return "redirect:/admin/login.do";
+
+			System.out.println("--------------------------------------------------------------\n");
+
+			return "com/sillasys/page/member/profile";
 		}
 			
 				

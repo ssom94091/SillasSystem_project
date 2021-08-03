@@ -79,6 +79,22 @@ public class ContractController {
 		
 			return "com/sillasys/sub/contract/contlist";
 		}
+		
+		/* 작성페이지 */
+		@RequestMapping(value = "/sub/contract/write.do", method = RequestMethod.GET)
+		public String goWritePage(@ModelAttribute ContractVO vo, HttpServletRequest request, ModelMap model)
+				throws Exception {
+			System.out.println("\n--------------------------------------------------------------");
+			System.out.println("＆write.do : get방식 실행됨＆");
+			HttpSession hs = request.getSession();
+			EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");
+			if (loginAdmin == null)
+				return "redirect:/admin/login.do";
+
+			System.out.println("--------------------------------------------------------------\n");
+
+			return "com/sillasys/sub/contract/write";
+		}
 				
 	/*GET go페이지 이동 맵핑 구간 끝 */
 	/*POST do맵핑*/

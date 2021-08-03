@@ -30,11 +30,12 @@
                    <!-- 카드 리스트 부분 -->
 						<div class="row">
 							<div>
-							
 								<button class="btn btn-danger" onclick='open_in_frame("http://localhost:8080/sub/contract/contlist.do")'>계약서목록</button>
 								<button class="btn btn-danger" onclick='open_in_frame("http://localhost:8080/sub/contract/form.do")'>양식보관함</button>
+								<button class="btn btn-danger" onclick='open_in_frame("http://localhost:8080/sub/contract/write.do")'>작성</button>
 								<iframe id='my_frame' src="http://localhost:8080/sub/contract/form.do"></iframe>
 							</div>
+							
 							
 						</div>
 					</div>

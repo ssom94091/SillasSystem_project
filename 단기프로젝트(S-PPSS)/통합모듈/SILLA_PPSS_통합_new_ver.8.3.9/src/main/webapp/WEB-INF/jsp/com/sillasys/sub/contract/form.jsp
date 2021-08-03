@@ -19,10 +19,12 @@
 	<div class="container">
 		<table class="table table-hover table table-striped">
 			<tr>
+				<th>No.</th>
 				<th>직원 계약서 목록</th>
 				<th>기능</th>
 			</tr>
 			<tr>
+				<th>1</th>
 				<th>신라시스템 근로계약서</th>
 				<th>
 					<button type="button" class="navyBtn" onClick="location.href='/sub/contract/view.do'">조회</button>
