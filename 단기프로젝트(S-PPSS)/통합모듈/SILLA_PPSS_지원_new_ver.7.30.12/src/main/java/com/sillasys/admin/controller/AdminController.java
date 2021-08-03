@@ -107,9 +107,9 @@ public class AdminController {
 	}
 	
 	//계약서 관리 페이지 이동
-	@RequestMapping(value = "/template/contract/contract.do", method = RequestMethod.GET)
+	@RequestMapping(value = "/page/contract.do", method = RequestMethod.GET)
 	public String gocontract() throws Exception {
-		return "com/sillasys/template/contract/contract";
+		return "com/sillasys/page/contract";
 	}
 	
 	// 양식보관함 페이지 이동
