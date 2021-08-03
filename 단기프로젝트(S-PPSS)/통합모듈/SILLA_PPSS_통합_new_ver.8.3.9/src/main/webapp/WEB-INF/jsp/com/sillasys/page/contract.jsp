@@ -2,21 +2,44 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><!-- java standard tag library -->
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>직원관리 페이지</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-</head>
-
-<body>
 
 
-</body>
+<!-- iframe 사이즈 -->
+<style>
+	#my_frame { width: 1000px; height: 700px; }
+</style>
 
-</html>
+<!-- iframe 페이지 이동 함수 -->
+<script>	
+	function open_in_frame(url) {
+		$("#my_frame").attr('src', url);
+	}
+</script>
+
+
+	
+<div class="container-fluid p-0">
+            <!-- About-->
+            <section class="resume-section" id="home">
+                <div class="resume-section-content">
+                 
+                    <div class="subheading mb-5">
+                        		 <h4><span class="text-primary">계약서관리_</span></h4>
+                    </div>
+                   <div class="container">
+                   <!-- 카드 리스트 부분 -->
+						<div class="row">
+							<div>
+							
+								<button class="btn btn-danger" onclick='open_in_frame("http://localhost:8080/sub/contract/contlist.do")'>계약서목록</button>
+								<button class="btn btn-danger" onclick='open_in_frame("http://localhost:8080/sub/contract/form.do")'>양식보관함</button>
+								<iframe id='my_frame' src="http://localhost:8080/sub/contract/form.do"></iframe>
+							</div>
+							
+						</div>
+					</div>
+                
+             </div>
+            </section>
+        </div>
+         <hr class="m-0" />

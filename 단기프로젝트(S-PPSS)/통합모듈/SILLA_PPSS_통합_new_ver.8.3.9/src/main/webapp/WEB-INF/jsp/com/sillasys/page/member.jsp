@@ -10,7 +10,6 @@
                  
                     <div class="subheading mb-5">
                         		 <h4><span class="text-primary">Member_</span></h4>
-                        <a href="http://www.sillasystem.com"> 신라시스템</a>
                     </div>
                    <div class="container">
                    <!-- 카드 리스트 부분 -->

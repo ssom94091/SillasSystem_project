@@ -22,6 +22,11 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../css/silla/styles.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+        
+        
+        
 </head>
 <body id="page-top">
 
@@ -49,7 +54,7 @@
                 <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/page/main.do">HOME</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/page/member.do">직원관리</a></li>
-                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contract">계약서관리</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/page/contract.do">계약서관리</a></li>
                 </ul>
             </div>
         </nav>
