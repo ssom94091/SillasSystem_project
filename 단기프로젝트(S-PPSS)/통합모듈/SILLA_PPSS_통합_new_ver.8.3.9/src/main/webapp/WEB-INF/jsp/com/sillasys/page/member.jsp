@@ -34,7 +34,7 @@
 													<b>부서 - </b><c:out value="${contentList.memberDepartment}"/> <br>
 													</p>
 												<div style="text-align:center;">
-													<a href="#" class="btn btn-success" style="margin:0, auto;">보기</a>
+													<a href="member/profile.do" class="btn btn-success" style="margin:0, auto;">보기</a>
 													<a href="#" class="btn btn-danger" style="margin-left:10px;">삭제</a>
 												</div>
 											</div>

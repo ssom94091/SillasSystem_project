@@ -20,5 +20,18 @@
 	FROM member_tb
 	</select>
 	
+	<select id="selectMember" parameterType="MemberVO" resultType="egovMap">
+		SELECT 
+			member_pk			<!--사원 번호 -->
+		   , member_name				
+		   , member_resnum_front		
+		   , member_resnum_rear		
+		   , member_gender			
+		   , member_address		
+		   , member_email		
+		   , member_number
+	FROM member_tb
+	WHERE member_pk = 'si-09-01'
+	</select>	
 	
 </mapper>

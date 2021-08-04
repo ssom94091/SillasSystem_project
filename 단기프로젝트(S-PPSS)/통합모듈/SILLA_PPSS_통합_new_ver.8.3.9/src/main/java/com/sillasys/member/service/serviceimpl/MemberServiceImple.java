@@ -26,6 +26,11 @@ public class MemberServiceImple implements MemberService{
 		return memberDAO.selectMember(vo); 
 	}
 	
+	@Override
+	public EgovMap selectMember(MemberVO vo) throws Exception {
+		return memberDAO.selectMemberOne(vo);
+	}
+	
 	
 	
 	
