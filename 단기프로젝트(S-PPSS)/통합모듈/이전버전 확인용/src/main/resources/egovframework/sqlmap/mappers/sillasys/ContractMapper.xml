@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="contractDAO">
+
+
+	<select id="selectList"  parameterType="String" resultType="egovMap">
+		SELECT 
+			c.contract_pk
+		   , u.user_name				<!--근로자      user_name-->
+		   , c.contract_type		<!--유형  	contract_type-->
+		   , c.content			<!--업무내용     content-->  
+		   , DATE_FORMAT(c.create_date,'%Y.%m.%d.  %r') AS create_date		<!--작성일        create_date-->
+		   , DATE_FORMAT(c.modify_date,'%Y.%m.%d.  %r') AS modify_date 	<!--수정일         modify_date --> 
+	FROM contract_tb AS c
+	JOIN user_tb AS u
+	ON c.admin_id = #{admin_id}
+	AND c.user_id = u.user_id 
+	AND c.chk = '0'
+	ORDER BY c.modify_date DESC;
+	</select>
+	
+	<select id="selectContractList"  parameterType="String" resultType="egovMap">
+	SELECT 
+			c.contract_pk			<!-- 작성 번호 -->
+		   , u.user_name				<!--근로자      user_name-->
+		   , u.user_resnum_front		<!-- 생일 -->
+		   , u.user_email			<!-- 이메일 -->
+		   , c.contract_type		<!--유형  	contract_type-->
+		   , c.content			<!--업무내용     content-->  
+		   , DATE_FORMAT(c.create_date,'%Y.%m.%d.  %r') AS create_date	
+		   , DATE_FORMAT(c.modify_date,'%Y.%m.%d.  %r') AS modify_date		<!--수정일         modify_date --> 
+	FROM contract_tb AS c
+	JOIN user_tb AS u
+	ON c.admin_id = #{admin_id}
+	AND c.user_id = u.user_id 
+	AND c.chk = '1'
+	ORDER BY c.create_date DESC;
+	</select>
+	
+	
+	<!-- 이름으로 검색 -->
+	<select id="searchNameContractList"  parameterType="String" resultType="egovMap">
+	SELECT 
+			c.contract_pk			<!-- 작성 번호 -->
+		   , u.user_name				<!--근로자      user_name-->
+		   , u.user_resnum_front		<!-- 생일 -->
+		   , u.user_email			<!-- 이메일 -->
+		   , c.contract_type		<!--유형  	contract_type-->
+		   , c.content			<!--업무내용     content-->  
+		   , DATE_FORMAT(c.create_date,'%Y.%m.%d.  %r') AS create_date	
+		   , DATE_FORMAT(c.modify_date,'%Y.%m.%d.  %r') AS modify_date		<!--수정일         modify_date --> 
+	FROM contract_tb AS c
+	JOIN user_tb AS u
+	ON c.admin_id = #{admin_id}
+	AND c.user_id = u.user_id 
+	AND c.chk = '0'
+	AND u.user_name LIKE CONCAT('%', #{searchType}, '%')
+	ORDER BY c.create_date DESC;
+	</select>
+	
+	
+	<!-- 유형으로 검색 -->
+	<select id="searchTypeContractList"  parameterType="String" resultType="egovMap">
+	SELECT 
+			c.contract_pk			<!-- 작성 번호 -->
+		   , u.user_name				<!--근로자      user_name-->
+		   , u.user_resnum_front		<!-- 생일 -->
+		   , u.user_email			<!-- 이메일 -->
+		   , c.contract_type		<!--유형  	contract_type-->
+		   , c.content			<!--업무내용     content-->  
+		   , DATE_FORMAT(c.create_date,'%Y.%m.%d.  %r') AS create_date	
+		   , DATE_FORMAT(c.modify_date,'%Y.%m.%d.  %r') AS modify_date		<!--수정일         modify_date --> 
+	FROM contract_tb AS c
+	JOIN user_tb AS u
+	ON c.admin_id = #{admin_id}
+	AND c.user_id = u.user_id 
+	AND c.chk = '0'
+	AND c.contract_type LIKE CONCAT('%', #{searchType}, '%')
+	ORDER BY c.create_date DESC;
+	</select>
+	
+	<!-- 업무내용으로 검색 -->
+	<select id="searchContentContractList"  parameterType="String" resultType="egovMap">
+	SELECT 
+			c.contract_pk			<!-- 작성 번호 -->
+		   , u.user_name				<!--근로자      user_name-->
+		   , u.user_resnum_front		<!-- 생일 -->
+		   , u.user_email			<!-- 이메일 -->
+		   , c.contract_type		<!--유형  	contract_type-->
+		   , c.content			<!--업무내용     content-->  
+		   , DATE_FORMAT(c.create_date,'%Y.%m.%d.  %r') AS create_date	
+		   , DATE_FORMAT(c.modify_date,'%Y.%m.%d.  %r') AS modify_date		<!--수정일         modify_date --> 
+	FROM contract_tb AS c
+	JOIN user_tb AS u
+	ON c.admin_id = #{admin_id}
+	AND c.user_id = u.user_id 
+	AND c.chk = '0'
+	AND c.content LIKE CONCAT('%', #{searchType}, '%')
+	ORDER BY c.create_date DESC;
+	</select>
+
+
+<!-- 업무내용으로 검색 -->
+	<select id="doMemberCheck"  parameterType="AdminVO" resultType="egovMap">
+	SELECT 
+		     u.user_name				<!--이름-->
+		   , u.user_gender				<!--성별 -->
+		   , u.user_resnum_front		<!--생일 -->
+		   , u.user_resnum_rear			<!--주민뒷번호 -->
+		   , u.user_phone	  			<!--연락처 -->
+		   , u.user_address 			<!--주소-->
+	FROM user_tb AS u
+	JOIN company_tb AS c
+	ON c.company_name = u.company_name
+	JOIN admin_tb AS a
+	ON c.company_name = a.company_name 
+	AND a.admin_id = #{admin_id}
+	ORDER BY u.user_name ASC;
+	</select>
+
+
+
+	<insert id="trmTemplate" parameterType="ContractVO">
+
+		INSERT INTO contract_tb (
+		admin_id
+		, contract_type
+		, user_id
+		, start_year
+		, start_month
+		, start_day
+		, work_place
+		, content
+		, work_per_week
+		, holiday
+		, pay_type
+		, pay
+		, bonus
+		, payday
+		, payfor
+		, em_insurance
+		, ac_insurance
+		, pension
+		, hlt_insurance
+		, contract_year
+		, contract_month
+		, contract_day
+		, admin_name
+		, canvas
+		)
+		VALUES(
+		#{admin_id}
+		, #{contract_type}
+		, #{user_id}
+		, #{start_year}
+		, #{start_month}
+		, #{start_day}
+		, #{work_place}
+		, #{content}
+		, #{work_per_week}
+		, #{holiday}
+		, #{pay_type}
+		, #{pay}
+		, #{bonus}
+		, #{payday}
+		, #{payfor}
+		, #{em_insurance}
+		, #{ac_insurance}
+		, #{pension}
+		, #{hlt_insurance}
+		, #{contract_year}
+		, #{contract_month}
+		, #{contract_day}
+		, #{admin_name}
+		, #{canvas}
+		)
+	</insert>
+	
+	<select id="resultpk" parameterType="ContractVO" resultType="egovMap">
+	SELECT 
+		 contract_pk
+	FROM  contract_tb
+	WHERE user_id = #{user_id}
+	AND	  admin_id = #{admin_id}
+	</select>
+	
+	<select id="admin" parameterType="ContractVO" resultType="egovMap">
+	SELECT 
+		c.company_name
+		,c.company_phone
+		,c.company_address
+	FROM company_tb AS c
+	JOIN  admin_tb AS a
+	ON a.admin_id = #{admin_id}
+	AND a.company_name = c.company_name
+	</select>
+	
+	<select id="user" parameterType="ContractVO" resultType="egovMap">
+	SELECT 
+		 company.company_name
+		, u.user_name
+		, c.contract_type
+		, c.start_year
+		, c.start_month
+		, c.start_day
+		, c.work_place
+		, c.content
+		, c.work_per_week
+		, c.holiday
+		, c.pay_type
+		, c.pay
+		, c.bonus
+		, c.payday
+		, c.payfor
+		, c.em_insurance
+		, c.ac_insurance
+		, c.pension
+		, c.hlt_insurance
+		, c.contract_year
+		, c.contract_month
+		, c.contract_day
+		, company.company_phone
+		, company.company_address
+		, c.admin_name
+	FROM contract_tb AS c
+	JOIN  user_tb AS u 
+	ON c.user_id = u.user_id
+	JOIN  company_tb AS company
+	ON u.company_name = company.company_name 
+	AND u.user_id= #{user_id}
+	</select>
+	
+	<select id="searchType1" parameterType="ContractVO" resultType="egovMap">
+	SELECT 
+		 company.company_name
+		, u.user_name
+		, c.contract_type
+		, c.start_year
+		, c.start_month
+		, c.start_day
+		, e.end_year
+		, e.end_month
+		, e.end_day
+		, c.work_place
+		, c.content
+		, w.start_hour
+		, w.start_min
+		, w.end_hour
+		, w.end_min
+		, w.b_start_hour
+		, w.b_start_min
+		, w.b_end_hour
+		, w.b_end_min
+		, c.work_per_week
+		, c.holiday
+		, c.pay_type
+		, c.pay
+		, c.bonus
+		, b.benefit_1
+		, b.benefit_2
+		, b.benefit_3
+		, b.benefit_4
+		, c.payday
+		, c.payfor
+		, c.em_insurance
+		, c.ac_insurance
+		, c.pension
+		, c.hlt_insurance
+		, c.canvas
+		, c.contract_year
+		, c.contract_month
+		, c.contract_day
+		, company.company_phone
+		, company.company_address
+		, c.admin_name
+		, u.user_address
+		, u.user_phone
+		, u.user_name
+	FROM contract_tb AS c
+	LEFT OUTER JOIN benefit_tb AS b
+	ON b.contract_pk = c.contract_pk
+	INNER JOIN  user_tb AS u 
+	ON c.user_id = u.user_id
+	INNER JOIN  company_tb AS company
+	ON u.company_name = company.company_name 
+	INNER JOIN end_time_tb AS e
+	ON e.contract_pk = c.contract_pk
+	INNER JOIN work_time_tb AS w
+	ON w.contract_pk = c.contract_pk
+	AND c.contract_pk = #{contract_pk}
+	</select>
+	
+	<insert id="trmTemplateWork" parameterType="ContractWorkVO">
+	
+	INSERT INTO work_time_tb(
+	contract_pk
+	, flag
+	, start_hour
+	, start_min
+	, end_hour
+	, end_min
+	, b_start_hour
+	, b_start_min
+	, b_end_hour
+	, b_end_min
+	, work_day
+	, work_time
+	)
+	VALUES(
+	  #{contract_pk}
+	, #{flag}
+	, #{start_hour}
+	, #{start_min}
+	, #{end_hour}
+	, #{end_min}
+	, #{b_start_hour}
+	, #{b_start_min}
+	, #{b_end_hour}
+	, #{b_end_min}
+	, #{work_day}
+	, #{work_time}
+	)
+	</insert>
+	
+	<insert id="trmTemplateEnd" parameterType="ContractEndVO">
+	INSERT INTO end_time_tb (
+	contract_pk
+	,end_year
+	, end_month
+	, end_day
+	)
+	VALUES(
+	#{contract_pk}
+	,#{end_year}
+	, #{end_month}
+	, #{end_day}
+	)
+	</insert>
+	
+	<insert id="trmTemplateBenefit" parameterType="ContractBenefitVO">
+	INSERT INTO Benefit_tb (
+	contract_pk
+	, benefit_1
+	, benefit_2
+	, benefit_3
+	, benefit_4
+	)
+	VALUES(
+	#{contract_pk}
+	,#{benefit_1}
+	, #{benefit_2}
+	, #{benefit_3}
+	, #{benefit_4}
+	)
+	</insert>
+	<delete id="deleteContract" parameterType="contractVO">
+	DELETE FROM contract_tb 
+	WHERE contract_pk = #{contract_pk}
+	</delete>
+	
+	<delete id="delTemplate" parameterType="contractVO">
+	DELETE FROM contract_tb 
+	WHERE contract_pk = #{contract_pk}
+	
+	</delete>
+	<delete id="delTemplateWork" parameterType="ContractWorkVO">
+	
+	DELETE FROM work_time_tb 
+	WHERE contract_pk = #{contract_pk}
+	
+		</delete>
+	
+	<delete id="delTemplateEnd" parameterType="ContractEndVO">
+	DELETE FROM end_time_tb 
+	WHERE contract_pk = #{contract_pk}
+	
+	</delete>
+	
+	<delete id="delTemplateBenefit" parameterType="ContractBenefitVO">
+	DELETE FROM benefit_tb 
+	WHERE contract_pk = #{contract_pk}
+	
+	</delete>
+	
+	
+	
+</mapper>
+

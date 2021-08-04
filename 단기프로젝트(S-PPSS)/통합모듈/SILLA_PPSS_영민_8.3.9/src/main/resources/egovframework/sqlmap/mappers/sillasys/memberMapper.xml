@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberDAO">
+
+	<select id="selectMemberList"  parameterType="String" resultType="egovMap">
+	SELECT 
+			member_pk			<!--사원 번호 -->
+		   , member_name				
+		   , member_resnum_front		
+		   , member_resnum_rear		
+		   , member_gender			
+		   , member_address		
+		   , member_email		
+		   , member_number
+		   , member_position
+		   , member_e_year
+		   , member_department
+		   , contract_flag	
+	FROM member_tb
+	</select>
+	
+	
+</mapper>
