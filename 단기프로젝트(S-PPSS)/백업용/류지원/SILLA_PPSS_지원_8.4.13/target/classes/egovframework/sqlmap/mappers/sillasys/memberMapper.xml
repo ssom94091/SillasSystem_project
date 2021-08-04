@@ -31,7 +31,45 @@
 		   , member_email		
 		   , member_number
 	FROM member_tb
-	WHERE member_pk = 'si-09-01'
+	WHERE member_pk = #{member_pk}
 	</select>	
 	
+	
+	<delete id="deleteMember" parameterType="MemberVO">
+		DELETE FROM member_tb 
+		WHERE member_pk = #{member_pk}
+	</delete>
+	
+	<insert id="insertMember" parameterType="MemberVO">
+	INSERT INTO member_tb (
+		member_pk
+		,member_name
+		,member_resnum_front
+		,member_resnum_rear
+		,member_gender
+		,member_address
+		,member_email
+		,member_number
+		,member_position
+		,member_e_year
+		,member_department
+		)
+	VALUES(
+	#{member_pk}
+	,#{member_name}
+	,#{member_resnum_front}
+	,#{member_resnum_rear}
+	,#{member_gender}
+	,#{member_address}
+	,#{member_email}
+	,#{member_number}
+	,#{member_position}
+	,#{member_e_year}
+	,#{member_department}
+	)
+	</insert>
+	
+	<select id="searchLastMember"  parameterType="MemberVO"  resultType="egovMap">
+		SELECT * FROM member_tb ORDER BY member_pk DESC LIMIT 1
+	</select>	
 </mapper>

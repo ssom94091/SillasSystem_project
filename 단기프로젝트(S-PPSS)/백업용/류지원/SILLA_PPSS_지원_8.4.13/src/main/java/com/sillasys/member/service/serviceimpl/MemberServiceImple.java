@@ -30,6 +30,22 @@ public class MemberServiceImple implements MemberService{
 	public EgovMap selectMember(MemberVO vo) throws Exception {
 		return memberDAO.selectMemberOne(vo);
 	}
+
+	@Override
+	public void deleteMember(MemberVO vo) {
+		memberDAO.deleteMember(vo);
+	}
+
+	@Override
+	public void createMember(MemberVO vo) {
+		memberDAO.createMember(vo);
+		
+	}
+
+	@Override
+	public EgovMap searchLastMember(MemberVO vo) {
+		return memberDAO.searchLastMember(vo);
+	}
 	
 	
 	

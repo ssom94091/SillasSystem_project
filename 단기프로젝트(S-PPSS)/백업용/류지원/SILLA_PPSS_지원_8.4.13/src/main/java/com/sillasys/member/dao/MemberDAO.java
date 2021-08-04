@@ -19,6 +19,16 @@ public class MemberDAO extends EgovAbstractMapper{
 	public EgovMap selectMemberOne(MemberVO vo) throws Exception {
 		return selectOne("memberDAO.selectMember", vo);
 	}
-	
+
+	public void deleteMember(MemberVO vo) {
+			delete("memberDAO.deleteMember", vo);
+	}
+	public void createMember(MemberVO vo) {
+		delete("memberDAO.createMember", vo);
+}
+
+	public EgovMap searchLastMember(MemberVO vo) {
+		return  selectOne("memberDAO.searchLastMember", vo);
+	}
 
 }
