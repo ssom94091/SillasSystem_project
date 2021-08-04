@@ -10,4 +10,6 @@ import egovframework.rte.psl.dataaccess.util.EgovMap;
 public interface MemberService {
 	
 	public List<EgovMap> selectMemberList(MemberVO vo) throws Exception;
+	
+	public EgovMap selectMember(MemberVO vo) throws Exception;
 }

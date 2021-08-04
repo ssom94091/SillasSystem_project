@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.sillasys.contract.vo.ContractVO;
 import com.sillasys.member.service.MemberService;
 import com.sillasys.member.vo.MemberVO;
 
@@ -48,7 +49,7 @@ public class MemberController {
 			System.out.println("레코드 수 :"+contentList.size());
 			System.out.println(contentList.toString());
 			if(contentList != null) {
-			System.out.println("데이터 set 성공");
+				System.out.println("데이터 set 성공");
 			}
 			System.out.println(contentList.get(0).keyList());
 			
@@ -72,9 +73,25 @@ public class MemberController {
 			System.out.println("--------------------------------------------------------------\n");
 			return "com/sillasys/page/member";
 		}
+		
+		/* 프로필 */
+		@RequestMapping(value = "/page/member/profile.do", method = RequestMethod.GET)
+		public String goWritePage(@ModelAttribute MemberVO vo, HttpServletRequest request, ModelMap model) throws Exception {
+			System.out.println("\n--------------------------------------------------------------");
+			System.out.println("＆profile.do : get방식 실행됨＆");
+			HttpSession hs = request.getSession();
+			EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");  
+			if(loginAdmin == null)
+				return "redirect:/admin/login.do";
 			
-				
-				
+			EgovMap memberList = memberService.selectMember(vo);
+			System.out.println(memberList.toString());
+			
+			model.addAttribute("memberList", memberList);	
+			
+			return "com/sillasys/page/member/profile";
+		}
+			
 	/*GET go페이지 이동 맵핑 구간 끝 */
 	/*POST do맵핑*/
 		
