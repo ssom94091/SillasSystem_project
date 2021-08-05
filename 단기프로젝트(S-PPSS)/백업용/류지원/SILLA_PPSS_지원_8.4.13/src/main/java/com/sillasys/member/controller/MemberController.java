@@ -29,7 +29,8 @@ public class MemberController {
 	private MemberService memberService;
 
 	/*Get go맵핑*/
-		/*직원목록 */
+		
+	/*직원목록 */
 		@RequestMapping(value="/page/member.do", method = RequestMethod.GET)
 		public String selectContractList(@ModelAttribute MemberVO vo,HttpServletRequest request, ModelMap model ) throws Exception{
 			System.out.println("\n--------------------------------------------------------------");
@@ -73,7 +74,7 @@ public class MemberController {
 			return "com/sillasys/page/member";
 		}
 
-	/* 프로필 */
+		/* 프로필 */
 		@RequestMapping(value = "/page/member/profile.do", method = RequestMethod.GET)
 		public String goWritePage(@ModelAttribute MemberVO vo, HttpServletRequest request, ModelMap model) throws Exception {
 			System.out.println("\n--------------------------------------------------------------");
@@ -109,6 +110,7 @@ public class MemberController {
 			return "com/sillasys/common/createMember";
 		}
 		
+		/* 직원 삭제 */
 		@RequestMapping(value = "/common/delete.do", method = RequestMethod.GET)
 		public String deleteMember(MemberVO vo,HttpServletRequest request, ModelMap model) throws Exception{
 			System.out.println("\n--------------------------------------------------------------");
@@ -142,8 +144,9 @@ public class MemberController {
 			
 			return "com/sillasys/common/delete";
 		}
-	/*GET go페이지 이동 맵핑 구간 끝 */
-	/*POST do맵핑*/
+		/*GET go페이지 이동 맵핑 구간 끝 */
+		
+		/*POST do맵핑*/
 		@RequestMapping(value = "/common/create.do", method = RequestMethod.POST)
 		public String createMember(MemberVO vo,HttpServletRequest request, ModelMap model) throws Exception{
 			System.out.println("\n--------------------------------------------------------------");

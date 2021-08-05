@@ -3,24 +3,24 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><!-- java standard tag library -->
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <script>
-/*선택한 직원 프로필 보기*/
 
- function createMember() {
-	 $("#frm0").attr("action", "../common/createMember.do");
+	/*선택한 직원 프로필 보기*/
+	function createMember() {
+		$("#frm0").attr("action", "../page/member/createMember.do");
 		$("#frm0").attr("method", "get");
-	var popupX = (window.screen.width/2) - (600/2);
-	var popupY = (window.screen.height/2)-(400/2);
-		childWindow = window.open("/common/memberChk.do?adminId="
+		var popupX = (window.screen.width/2) - (600/2);
+		var popupY = (window.screen.height/2)-(400/2);
+		childWindow = window.open("/page/member/createMember.do?adminId="
 				+ document.frm1.admin_id.value, "", "width=600, height=400 left="+popupX+",top="+popupY);
 		console.log("부모adminid="+document.getElementById("admin_id").value);
-				
-				$("#frm0").submit();
-			
+		$("#frm0").submit();	
 	}
+	
+/*직원목록에서 데이터 삭제*/
 function viewProfile(memberPk) {
 	 $("#member_pk").val(memberPk);
 	 $("#frm1").submit();
-	}
+	 }
 	
 /*직원목록에서 데이터 삭제*/
 function deleteProfile(memberPk) {
@@ -29,13 +29,14 @@ function deleteProfile(memberPk) {
 			$("#member_pk").val(memberPk);
 			$("#frm1").attr("action", "../common/delete.do");
 			$("#frm1").submit();
-		}
-		else{
+	}
+	else {
 		alert("삭제가 취소되었습니다.");	
-		}
+	}
 }
 
 </script>
+
 <div class="container-fluid p-0" id="test">
 	<!-- About-->
 	<section class="resume-section" id="home">
