@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles COnfiguration 2.1//EN"
+        "tiles-config_2_1.dtd">
+       <!--  "http://tiles.apache.org/dtds/tiles-config_2_1.dtd" -->
+<tiles-definitions>
+
+    <!--관리자 -->
+    <definition name="layout-admin-tiles" template="/WEB-INF/tiles/admin/template.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/admin/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/admin/foot.jsp" />
+    </definition>
+    
+     <definition name="com/sillasys/admin/*" extends="layout-admin-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/admin/*/*" extends="layout-admin-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/admin/*/*/*" extends="layout-admin-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/admin/*/*/*/*" extends="layout-admin-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/admin/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    
+     <!--페이지 -->
+    <definition name="layout-page-tiles" template="/WEB-INF/tiles/page/template2.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/page/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/page/foot.jsp" />
+    </definition>
+    
+     <definition name="com/sillasys/page/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/page/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/page/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/page/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/page/*/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/page/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/page/*/*/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/page/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    
+    
+    <!--common -->
+    <definition name="layout-common-tiles" template="/WEB-INF/tiles/common/template3.jsp">
+        <put-attribute name="head" value="/WEB-INF/tiles/include/common/head.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="foot" value="/WEB-INF/tiles/include/common/foot.jsp" />
+    </definition>
+    
+     <definition name="com/sillasys/common/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="com/sillasys/common/*/*/*/*" extends="layout-page-tiles">
+        <put-attribute name="body" value="/WEB-INF/jsp/com/sillasys/common/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+</tiles-definitions>
+
+
+ 
