@@ -44,6 +44,19 @@
         </property>
     </bean>
     
+    <!-- 인터셉터 -->
+    <!-- <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+        <property name="interceptors">
+            <list>
+                <ref bean="authenticInterceptor" />
+               
+            </list>
+        </property>
+    </bean>
+ 
+    <bean id="authenticInterceptor" class="com.sillasys.mail.AuthenticInterceptor"/>
+     -->
+    
    
     
 </beans>

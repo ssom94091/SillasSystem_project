@@ -112,8 +112,23 @@ public class ContractController {
 			model.addAttribute("result", result);
 			return "com/sillasys/page/contract/view";
 		}
+		
+		/*mail */
+		@RequestMapping(value="/page/contract/mail/mailform.do", method = RequestMethod.GET)
+		public String goMail(@ModelAttribute ContractVO vo,HttpServletRequest request, ModelMap model ) throws Exception{
+			System.out.println("\n--------------------------------------------------------------");
+			System.out.println("＆mailform.do : get방식 실행됨＆");
+			HttpSession hs = request.getSession();
+			EgovMap result = null;
+			
+			EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin");  
+			if(loginAdmin == null)
+				return "redirect:/admin/login.do";
+			return "com/sillasys/page/contract/mail/mailform";
+		}
 	/*GET go페이지 이동 맵핑 구간 끝 */
-	/*POST do맵핑*/               
+	
+		/*POST do맵핑*/               
 		@RequestMapping(value="/page/contract/template1.do", method = RequestMethod.POST)
 		public String insertTemplate(@ModelAttribute ContractVO vo,HttpServletRequest request, ModelMap model ) throws Exception{
 			System.out.println("\n--------------------------------------------------------------");
@@ -132,6 +147,18 @@ public class ContractController {
 			System.out.println("--------------------------------------------------------------\n");
 			
 			return "com/sillasys/page/contract/template1";
+		}
+		
+		@RequestMapping(value="/page/contract/mail/sendmail.do", method = RequestMethod.POST)
+		public String doMail(@ModelAttribute ContractVO vo,HttpServletRequest request, ModelMap model ) throws Exception{
+			System.out.println("\n--------------------------------------------------------------");
+			System.out.println("＆sendmail.do : POST방식 실행됨＆");
+			HttpSession hs = request.getSession();
+			EgovMap loginAdmin = (EgovMap) hs.getAttribute("loginAdmin"); 
+			if(loginAdmin == null)
+				return "redirect:/admin/login.do";
+			
+			return "com/sillasys/page/contract/mail/sendmail";
 		}
 	
 		

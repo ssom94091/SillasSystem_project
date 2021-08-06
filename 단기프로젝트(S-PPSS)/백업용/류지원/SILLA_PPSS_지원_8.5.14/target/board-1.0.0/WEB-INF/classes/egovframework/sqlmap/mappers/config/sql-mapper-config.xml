@@ -3,7 +3,7 @@
 
 <configuration>
 	<typeAliases>
-			<typeAlias alias="egovMap"
+		<typeAlias alias="egovMap"
 			type="egovframework.rte.psl.dataaccess.util.EgovMap" />
 			
 		<typeAlias alias="adminVO"
@@ -11,8 +11,19 @@
 			
 		<typeAlias alias="memberVO"
 			type="com.sillasys.member.vo.MemberVO" />
-			
-
+			<typeAlias alias="contractVO"
+			type="com.sillasys.contract.vo.ContractVO" />
+		<!-- 
+		<typeAlias type="com.sillasys.user.employee.vo.ContractWorkTimeVO"
+			alias="contractWorkTimeVO" />
+		
+		<typeAlias type="com.sillasys.user.employee.vo.ContractEndTimeVO"
+			alias="contractEndTimeVO" />
+		
+		<typeAlias type="com.sillasys.user.employee.vo.ContractBenefitVO"
+			alias="contractBenefitVO" />
+ -->
+		
 
 		<!-- <typeAlias alias="ComDefaultCodeVO" type="egovframework.com.cmm.ComDefaultCodeVO" 
 			/> <typeAlias alias="comDefaultVO" type="egovframework.com.cmm.ComDefaultVO" 
